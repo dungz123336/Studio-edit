@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<style>
+  /* KHÔNG có veTai: toàn bộ hoạt ảnh là CSS @keyframes + Element.animate — máy tự tua theo t */
+  body { font-family: var(--font-nhan); }
+  .the { position: absolute; left: 4%; right: 4%; top: 12%; bottom: 12%; border-radius: 44px; overflow: hidden;
+         display: flex; align-items: center; gap: 44px; padding: 0 56px; box-sizing: border-box;
+         background: linear-gradient(135deg, rgba(255,255,255,.32), rgba(255,255,255,.10));
+         border: 2px solid rgba(255,255,255,.55);
+         box-shadow: inset 0 1px 0 rgba(255,255,255,.7);
+         animation: truotVao .9s cubic-bezier(.2,1.25,.35,1) both; }
+  .the::before { content: ""; position: absolute; inset: -40% -10% auto -10%; height: 180%;
+         background: linear-gradient(100deg, transparent 35%, rgba(255,255,255,.40) 50%, transparent 65%);
+         transform: translateX(-120%); animation: loe 1.4s .9s ease-in-out both; pointer-events: none; }
+  .icon { flex: none; width: 190px; height: 190px; border-radius: 50%; display: grid; place-items: center;
+          background: radial-gradient(circle at 30% 30%, var(--mau-nhan), color-mix(in srgb, var(--mau-nhan) 60%, #000));
+          box-shadow: 0 0 0 10px color-mix(in srgb, var(--mau-nhan) 30%, transparent); }
+  .icon svg { width: 110px; height: 110px; overflow: visible; }
+  .icon path { fill: none; stroke: var(--mau-toi); stroke-width: 9; stroke-linecap: round; stroke-linejoin: round;
+               stroke-dasharray: 1; stroke-dashoffset: 1; animation: ve .7s .55s ease-out forwards; }
+  .chu { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+  .tieu { font: 900 76px/1.05 var(--font-tieu-de); color: var(--mau-sang); text-shadow: 0 3px 12px rgba(0,0,0,.35);
+          animation: len .6s .35s cubic-bezier(.2,.9,.3,1) both; }
+  .mo { font: 400 40px/1.25 var(--font-than); color: rgba(255,255,255,.95); text-shadow: 0 2px 8px rgba(0,0,0,.4);
+        animation: len .6s .5s cubic-bezier(.2,.9,.3,1) both; }
+  .mo b { color: var(--mau-nhan); font-family: var(--font-nhan); }
+  @keyframes truotVao { from { transform: translateX(-115%) skewX(-8deg); opacity: 0; } to { transform: none; opacity: 1; } }
+  @keyframes loe { to { transform: translateX(120%); } }
+  @keyframes ve { to { stroke-dashoffset: 0; } }
+  @keyframes len { from { transform: translateY(40px); opacity: 0; } to { transform: none; opacity: 1; } }
+</style>
+</head>
+<body>
+<div class="the">
+  <div class="icon">
+    <svg viewBox="0 0 100 100"><path pathLength="1" d="M57 8 L22 56 H48 L42 92 L78 42 H52 Z"/></svg>
+  </div>
+  <div class="chu">
+    <div class="tieu" id="tieu"></div>
+    <div class="mo" id="mo"></div>
+  </div>
+</div>
+<script>
+const P = Object.assign({ tieu_de: "Tiết kiệm điện", mo_ta: "Rút sạc khi đầy — giảm <b>12%</b> hoá đơn mỗi tháng" }, window.PROPS);
+tieu.textContent = P.tieu_de; mo.innerHTML = P.mo_ta;
+// nhịp đập icon bằng Web Animations API, bắt đầu ở giây 1.3 (ganTimeline: máy tua theo t)
+ganTimeline(document.querySelector(".icon").animate(
+  [{ transform: "scale(1)" }, { transform: "scale(1.12)" }, { transform: "scale(1)" }],
+  { duration: 900, iterations: Infinity, easing: "ease-in-out" }), 1.3);
+</script>
+</body>
+</html>

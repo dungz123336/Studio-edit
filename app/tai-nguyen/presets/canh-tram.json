@@ -1,0 +1,50 @@
+[
+  {
+    "ten": "so-sanh-truoc-sau",
+    "mo_ta": "Hai cột trước/sau, cột phải sáng hơn"
+  },
+  {
+    "ten": "tuong-chu-vs-dan-chung",
+    "mo_ta": "Slide đặc chữ đối lại slide có số liệu"
+  },
+  {
+    "ten": "luoi-anh-gom-khoi",
+    "mo_ta": "Lưới ảnh nhỏ chạy về gom thành một khối"
+  },
+  {
+    "ten": "cot-moc-dan",
+    "mo_ta": "Biểu đồ cột mọc dần theo lời nói"
+  },
+  {
+    "ten": "so-do-tu-duy",
+    "mo_ta": "Nhánh toả ra từ một ý trung tâm"
+  },
+  {
+    "ten": "gach-dau-dong",
+    "mo_ta": "Từng gạch đầu dòng hiện theo mỗi cú nhấp"
+  },
+  {
+    "ten": "so-sanh-hai-cong-cu",
+    "mo_ta": "Bảng đối chiếu hai công cụ"
+  },
+  {
+    "ten": "dong-thoi-gian",
+    "mo_ta": "Mốc thời gian chạy ngang"
+  },
+  {
+    "ten": "quy-trinh-buoc",
+    "mo_ta": "Các bước nối bằng mũi tên"
+  },
+  {
+    "ten": "so-lieu-lon",
+    "mo_ta": "Một con số chiếm cả khung, chú thích nhỏ dưới"
+  },
+  {
+    "ten": "danh-sach-kiem",
+    "mo_ta": "Danh sách có dấu tích hiện dần"
+  },
+  {
+    "ten": "trich-dan",
+    "mo_ta": "Câu trích cỡ lớn trên nền tối"
+  }
+]

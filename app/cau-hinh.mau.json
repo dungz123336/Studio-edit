@@ -1,0 +1,78 @@
+{
+ "_ban_quyen": "© 2026 Studio dựng video. STUDIO-DUNG-VIDEO · BAN QUYEN. Cấm sao chép/sửa/phân phối lại.",
+ "_doc": "Hồ sơ thương hiệu. Mỗi người sửa file này theo mình, không sửa script.",
+ "kenh": {
+  "ten": "Kênh của bạn",
+  "seri": "",
+  "ngon_ngu": "vi"
+ },
+ "kho": {
+  "duong_dan": "",
+  "bo_mua": "",
+  "_doc": "Bộ cài tự điền. Mac mặc định ~/Movies/VideoKit-Free · Windows ~/Videos/VideoKit-Free.",
+  "_bo_mua": "Bộ tài nguyên bạn tự mua thêm (tuỳ chọn) — trỏ tới thư mục của nó."
+ },
+ "may": {
+  "che_do": "chuan",
+  "_doc": "nhanh = máy yếu, dựng gấp. chuan = mặc định. ky = chậm, chất nhất. Xem kho/may-yeu.md."
+ },
+ "chu": {
+  "phu_de": "",
+  "title_to": "",
+  "bia": "",
+  "_doc": "Để trống: mỗi kênh tự chọn font (AI chọn theo video + hồ sơ; gói kho có font đủ dấu). Chỉ điền khi muốn KHOÁ font cho mọi kênh trên máy này."
+ },
+ "mau": {
+  "nhan": "",
+  "chu_chinh": "",
+  "nen_card": "",
+  "vien": "",
+  "_doc": "Để trống: màu nhấn suy từ bối cảnh video / màu kênh trong hồ sơ. Không có màu 'nhà' của app."
+ },
+ "logo": {
+  "duong_dan": "",
+  "_doc": "Để trống nếu không có. Chỉ gắn lên bìa khi video đúng chủ đề thương hiệu đó."
+ },
+ "quay": {
+  "may": "",
+  "profile_mau": "thuong",
+  "_doc": "profile_mau = 'thuong' thì KHÔNG áp LUT. Đổi thành 'dlog' mới dùng LUT."
+ },
+ "dung": {
+  "toc_do": 1.1,
+  "giu_nghi": 0.2,
+  "giu_nghi_dai": 0.28,
+  "nguong_lang": 0.33,
+  "khung_hinh": 30,
+  "kich_thuoc": [
+   1080,
+   1920
+  ]
+ },
+ "am_thanh": {
+  "giong": -16,
+  "nhac": -34,
+  "nhan": -27,
+  "chuyen_canh": -30,
+  "giao_dien": -29,
+  "dich_cuoi": -15.5,
+  "dinh_that": -2.0
+ },
+ "bia": {
+  "kieu": "hai-dong",
+  "cat_tiktok": [
+   240,
+   1680
+  ],
+  "le_duoi": 100,
+  "mo_tu_y": 880
+ },
+ "ban_giao": {
+  "thu_muc": "~/Downloads",
+  "moi_video_mot_thu_muc": true
+ },
+ "cap_nhat": {
+  "goc": "https://aizening.com/skill/edit-video/studio/update",
+  "_doc": "Máy chủ bản quyền + cập nhật của người bán. Mã bản quyền nhập bằng scripts/ban_quyen.py kich-hoat <MÃ>."
+ }
+}

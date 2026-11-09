@@ -1,0 +1,207 @@
+{
+ "_ban_quyen": "© 2026 Studio dựng video. STUDIO-DUNG-VIDEO · BAN QUYEN. Cấm sao chép/sửa/phân phối lại.",
+ "0": {
+  "ten": "Giọng Adam",
+  "tep": "giong-0.mp3"
+ },
+ "1": {
+  "ten": "Trung Caha – Rõ ràng, Chắc chắn",
+  "tep": "giong-1.mp3"
+ },
+ "2": {
+  "ten": "Kiều Linh",
+  "tep": "giong-2.mp3"
+ },
+ "3": {
+  "ten": "Tùng Đặng – Trầm, Ấm áp",
+  "tep": "giong-3.mp3"
+ },
+ "4": {
+  "ten": "Hạnh – Mượt mà, Rõ ràng",
+  "tep": "giong-4.mp3"
+ },
+ "5": {
+  "ten": "Tùng Đặng – Ấm áp, Điềm tĩnh",
+  "tep": "giong-5.mp3"
+ },
+ "6": {
+  "ten": "Ngân Nguyễn",
+  "tep": "giong-6.mp3"
+ },
+ "7": {
+  "ten": "Triều Dương – Trầm, Điềm tĩnh",
+  "tep": "giong-7.mp3"
+ },
+ "8": {
+  "ten": "Như – Điềm tĩnh, Tự tin",
+  "tep": "giong-8.mp3"
+ },
+ "9": {
+  "ten": "Mai – Tự nhiên, Tươi sáng",
+  "tep": "giong-9.mp3"
+ },
+ "10": {
+  "ten": "Hải Ly – Trầm, Nghiêm túc",
+  "tep": "giong-10.mp3"
+ },
+ "11": {
+  "ten": "Tuyết – Sắc nét, Trang trọng",
+  "tep": "giong-11.mp3"
+ },
+ "12": {
+  "ten": "Hiền – Ấm áp, Trầm",
+  "tep": "giong-12.mp3"
+ },
+ "13": {
+  "ten": "Ninh Đôn – Trầm, Ấm áp",
+  "tep": "giong-13.mp3"
+ },
+ "14": {
+  "ten": "Sơn Trần – Thoải mái, Đối thoại",
+  "tep": "giong-14.mp3"
+ },
+ "15": {
+  "ten": "Tuấn – Thân thiện, Điềm tĩnh",
+  "tep": "giong-15.mp3"
+ },
+ "16": {
+  "ten": "Nhật",
+  "tep": "giong-16.mp3"
+ },
+ "17": {
+  "ten": "Huyền – Điềm tĩnh, Thân thiện",
+  "tep": "giong-17.mp3"
+ },
+ "18": {
+  "ten": "Trung – Nhẹ nhàng, Mượt mà",
+  "tep": "giong-18.mp3"
+ },
+ "19": {
+  "ten": "Đức – Rõ ràng, Điềm tĩnh",
+  "tep": "giong-19.mp3"
+ },
+ "20": {
+  "ten": "Quang Nguyễn – Ấm áp, Sôi nổi",
+  "tep": "giong-20.mp3"
+ },
+ "21": {
+  "ten": "Ly – Rõ ràng, Điềm tĩnh",
+  "tep": "giong-21.mp3"
+ },
+ "22": {
+  "ten": "Trang – Rõ ràng, Mượt mà",
+  "tep": "giong-22.mp3"
+ },
+ "23": {
+  "ten": "Hùng Trần – Trầm, Điềm tĩnh",
+  "tep": "giong-23.mp3"
+ },
+ "24": {
+  "ten": "Kênh",
+  "tep": "giong-24.mp3"
+ },
+ "25": {
+  "ten": "Anh – Ấm áp, Điềm tĩnh",
+  "tep": "giong-25.mp3"
+ },
+ "26": {
+  "ten": "Hoàng Đặng – Trầm, Mượt mà",
+  "tep": "giong-26.mp3"
+ },
+ "27": {
+  "ten": "Viên – Ấm áp, Rõ ràng",
+  "tep": "giong-27.mp3"
+ },
+ "28": {
+  "ten": "Ngân – Rộn ràng",
+  "tep": "giong-28.mp3"
+ },
+ "29": {
+  "ten": "Dũng – Trầm, Vang vọng",
+  "tep": "giong-29.mp3"
+ },
+ "30": {
+  "ten": "Sang Trương – Trầm, Điềm tĩnh",
+  "tep": "giong-30.mp3"
+ },
+ "31": {
+  "ten": "Huyền – Rõ ràng, Tự tin",
+  "tep": "giong-31.mp3"
+ },
+ "32": {
+  "ten": "Thắm",
+  "tep": "giong-32.mp3"
+ },
+ "33": {
+  "ten": "Thảo – Nhẹ nhàng, Điềm tĩnh",
+  "tep": "giong-33.mp3"
+ },
+ "34": {
+  "ten": "Hào – Ấm áp, Dịu dàng",
+  "tep": "giong-34.mp3"
+ },
+ "35": {
+  "ten": "My – Nhẹ nhàng, Ấm áp",
+  "tep": "giong-35.mp3"
+ },
+ "36": {
+  "ten": "Liam – Ấm áp",
+  "tep": "giong-36.mp3"
+ },
+ "37": {
+  "ten": "Thanh – Rõ ràng, Ổn định",
+  "tep": "giong-37.mp3"
+ },
+ "38": {
+  "ten": "Giang – Ấm áp, Tự tin",
+  "tep": "giong-38.mp3"
+ },
+ "39": {
+  "ten": "Huy Lê – Điềm tĩnh, Rõ ràng",
+  "tep": "giong-39.mp3"
+ },
+ "40": {
+  "ten": "Huỳnh Dương – Năng động, Tự tin",
+  "tep": "giong-40.mp3"
+ },
+ "41": {
+  "ten": "Phương – Mượt mà, An ủi",
+  "tep": "giong-41.mp3"
+ },
+ "42": {
+  "ten": "Minh – Rõ ràng, Chắc chắn",
+  "tep": "giong-42.mp3"
+ },
+ "43": {
+  "ten": "An Nhiên",
+  "tep": "giong-43.mp3"
+ },
+ "44": {
+  "ten": "Xuân – Năng động",
+  "tep": "giong-44.mp3"
+ },
+ "45": {
+  "ten": "Quỳnh Anh",
+  "tep": "giong-45.mp3"
+ },
+ "46": {
+  "ten": "Emma – Điềm tĩnh, Êm dịu",
+  "tep": "giong-46.mp3"
+ },
+ "47": {
+  "ten": "Phong – Ấm áp, Rõ ràng",
+  "tep": "giong-47.mp3"
+ },
+ "48": {
+  "ten": "Nhung – Rõ ràng, Trang trọng",
+  "tep": "giong-48.mp3"
+ },
+ "49": {
+  "ten": "Trang – Nhẹ nhàng",
+  "tep": "giong-49.mp3"
+ },
+ "50": {
+  "ten": "Viết Linh",
+  "tep": "giong-50.mp3"
+ }
+}

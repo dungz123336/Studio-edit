@@ -1,0 +1,554 @@
+{
+ "_ban_quyen": "© 2026 Studio dựng video. STUDIO-DUNG-VIDEO · BAN QUYEN. Cấm sao chép/sửa/phân phối lại.",
+ "id": "sanpham",
+ "ten": "Bán hàng chốt đơn",
+ "lenh": [
+  "/sanpham",
+  "/san-pham",
+  "/banhang",
+  "/ban-hang",
+  "/sale"
+ ],
+ "mo_ta": "Video bán hàng TikTok Shop: tên sản phẩm IN HOA màu nhấn từ giây 0, nhãn công dụng đổi theo clip, số lớn cho giá/ưu đãi có thật, nhịp nhanh, kết bằng ô bình luận gõ từ khoá để chốt.",
+ "hop_voi": [
+  "TikTok Shop/affiliate",
+  "giới thiệu sản phẩm có giá/ưu đãi",
+  "quảng cáo UGC ngắn",
+  "livestream cắt clip"
+ ],
+ "tu_khoa": [
+  "bán",
+  "bán hàng",
+  "sản phẩm",
+  "chốt đơn",
+  "giảm giá",
+  "khuyến mãi",
+  "ưu đãi",
+  "voucher",
+  "giá",
+  "shop",
+  "tiktok shop",
+  "affiliate",
+  "quảng cáo",
+  "ads",
+  "deal",
+  "mua"
+ ],
+ "gan_voi": [
+  "review",
+  "thoitrang"
+ ],
+ "khi_khong_dung": "Thương hiệu cao cấp/sang (dùng batdongsan hoặc thoitrang); review khách quan không chốt đơn (dùng review); nếu lời không có số/giá thật thì bỏ số lớn.",
+ "vi_sao": "B1 hàng 6 & 14 (S5 bán hàng / quảng cáo UGC: lời hứa trong 3 s → bằng chứng → CTA một hành động, âm có thể nén LRA ≤3); KET.cta-mot-hanh-dong; HE.khong-bia-so; AM.drop-tai-punchline; khối đỏ + chữ vàng là ngôn ngữ 'sale' quen của TikTok Shop (nhận diện nhanh — TRI.dinh-huong-khong-nhon).",
+ "grade": "grade.ruc-ro",
+ "cam": [],
+ "bia_kieu": [
+  "mot_vat_noi_bat",
+  "so_lon",
+  "truoc_sau"
+ ],
+ "outro": {
+  "kieu": "cta",
+  "lop": "mau_the.binh-luan"
+ },
+ "nhac_mood": "nang-luong",
+ "cho_phep_den_trang": false,
+ "minh_hoa": "minh-hoa/sanpham.jpg",
+ "minh_hoa_ghi_chu": "Minh hoạ là khung hình THẬT (video quay thật) đã áp đúng grade, màu, font và lớp hiệu ứng của gói — chữ trong ảnh chỉ là câu mẫu; khi dựng, Claude viết chữ theo lời thật trong video của bạn.",
+ "tham_khao_v2": {
+  "uu_tien_lop": [
+   "hieu_ung_chu.hai-tang",
+   "mau_the.so-lon",
+   "mau_the.nhan-dan",
+   "mau_the.danh-sach",
+   "hieu_ung_chu.tu-khoa-nay",
+   "do_hoa.khoanh",
+   "mau_the.binh-luan"
+  ],
+  "uu_tien_chuyen": [
+   "chuyen_canh.chop-trang",
+   "chuyen_canh.day-vao",
+   "chuyen_canh.lia-nhoe"
+  ],
+  "ngu_phap": "S5",
+  "chuyen_mac_dinh": "cat_cung"
+ },
+ "spec": {
+  "phien_ban": 1,
+  "nguon": "goi:sanpham",
+  "palette": {
+   "nhan": "#FFE14D",
+   "sang": "#FFFFFF",
+   "toi": "#B3121B"
+  },
+  "type_scale": {
+   "phu_de": {
+    "co": 62.0,
+    "dam": 800,
+    "hoa": false,
+    "font": "BeVietnamPro-ExtraBold.ttf"
+   },
+   "nhan": {
+    "co": 128.0,
+    "dam": 800,
+    "hoa": false,
+    "font": "BeVietnamPro-ExtraBold.ttf",
+    "font_phu": "BeVietnamPro-Bold.ttf"
+   },
+   "tieu_de": {
+    "co": 150.0,
+    "dam": 900,
+    "hoa": true,
+    "font": "BarlowCondensed-Black.ttf"
+   },
+   "nhom_font": [
+    "sans_dam",
+    "display"
+   ],
+   "so_font_khac_nhau": 2
+  },
+  "layout": {
+   "anchors": [
+    {
+     "vai": "phu_de",
+     "anchor": "bc",
+     "x": 0.5,
+     "y": 0.72,
+     "so_voi": "khung",
+     "tan_suat": 1.0
+    },
+    {
+     "vai": "tieu_de",
+     "anchor": "tc",
+     "x": 0.5,
+     "y": 0.22,
+     "so_voi": "tren_dau",
+     "tan_suat": 0.8
+    },
+    {
+     "vai": "nhan",
+     "anchor": "mc",
+     "x": 0.5,
+     "y": 0.62,
+     "so_voi": "duoi_cam",
+     "tan_suat": 0.6
+    },
+    {
+     "vai": "the",
+     "anchor": "mc",
+     "x": 0.5,
+     "y": 0.45,
+     "so_voi": "khung",
+     "tan_suat": 0.5
+    }
+   ],
+   "rong_max_chu": 0.84,
+   "khung_nguoi": "toan_khung"
+  },
+  "motion_vocab": {
+   "vao": [
+    {
+     "kieu": "pop",
+     "dai": 0.3,
+     "ease": "back",
+     "tan_suat": 0.59,
+     "lop_v2": "hieu_ung_chu.hai-tang",
+     "tu_ti_le": 0.85
+    },
+    {
+     "kieu": "pop",
+     "dai": 0.3,
+     "ease": "back",
+     "tan_suat": 0.29,
+     "lop_v2": "mau_the.*"
+    },
+    {
+     "kieu": "pop",
+     "dai": 0.28,
+     "ease": "back",
+     "tan_suat": 0.12,
+     "lop_v2": "hieu_ung_chu.tu-khoa-nay",
+     "tu_ti_le": 1.25
+    }
+   ],
+   "ra": [
+    {
+     "kieu": "fade",
+     "dai": 0.2,
+     "ease": "out",
+     "tan_suat": 1.0
+    }
+   ],
+   "tach": "none",
+   "nhip_dong": "nhanh",
+   "so_le": 0.06
+  },
+  "graphics_vocab": {
+   "chu": {
+    "vien": false,
+    "bong": true,
+    "nen_khoi": true,
+    "gradient": false,
+    "hoa": true
+   },
+   "duong": [
+    "khoanh"
+   ],
+   "hinh_minh_hoa": "nhieu",
+   "nen_moi": "khong",
+   "the": {
+    "hinh": "pill",
+    "co_vien": 0,
+    "bo": 999,
+    "nen_mo": false,
+    "co_icon": false
+   }
+  },
+  "camera_vocab": {
+   "dung": true,
+   "z_thuong": [
+    1.0,
+    1.06,
+    1.12
+   ],
+   "kieu": "cat_nhay",
+   "tan_suat_giay": 1.4
+  },
+  "sfx_vocab": {
+   "dung": true,
+   "nghia": [
+    "whoosh ngắn",
+    "pop",
+    "ding",
+    "click"
+   ],
+   "nhac": "nang-luong",
+   "nhac_db": -14.0
+  },
+  "rhythm_rules": {
+   "giay_moi_lop_chu": 1.4,
+   "so_lop_dong_thoi_toi_da": 2,
+   "khoang_trong_toi_da_giay": 4.0,
+   "phu_de": "cum",
+   "phu_de_toi_da_chu": 5,
+   "hook_giay": 3,
+   "chuyen_canh": [
+    "flash",
+    "zoom",
+    "cut"
+   ]
+  },
+  "bia": {
+   "so_chu": 4,
+   "nguoi": false,
+   "nen": "khung_mo",
+   "bo_cuc": "mot_vat_noi_bat, so_lon, truoc_sau"
+  },
+  "dau_an_khong_chep": [],
+  "ghi_chu": "Video bán hàng TikTok Shop: tên sản phẩm IN HOA màu nhấn từ giây 0, nhãn công dụng đổi theo clip, số lớn cho giá/ưu đãi có thật, nhịp nhanh, kết bằng ô bình luận gõ từ khoá để chốt."
+ },
+ "quyet_dinh": {
+  "phien": 1,
+  "ly_do": "Video bán hàng TikTok Shop: tên sản phẩm IN HOA màu nhấn từ giây 0, nhãn công dụng đổi theo clip, số lớn cho giá/ưu đãi có thật, nhịp nhanh, kết bằng ô bình luận gõ từ khoá để chốt.",
+  "font": {
+   "tieu_de": "BarlowCondensed-Black.ttf",
+   "phu_de": "BeVietnamPro-ExtraBold.ttf",
+   "nhan": "BeVietnamPro-ExtraBold.ttf"
+  },
+  "bang_mau": {
+   "nhan": "#FFE14D",
+   "nhan2": "#FFFFFF",
+   "sang": "#FFFFFF",
+   "toi": "#B3121B"
+  },
+  "chu": {
+   "co": 128.0,
+   "dam": 800,
+   "dong": 1.15,
+   "can": "giua",
+   "mau": "#FFFFFF",
+   "font": "nhan",
+   "rong_max": 0.84,
+   "hoa": false,
+   "gian": 0,
+   "vien": null,
+   "bong": [
+    {
+     "x": 0,
+     "y": 6,
+     "mo": 0,
+     "mau": "#000000CC"
+    }
+   ],
+   "nen": {
+    "mau": "#B3121BCC",
+    "dem": [
+     28,
+     16
+    ],
+    "bo": 18
+   },
+   "gradient": null
+  },
+  "khoi": {
+   "cach_dong": 0.95,
+   "can": "giua",
+   "rong_max": 0.84
+  },
+  "the": {
+   "hinh": "pill",
+   "mau": "#B3121BDD",
+   "bo": 300.0,
+   "dem": [
+    32,
+    20
+   ],
+   "vien": null,
+   "bong": [
+    {
+     "x": 0,
+     "y": 8,
+     "mo": 20,
+     "mau": "#00000080"
+    }
+   ],
+   "chu": {
+    "co": 64.0,
+    "dam": 800,
+    "mau": "#FFFFFF",
+    "font": "nhan",
+    "vien": null,
+    "bong": null,
+    "gradient": null
+   }
+  },
+  "hinh": {
+   "fit": "cover",
+   "bo": 0,
+   "vien": null,
+   "bong": [
+    {
+     "x": 0,
+     "y": 10,
+     "mo": 30,
+     "mau": "#00000080"
+    }
+   ]
+  },
+  "duong": {
+   "w": 8,
+   "ve": 0.4,
+   "ease": "out",
+   "mau": "#FFE14D"
+  },
+  "phu_de": {
+   "che_do": "cum",
+   "toi_da_chu": 20,
+   "karaoke": true,
+   "keo_dai": 0.15,
+   "lang_ngat": 0.5,
+   "tween": 0.2,
+   "nhuong_cho": 0.2,
+   "mau_noi": "#FFE14D",
+   "hien": "noi",
+   "khi_chong": "doi",
+   "an_khi_lop_chu": false,
+   "kieu_dang": {
+    "font": "phu_de",
+    "co": 62.0,
+    "dam": 800,
+    "mau": "#FFFFFF",
+    "dong": 1.15,
+    "can": "giua",
+    "hoa": false,
+    "gian": 0,
+    "rong_max": 0.86,
+    "vien": [
+     {
+      "w": 8,
+      "mau": "#B3121B"
+     }
+    ],
+    "bong": null,
+    "nen": null,
+    "gradient": null
+   },
+   "vi_tri": {
+    "anchor": "bc",
+    "x": 0.5,
+    "y": 0.72,
+    "so_voi": "khung"
+   },
+   "anim": {
+    "vao": {
+     "kieu": "pop",
+     "dai": 0.12,
+     "ease": "out",
+     "tu": {
+      "scale": 0.9,
+      "opacity": 0
+     }
+    },
+    "ra": {
+     "kieu": "none"
+    }
+   }
+  },
+  "anim": {
+   "vao": {
+    "kieu": "pop",
+    "dai": 0.3,
+    "ease": "back"
+   },
+   "ra": {
+    "kieu": "fade",
+    "dai": 0.2,
+    "ease": "out"
+   },
+   "so_le": 0.06,
+   "keyframe_dai": 0.25,
+   "keyframe_ease": "in_out",
+   "ken_burns": [
+    1.0,
+    1.06
+   ],
+   "nhoe_dong": 0,
+   "kieu": {
+    "slide": {
+     "x": -40,
+     "opacity": 0
+    },
+    "pop": {
+     "scale": 0.6,
+     "opacity": 0
+    },
+    "blur": {
+     "blur": 12,
+     "opacity": 0
+    },
+    "flip": {
+     "rot_y": -80,
+     "opacity": 0
+    },
+    "tilt": {
+     "rot_x": 70,
+     "opacity": 0
+    }
+   }
+  },
+  "camera": {
+   "ease": "out",
+   "dai": 0
+  },
+  "vi_tri": {
+   "hop_mac_dinh": {
+    "hinh": [
+     0.8,
+     0.4
+    ],
+    "py": [
+     0.5,
+     0.3
+    ],
+    "mau": [
+     0.8,
+     0.4
+    ],
+    "web": [
+     0.8,
+     0.3
+    ],
+    "video": [
+     1.0,
+     1.0
+    ]
+   },
+   "cach_nhom": 0.012,
+   "anchor": "mc",
+   "so_voi": "duoi_cam",
+   "xep": "doc"
+  },
+  "ne_mat": {
+   "thu_toi": 0.7,
+   "noi": 0.1
+  },
+  "am": {
+   "nhac": {
+    "db": -14.0,
+    "vao": 1.0,
+    "ra": 2.0,
+    "ne_giong": true
+   },
+   "sfx": {
+    "db": -8
+   },
+   "giong_lufs": -16,
+   "dinh_dbtp": -2.0,
+   "giong_db": 0,
+   "sidechain": {
+    "threshold": 0.05,
+    "ratio": 4,
+    "attack": 25,
+    "release": 400
+   }
+  },
+  "nen_moi": {
+   "mau": "#B3121B",
+   "mo_sigma": 24,
+   "toi": 0.15,
+   "kieu": "mau",
+   "mo": 0.3,
+   "vien_sang": null
+  },
+  "chuyen_canh": {
+   "flash_dai": 0.2,
+   "zoom_dai": 0.3
+  },
+  "cat": {
+   "nhip": "vua"
+  },
+  "bia": {
+   "so_phuong_an": 3,
+   "nen": {
+    "kieu": "khung_mo",
+    "mo": 0.4,
+    "toi": 0.3
+   },
+   "nguoi": {
+    "co": 1.1,
+    "x": 0.5,
+    "y": 0.62,
+    "vien_sang": null,
+    "bong": {
+     "x": 0,
+     "y": 24,
+     "mo": 40,
+     "mau": "#000000AA"
+    },
+    "lat": false
+   },
+   "chu": {
+    "co": 150.0,
+    "dam": 900,
+    "mau": "#FFFFFF",
+    "font": "tieu_de",
+    "hoa": true,
+    "can": "giua",
+    "gian": 0,
+    "dong": 1.05,
+    "rong_max": 0.86,
+    "vien": [
+     {
+      "w": 10,
+      "mau": "#B3121B"
+     }
+    ],
+    "bong": null,
+    "nen": null,
+    "gradient": null
+   },
+   "tuong_phan_toi_thieu": 3.0,
+   "de_mat_toi_da": 0.12
+  }
+ }
+}

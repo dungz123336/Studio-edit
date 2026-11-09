@@ -1,0 +1,54 @@
+# Python and downloaded tools
+__pycache__/
+*.py[cod]
+.venv/
+app/.venv/
+.venv.previous.*/
+runtime/
+.runtime/
+.cache/
+tools/
+git/
+
+# Each machine keeps its own work, configuration and credentials
+data/
+projects/
+app/cau-hinh.json
+**/.ban-quyen.json
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.pfx
+*.p12
+credentials.json
+.git-credentials
+.claude/
+app/studio/web/portable-instance.json
+
+# Personal channels; keep the seven shipped template/preset documents
+app/nao/ca-nhan/*
+!app/nao/ca-nhan/_mau/
+app/nao/ca-nhan/_mau/*.json
+
+# Caches and machine-generated models
+app/v3/mo-hinh/*
+!app/v3/mo-hinh/GIAY-PHEP.md
+!app/v3/mo-hinh/modnet.onnx
+!app/v3/mo-hinh/yunet.onnx
+*.log
+*.pid
+*.tmp
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+
+# Build products
+dist/
+*.zip
+*.7z
+PACKAGE-MANIFEST.json
+*.lnk
+Thumbs.db
+Desktop.ini

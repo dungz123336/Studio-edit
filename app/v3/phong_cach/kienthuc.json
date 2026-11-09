@@ -1,0 +1,553 @@
+{
+ "_ban_quyen": "© 2026 Studio dựng video. STUDIO-DUNG-VIDEO · BAN QUYEN. Cấm sao chép/sửa/phân phối lại.",
+ "id": "kienthuc",
+ "ten": "Kiến thức chuyên gia",
+ "lenh": [
+  "/kienthuc",
+  "/kien-thuc",
+  "/chiase"
+ ],
+ "mo_ta": "Talking head một máy kiểu biên tập: hook chữ 2 tầng, punch-in đổi cỡ cảnh 2–5 s, thẻ chương mảnh↔đậm, nhãn cộng dồn cho liệt kê, phụ đề chạy nhỏ + một màu nhấn.",
+ "hop_voi": [
+  "chia sẻ kiến thức nghề nghiệp",
+  "quan điểm có lập luận",
+  "case-study",
+  "N điều/bước",
+  "talking head một máy"
+ ],
+ "tu_khoa": [
+  "kiến thức",
+  "chia sẻ",
+  "kinh nghiệm",
+  "bí quyết",
+  "mẹo",
+  "nghề nghiệp",
+  "làm nghề",
+  "điều",
+  "sai lầm",
+  "bài học",
+  "giải thích",
+  "case study"
+ ],
+ "gan_voi": [
+  "giaoduc",
+  "podcast"
+ ],
+ "khi_khong_dung": "Video không lời/montage cảnh đẹp (dùng dienanh/dulich); nội dung giải trí cần màu rực (dùng hai); quay màn hình chiếm phần lớn (dùng huongdan).",
+ "vi_sao": "B1 hàng 1 & 9 (S1/D2); HOOK.chu-hook-2-tang; CAM.mot-may-doi-co-canh (punch-in thay b-roll); THAN.nhan-cong-don-the-chuong và CHU.mot-mau-nhan (màu nhấn lấy từ cảnh khi có); CHU.tan-suat-chu-nhan (1 chữ nhấn/8–12 s).",
+ "grade": "grade.trung-tinh",
+ "cam": [
+  "mo_xuyen_tam",
+  "vignette"
+ ],
+ "bia_kieu": [
+  "mat_va_vat",
+  "cau_noi_lam_hinh",
+  "danh_sach"
+ ],
+ "outro": {
+  "kieu": "cta",
+  "lop": "mau_the.binh-luan"
+ },
+ "nhac_mood": "tap-trung",
+ "cho_phep_den_trang": false,
+ "minh_hoa": "minh-hoa/kienthuc.jpg",
+ "minh_hoa_ghi_chu": "Minh hoạ là khung hình THẬT (video quay thật) đã áp đúng grade, màu, font và lớp hiệu ứng của gói — chữ trong ảnh chỉ là câu mẫu; khi dựng, Claude viết chữ theo lời thật trong video của bạn.",
+ "tham_khao_v2": {
+  "uu_tien_lop": [
+   "hieu_ung_chu.hai-tang",
+   "hieu_ung_chu.go-theo-loi",
+   "mau_the.chuong",
+   "mau_the.danh-sach",
+   "mau_the.so-lon",
+   "hieu_ung_chu.tu-khoa-nay",
+   "mau_the.nhan-dan",
+   "do_hoa.khoanh",
+   "mau_the.binh-luan"
+  ],
+  "uu_tien_chuyen": [
+   "chuyen_canh.day-vao",
+   "chuyen_canh.chop-trang"
+  ],
+  "ngu_phap": "S1",
+  "chuyen_mac_dinh": "cat_cung"
+ },
+ "spec": {
+  "phien_ban": 1,
+  "nguon": "goi:kienthuc",
+  "palette": {
+   "nhan": "#FFB627",
+   "sang": "#FAF6EE",
+   "toi": "#15161A"
+  },
+  "type_scale": {
+   "phu_de": {
+    "co": 60.0,
+    "dam": 700,
+    "hoa": false,
+    "font": "BeVietnamPro-Bold.ttf"
+   },
+   "nhan": {
+    "co": 128.0,
+    "dam": 800,
+    "hoa": false,
+    "font": "BeVietnamPro-ExtraBold.ttf",
+    "font_phu": "Lora-SemiBoldItalic.ttf"
+   },
+   "tieu_de": {
+    "co": 150.0,
+    "dam": 900,
+    "hoa": false,
+    "font": "BeVietnamPro-Black.ttf"
+   },
+   "nhom_font": [
+    "sans_dam",
+    "serif"
+   ],
+   "so_font_khac_nhau": 3
+  },
+  "layout": {
+   "anchors": [
+    {
+     "vai": "phu_de",
+     "anchor": "bc",
+     "x": 0.5,
+     "y": 0.72,
+     "so_voi": "khung",
+     "tan_suat": 1.0
+    },
+    {
+     "vai": "tieu_de",
+     "anchor": "tc",
+     "x": 0.5,
+     "y": 0.22,
+     "so_voi": "tren_dau",
+     "tan_suat": 0.8
+    },
+    {
+     "vai": "nhan",
+     "anchor": "mc",
+     "x": 0.5,
+     "y": 0.62,
+     "so_voi": "duoi_cam",
+     "tan_suat": 0.6
+    },
+    {
+     "vai": "the",
+     "anchor": "mc",
+     "x": 0.5,
+     "y": 0.45,
+     "so_voi": "khung",
+     "tan_suat": 0.5
+    }
+   ],
+   "rong_max_chu": 0.84,
+   "khung_nguoi": "toan_khung"
+  },
+  "motion_vocab": {
+   "vao": [
+    {
+     "kieu": "pop",
+     "dai": 0.3,
+     "ease": "back",
+     "tan_suat": 0.5,
+     "lop_v2": "hieu_ung_chu.hai-tang",
+     "tu_ti_le": 0.85
+    },
+    {
+     "kieu": "pop",
+     "dai": 0.15,
+     "ease": "out",
+     "tan_suat": 0.25,
+     "lop_v2": "hieu_ung_chu.go-theo-loi",
+     "tach": "tu",
+     "do_may": "word_by_word"
+    },
+    {
+     "kieu": "pop",
+     "dai": 0.3,
+     "ease": "back",
+     "tan_suat": 0.17,
+     "lop_v2": "mau_the.*"
+    },
+    {
+     "kieu": "pop",
+     "dai": 0.28,
+     "ease": "back",
+     "tan_suat": 0.08,
+     "lop_v2": "hieu_ung_chu.tu-khoa-nay",
+     "tu_ti_le": 1.25
+    }
+   ],
+   "ra": [
+    {
+     "kieu": "fade",
+     "dai": 0.2,
+     "ease": "out",
+     "tan_suat": 1.0
+    }
+   ],
+   "tach": "tu",
+   "nhip_dong": "vua",
+   "so_le": 0.1
+  },
+  "graphics_vocab": {
+   "chu": {
+    "vien": false,
+    "bong": true,
+    "nen_khoi": false,
+    "gradient": false,
+    "hoa": false
+   },
+   "duong": [
+    "khoanh"
+   ],
+   "hinh_minh_hoa": "nhieu",
+   "nen_moi": "khong",
+   "the": {
+    "hinh": "pill",
+    "co_vien": 0,
+    "bo": 999,
+    "nen_mo": false,
+    "co_icon": false
+   }
+  },
+  "camera_vocab": {
+   "dung": true,
+   "z_thuong": [
+    1.0,
+    1.06,
+    1.12
+   ],
+   "kieu": "cat_nhay",
+   "tan_suat_giay": 3.5
+  },
+  "sfx_vocab": {
+   "dung": true,
+   "nghia": [
+    "whoosh ngắn",
+    "pop"
+   ],
+   "nhac": "tap-trung",
+   "nhac_db": -18.0
+  },
+  "rhythm_rules": {
+   "giay_moi_lop_chu": 3.5,
+   "so_lop_dong_thoi_toi_da": 1,
+   "khoang_trong_toi_da_giay": 10.0,
+   "phu_de": "cum",
+   "phu_de_toi_da_chu": 5,
+   "hook_giay": 3,
+   "chuyen_canh": [
+    "zoom",
+    "flash",
+    "cut"
+   ]
+  },
+  "bia": {
+   "so_chu": 4,
+   "nguoi": true,
+   "nen": "khung_mo",
+   "bo_cuc": "mat_va_vat, cau_noi_lam_hinh, danh_sach"
+  },
+  "dau_an_khong_chep": [],
+  "ghi_chu": "Talking head một máy kiểu biên tập: hook chữ 2 tầng, punch-in đổi cỡ cảnh 2–5 s, thẻ chương mảnh↔đậm, nhãn cộng dồn cho liệt kê, phụ đề chạy nhỏ + một màu nhấn. Cấm: mo_xuyen_tam, vignette. Màu nhấn lấy theo cảnh nếu hợp."
+ },
+ "quyet_dinh": {
+  "phien": 1,
+  "ly_do": "Talking head một máy kiểu biên tập: hook chữ 2 tầng, punch-in đổi cỡ cảnh 2–5 s, thẻ chương mảnh↔đậm, nhãn cộng dồn cho liệt kê, phụ đề chạy nhỏ + một màu nhấn. Cấm: mo_xuyen_tam, vignette. Màu nhấn lấy theo cảnh nếu hợp.",
+  "font": {
+   "tieu_de": "BeVietnamPro-Black.ttf",
+   "phu_de": "BeVietnamPro-Bold.ttf",
+   "nhan": "BeVietnamPro-ExtraBold.ttf"
+  },
+  "bang_mau": {
+   "nhan": "#FFB627",
+   "nhan2": "#FAF6EE",
+   "sang": "#FAF6EE",
+   "toi": "#15161A"
+  },
+  "chu": {
+   "co": 128.0,
+   "dam": 800,
+   "dong": 1.15,
+   "can": "giua",
+   "mau": "#FAF6EE",
+   "font": "nhan",
+   "rong_max": 0.84,
+   "hoa": false,
+   "gian": 0,
+   "vien": null,
+   "bong": [
+    {
+     "x": 0,
+     "y": 6,
+     "mo": 0,
+     "mau": "#000000CC"
+    }
+   ],
+   "nen": null,
+   "gradient": null
+  },
+  "khoi": {
+   "cach_dong": 0.95,
+   "can": "giua",
+   "rong_max": 0.84
+  },
+  "the": {
+   "hinh": "pill",
+   "mau": "#15161ADD",
+   "bo": 300.0,
+   "dem": [
+    32,
+    20
+   ],
+   "vien": null,
+   "bong": [
+    {
+     "x": 0,
+     "y": 8,
+     "mo": 20,
+     "mau": "#00000080"
+    }
+   ],
+   "chu": {
+    "co": 64.0,
+    "dam": 800,
+    "mau": "#FAF6EE",
+    "font": "nhan",
+    "vien": null,
+    "bong": null,
+    "gradient": null
+   }
+  },
+  "hinh": {
+   "fit": "cover",
+   "bo": 0,
+   "vien": null,
+   "bong": [
+    {
+     "x": 0,
+     "y": 10,
+     "mo": 30,
+     "mau": "#00000080"
+    }
+   ]
+  },
+  "duong": {
+   "w": 8,
+   "ve": 0.4,
+   "ease": "out",
+   "mau": "#FFB627"
+  },
+  "phu_de": {
+   "che_do": "cum",
+   "toi_da_chu": 20,
+   "karaoke": true,
+   "keo_dai": 0.15,
+   "lang_ngat": 0.5,
+   "tween": 0.2,
+   "nhuong_cho": 0.2,
+   "mau_noi": "#FFB627",
+   "hien": "noi",
+   "khi_chong": "doi",
+   "an_khi_lop_chu": false,
+   "kieu_dang": {
+    "font": "phu_de",
+    "co": 60.0,
+    "dam": 700,
+    "mau": "#FAF6EE",
+    "dong": 1.15,
+    "can": "giua",
+    "hoa": false,
+    "gian": 0,
+    "rong_max": 0.86,
+    "vien": [
+     {
+      "w": 8,
+      "mau": "#15161A"
+     }
+    ],
+    "bong": null,
+    "nen": null,
+    "gradient": null
+   },
+   "vi_tri": {
+    "anchor": "bc",
+    "x": 0.5,
+    "y": 0.72,
+    "so_voi": "khung"
+   },
+   "anim": {
+    "vao": {
+     "kieu": "pop",
+     "dai": 0.12,
+     "ease": "out",
+     "tu": {
+      "scale": 0.9,
+      "opacity": 0
+     }
+    },
+    "ra": {
+     "kieu": "none"
+    }
+   }
+  },
+  "anim": {
+   "vao": {
+    "kieu": "pop",
+    "dai": 0.3,
+    "ease": "back"
+   },
+   "ra": {
+    "kieu": "fade",
+    "dai": 0.2,
+    "ease": "out"
+   },
+   "so_le": 0.1,
+   "keyframe_dai": 0.25,
+   "keyframe_ease": "in_out",
+   "ken_burns": [
+    1.0,
+    1.06
+   ],
+   "nhoe_dong": 0,
+   "kieu": {
+    "slide": {
+     "x": -40,
+     "opacity": 0
+    },
+    "pop": {
+     "scale": 0.6,
+     "opacity": 0
+    },
+    "blur": {
+     "blur": 12,
+     "opacity": 0
+    },
+    "flip": {
+     "rot_y": -80,
+     "opacity": 0
+    },
+    "tilt": {
+     "rot_x": 70,
+     "opacity": 0
+    }
+   }
+  },
+  "camera": {
+   "ease": "out",
+   "dai": 0
+  },
+  "vi_tri": {
+   "hop_mac_dinh": {
+    "hinh": [
+     0.8,
+     0.4
+    ],
+    "py": [
+     0.5,
+     0.3
+    ],
+    "mau": [
+     0.8,
+     0.4
+    ],
+    "web": [
+     0.8,
+     0.3
+    ],
+    "video": [
+     1.0,
+     1.0
+    ]
+   },
+   "cach_nhom": 0.012,
+   "anchor": "mc",
+   "so_voi": "duoi_cam",
+   "xep": "doc"
+  },
+  "ne_mat": {
+   "thu_toi": 0.7,
+   "noi": 0.1
+  },
+  "am": {
+   "nhac": {
+    "db": -18.0,
+    "vao": 1.0,
+    "ra": 2.0,
+    "ne_giong": true
+   },
+   "sfx": {
+    "db": -8
+   },
+   "giong_lufs": -16,
+   "dinh_dbtp": -2.0,
+   "giong_db": 0,
+   "sidechain": {
+    "threshold": 0.05,
+    "ratio": 4,
+    "attack": 25,
+    "release": 400
+   }
+  },
+  "nen_moi": {
+   "mau": "#15161A",
+   "mo_sigma": 24,
+   "toi": 0.15,
+   "kieu": "mau",
+   "mo": 0.3,
+   "vien_sang": null
+  },
+  "chuyen_canh": {
+   "flash_dai": 0.2,
+   "zoom_dai": 0.3
+  },
+  "cat": {
+   "nhip": "vua"
+  },
+  "bia": {
+   "so_phuong_an": 3,
+   "nen": {
+    "kieu": "khung_mo",
+    "mo": 0.4,
+    "toi": 0.3
+   },
+   "nguoi": {
+    "co": 1.1,
+    "x": 0.5,
+    "y": 0.62,
+    "vien_sang": null,
+    "bong": {
+     "x": 0,
+     "y": 24,
+     "mo": 40,
+     "mau": "#000000AA"
+    },
+    "lat": false
+   },
+   "chu": {
+    "co": 150.0,
+    "dam": 900,
+    "mau": "#FAF6EE",
+    "font": "tieu_de",
+    "hoa": false,
+    "can": "giua",
+    "gian": 0,
+    "dong": 1.05,
+    "rong_max": 0.86,
+    "vien": [
+     {
+      "w": 10,
+      "mau": "#15161A"
+     }
+    ],
+    "bong": null,
+    "nen": null,
+    "gradient": null
+   },
+   "tuong_phan_toi_thieu": 3.0,
+   "de_mat_toi_da": 0.12
+  }
+ }
+}

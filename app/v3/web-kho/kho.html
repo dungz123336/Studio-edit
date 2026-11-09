@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kho tài nguyên — Studio AI</title>
+<link rel="stylesheet" href="kho.css">
+</head>
+<body>
+<header class="thanh">
+  <div class="logo" title="Kho tài nguyên Studio AI"><span class="cham"></span>Kho tài nguyên</div>
+  <div class="o-tim">
+    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    <input id="tim" type="search" placeholder="Tìm theo nghĩa: chữ hiện ra · tiền · nhạc buồn piano · ánh sáng loé · font viết tay…" autocomplete="off" spellcheck="false">
+    <kbd>/</kbd>
+  </div>
+  <select id="sap" title="Sắp xếp">
+    <option value="ten">Tên A→Z</option>
+    <option value="moi">Mới nhất</option>
+    <option value="dai">Dài nhất</option>
+    <option value="ngan">Ngắn nhất</option>
+    <option value="nhom">Theo thư mục</option>
+    <option value="dam">Đậm nhất (font)</option>
+    <option value="it_dung">Ít dùng nhất</option>
+  </select>
+  <label class="cb" id="chua-dung-o" title="Chỉ hiện mục chưa video nào trên máy này dùng tới"><input type="checkbox" id="chua-dung"> chưa dùng</label>
+  <button id="nut-gan" class="nut nut-phu" title="Gắn nghĩa AI (mô tả, công dụng, cảm xúc) cho tài nguyên chưa có nghĩa — tốn ít lượt Claude, chạy nền">✦ Gắn nghĩa AI</button>
+  <button id="nut-lap" class="nut nut-phu" title="Quét lại kho gốc, chỉ làm mục mới/đổi">⟳ Lập lại chỉ mục</button>
+</header>
+
+<nav class="chips" id="chips" aria-label="Loại tài nguyên"></nav>
+<nav class="chips chips-cd an" id="chips-cd" aria-label="Lọc theo công dụng"></nav>
+
+<div id="tien-do" class="tien-do an">
+  <div class="thanh-td"><div class="day" id="td-day"></div></div>
+  <span id="td-txt">Đang lập…</span>
+</div>
+
+<div id="font-thu" class="font-thu an">
+  <input id="font-chu" type="text" placeholder="Gõ chữ thử — mọi font sẽ hiện câu này (có dấu)" maxlength="80">
+  <label class="cb"><input type="checkbox" id="font-du-dau"> chỉ font đủ dấu Việt</label>
+</div>
+
+<div id="tom-tat" class="tom-tat"></div>
+<main id="luoi" class="luoi" aria-live="polite"></main>
+<div id="trong" class="trong an">Không có mục nào khớp.</div>
+<div id="dang-tai" class="dang-tai an">Đang tải…</div>
+<div id="canh"></div>
+
+<audio id="audio" preload="none"></audio>
+<div id="toast" class="toast" role="status"></div>
+<div id="modal" class="modal an" role="dialog" aria-modal="true"><div class="hop"><button class="dong" id="modal-dong" aria-label="Đóng">×</button><div id="modal-nd"></div></div></div>
+
+<script src="kho.js"></script>
+</body>
+</html>

@@ -1,0 +1,302 @@
+{
+ "phien": 1,
+ "ly_do": "Mẫu chuẩn (bộ hồi quy, AI chép khi viết quyết định kênh): sans đậm, chữ sáng trên nền tối, phụ đề nền tối đáy khung, hoạt ảnh ngắn. Khớp đúng trường engine đọc (dung/mau/bang.py).",
+ "font": {
+  "tieu_de": "Be Vietnam Pro",
+  "phu_de": "Be Vietnam Pro",
+  "nhan": "Be Vietnam Pro"
+ },
+ "bang_mau": {
+  "nhan": "#FFCC00",
+  "nhan2": "#FF9F1C",
+  "sang": "#FFFFFF",
+  "toi": "#0A0F1A"
+ },
+ "chu": {
+  "co": 72,
+  "dam": 700,
+  "dong": 1.15,
+  "can": "giua",
+  "mau": "#FFFFFF",
+  "font": "tieu_de",
+  "rong_max": 0.86,
+  "hoa": false,
+  "gian": 0,
+  "vien": [
+   {
+    "w": 4,
+    "mau": "#000000"
+   }
+  ],
+  "bong": [
+   {
+    "x": 0,
+    "y": 6,
+    "mo": 0,
+    "mau": "#000000CC"
+   }
+  ],
+  "nen": null,
+  "gradient": null
+ },
+ "khoi": {
+  "cach_dong": 0.95,
+  "can": "giua",
+  "rong_max": 0.86
+ },
+ "the": {
+  "hinh": "pill",
+  "mau": "#111111CC",
+  "bo": 24,
+  "dem": [
+   32,
+   20
+  ],
+  "vien": null,
+  "bong": [
+   {
+    "x": 0,
+    "y": 8,
+    "mo": 20,
+    "mau": "#00000080"
+   }
+  ],
+  "chu": {
+   "co": 48,
+   "dam": 700,
+   "mau": "#FFFFFF",
+   "font": "nhan",
+   "vien": null,
+   "bong": null,
+   "gradient": null
+  }
+ },
+ "hinh": {
+  "fit": "cover",
+  "bo": 0,
+  "vien": null,
+  "bong": [
+   {
+    "x": 0,
+    "y": 10,
+    "mo": 30,
+    "mau": "#00000080"
+   }
+  ]
+ },
+ "duong": {
+  "w": 8,
+  "ve": 0.4,
+  "ease": "out",
+  "mau": "#FFCC00"
+ },
+ "phu_de": {
+  "che_do": "cum",
+  "toi_da_chu": 22,
+  "karaoke": true,
+  "keo_dai": 0.15,
+  "lang_ngat": 0.5,
+  "tween": 0.2,
+  "nhuong_cho": 0.2,
+  "mau_noi": "#FFCC00",
+  "hien": "noi",
+  "khi_chong": "doi",
+  "an_khi_lop_chu": false,
+  "kieu_dang": {
+   "font": "phu_de",
+   "co": 60,
+   "dam": 700,
+   "mau": "#FFFFFF",
+   "dong": 1.15,
+   "can": "giua",
+   "hoa": false,
+   "gian": 0,
+   "rong_max": 0.86,
+   "vien": [
+    {
+     "w": 8,
+     "mau": "#000000"
+    }
+   ],
+   "bong": null,
+   "nen": null,
+   "gradient": null
+  },
+  "vi_tri": {
+   "anchor": "bc",
+   "x": 0.5,
+   "y": 0.76,
+   "so_voi": "khung"
+  },
+  "anim": {
+   "vao": {
+    "kieu": "pop",
+    "dai": 0.12,
+    "ease": "out",
+    "tu": {
+     "scale": 0.9,
+     "opacity": 0
+    }
+   },
+   "ra": {
+    "kieu": "none"
+   }
+  }
+ },
+ "anim": {
+  "vao": {
+   "kieu": "fade",
+   "dai": 0.25,
+   "ease": "out"
+  },
+  "ra": {
+   "kieu": "fade",
+   "dai": 0.2,
+   "ease": "in"
+  },
+  "so_le": 0.05,
+  "keyframe_dai": 0.25,
+  "keyframe_ease": "in_out",
+  "ken_burns": [
+   1.0,
+   1.06
+  ],
+  "nhoe_dong": 0,
+  "kieu": {
+   "slide": {
+    "x": -40,
+    "opacity": 0
+   },
+   "pop": {
+    "scale": 0.6,
+    "opacity": 0
+   },
+   "blur": {
+    "blur": 12,
+    "opacity": 0
+   },
+   "flip": {
+    "rot_y": -80,
+    "opacity": 0
+   },
+   "tilt": {
+    "rot_x": 70,
+    "opacity": 0
+   }
+  }
+ },
+ "camera": {
+  "ease": "out",
+  "dai": 0
+ },
+ "vi_tri": {
+  "hop_mac_dinh": {
+   "hinh": [
+    0.8,
+    0.4
+   ],
+   "py": [
+    0.5,
+    0.3
+   ],
+   "mau": [
+    0.8,
+    0.4
+   ],
+   "web": [
+    0.8,
+    0.3
+   ],
+   "video": [
+    1.0,
+    1.0
+   ]
+  },
+  "cach_nhom": 0.012,
+  "anchor": "mc",
+  "so_voi": "khung",
+  "xep": "doc"
+ },
+ "ne_mat": {
+  "thu_toi": 0.7,
+  "noi": 0.1
+ },
+ "am": {
+  "nhac": {
+   "db": -22,
+   "vao": 1.0,
+   "ra": 2.0,
+   "ne_giong": true
+  },
+  "sfx": {
+   "db": -8
+  },
+  "giong_lufs": -16,
+  "dinh_dbtp": -2.0,
+  "giong_db": 0,
+  "sidechain": {
+   "threshold": 0.05,
+   "ratio": 4,
+   "attack": 25,
+   "release": 400
+  }
+ },
+ "nen_moi": {
+  "mau": "#0E0E12",
+  "mo_sigma": 24,
+  "toi": 0.15,
+  "kieu": "mau",
+  "mo": 0.3,
+  "vien_sang": null
+ },
+ "chuyen_canh": {
+  "flash_dai": 0.2,
+  "zoom_dai": 0.3
+ },
+ "cat": {
+  "nhip": "vua"
+ },
+ "bia": {
+  "so_phuong_an": 3,
+  "nen": {
+   "kieu": "khung_mo",
+   "mo": 0.4,
+   "toi": 0.3
+  },
+  "nguoi": {
+   "co": 1.1,
+   "x": 0.5,
+   "y": 0.62,
+   "vien_sang": null,
+   "bong": {
+    "x": 0,
+    "y": 24,
+    "mo": 40,
+    "mau": "#000000AA"
+   },
+   "lat": false
+  },
+  "chu": {
+   "co": 120,
+   "dam": 900,
+   "mau": "#FFFFFF",
+   "font": "tieu_de",
+   "hoa": true,
+   "can": "giua",
+   "gian": 0,
+   "dong": 1.05,
+   "rong_max": 0.86,
+   "vien": [
+    {
+     "w": 10,
+     "mau": "#000000"
+    }
+   ],
+   "bong": null,
+   "nen": null,
+   "gradient": null
+  },
+  "tuong_phan_toi_thieu": 3.0,
+  "de_mat_toi_da": 0.12
+ }
+}

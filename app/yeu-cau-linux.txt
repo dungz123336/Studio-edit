@@ -1,0 +1,17 @@
+# © 2026 Studio dựng video. STUDIO-DUNG-VIDEO · BAN QUYEN.
+# Phần mềm có bản quyền. CẤM sao chép, sửa đổi, dịch ngược, phân phối lại dưới mọi hình thức.
+# Mọi hành vi dùng/chia sẻ trái phép đều bị truy vết theo mã bản quyền gắn trong bản giao.
+# Gói Python cho Linux và Mac Intel — Python 3.12 (1.2.19: tách khỏi Windows vì onnxruntime-directml chỉ có bản Windows)
+faster-whisper==1.2.1   # đã thử 06/10/2026 trên Windows
+av==14.2.0            # faster-whisper 1.2.1 gọi av.open(metadata_errors=…): av 15+ bỏ tham số này → nhận giọng hỏng; 14.4 không có bản dựng sẵn Windows
+mediapipe==0.10.21   # bản 1.0 bỏ mp.solutions (tách người) — khoá lại, đã thử 06/10/2026
+numpy
+pillow
+scipy
+fonttools
+requests
+cryptography   # kiểm chữ ký số bản cập nhật + thẻ kích hoạt
+opencv-python==4.11.0.86   # Studio 2: ghim cùng bản opencv-contrib của mediapipe (rapidocr kéo opencv 5)
+rapidocr_onnxruntime   # Studio 2: bìa (kiem_bia) + học kênh cần OCR — bản 1.2.13 thiếu dòng này
+skia-python   # 1.3 lõi mới: chữ chuẩn (kerning, font biến thiên, viền/bóng nhiều lớp)
+onnxruntime   # 1.3 tách người MODNet (CPU; CoreML trên Mac Intel không có)

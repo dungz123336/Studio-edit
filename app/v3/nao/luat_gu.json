@@ -1,0 +1,142 @@
+{
+ "phien_ban": 1,
+ "mo_ta": "Luật gu / luật nghề — mặc định TẮT (không luật nào bật sẵn). Hồ sơ kênh bật từng luật và đặt số: ho-so.json → luat_gu: {\"<id>\": {\"bat\": true, \"gia_tri\": <số>}}. Vi phạm → canh_bao trong kiem.json CHỈ ghi số đo so với ngưỡng hồ sơ (không chặn, không câu khuyên). Số đo nghề luôn được in ở canh_bao id so_do_nghe (thông tin), kể cả khi tắt.",
+ "luat": [
+  {
+   "id": "sfx_lap_toi_da",
+   "mo_ta": "Một id SFX dùng quá N lần trong video (số đo: số lần mỗi id).",
+   "don_vi": "lần",
+   "gia_tri": 3,
+   "bat": false,
+   "do": "đếm id_kho trong ke_hoach.am.sfx (gồm sfx gắn vào lớp); > gia_tri → canh_bao {tranh: [id đã dùng]}."
+  },
+  {
+   "id": "mat_do_toi_da",
+   "mo_ta": "Số lớp chữ/thẻ hiện đồng thời tối đa.",
+   "don_vi": "lớp",
+   "gia_tri": 2,
+   "bat": false,
+   "do": "tại mọi t, đếm lớp chu/the có t0 ≤ t < t1 (không tính phụ đề)."
+  },
+  {
+   "id": "khoang_trong_toi_da",
+   "mo_ta": "Khoảng dài nhất không có lớp nào ngoài phụ đề.",
+   "don_vi": "giây",
+   "gia_tri": 6,
+   "bat": false,
+   "do": "khoảng [t0 lớp sau − t1 lớp trước] lớn nhất trên timeline."
+  },
+  {
+   "id": "so_font_toi_da",
+   "mo_ta": "Số họ font khác nhau trong một video.",
+   "don_vi": "font",
+   "gia_tri": 2,
+   "bat": false,
+   "do": "đếm đường dẫn font đã giải (gộp cùng họ)."
+  },
+  {
+   "id": "so_mau_toi_da",
+   "mo_ta": "Số màu khác nhau dùng cho chữ/thẻ/đường (không tính trắng, đen).",
+   "don_vi": "màu",
+   "gia_tri": 3,
+   "bat": false,
+   "do": "tập mau trong kieu_dang, chuẩn về #RRGGBB."
+  },
+  {
+   "id": "co_chu_toi_thieu",
+   "mo_ta": "Cỡ chữ nhỏ nhất cho lớp chu (px trên khung 1080×1920).",
+   "don_vi": "px",
+   "gia_tri": 44,
+   "bat": false,
+   "do": "kieu_dang.co × (W/1080)."
+  },
+  {
+   "id": "bia_so_chu",
+   "mo_ta": "Số từ tối đa trên bìa.",
+   "don_vi": "từ",
+   "gia_tri": 6,
+   "bat": false,
+   "do": "tổng từ trong bia.thiet_ke.chu[].text."
+  },
+  {
+   "id": "giay_moi_tu_chu",
+   "mo_ta": "Thời gian hiện tối thiểu mỗi từ của chữ nhấn (cao hơn luật chặn 0.3).",
+   "don_vi": "giây/từ",
+   "gia_tri": 0.45,
+   "bat": false,
+   "do": "(t1−t0)/số từ."
+  },
+  {
+   "id": "hook_toi_da",
+   "mo_ta": "Lớp chữ đầu tiên phải xuất hiện trước giây này.",
+   "don_vi": "giây",
+   "gia_tri": 1.5,
+   "bat": false,
+   "do": "min t0 của lớp chu/the."
+  },
+  {
+   "id": "phu_de_toi_da_chu",
+   "mo_ta": "Số ký tự tối đa một cụm phụ đề.",
+   "don_vi": "ký tự",
+   "gia_tri": 22,
+   "bat": false,
+   "do": "phu_de.toi_da_chu."
+  },
+  {
+   "id": "camera_toi_da",
+   "mo_ta": "Số lần đổi camera mỗi phút.",
+   "don_vi": "lần/phút",
+   "gia_tri": 8,
+   "bat": false,
+   "do": "len(camera) / (dur/60)."
+  },
+  {
+   "id": "sfx_toi_da",
+   "mo_ta": "Số sfx mỗi phút.",
+   "don_vi": "lần/phút",
+   "gia_tri": 10,
+   "bat": false,
+   "do": "len(am.sfx) / (dur/60)."
+  },
+  {
+   "id": "khong_nen_moi",
+   "mo_ta": "Không thay nền sau người (giữ bối cảnh thật).",
+   "don_vi": "bật/tắt",
+   "gia_tri": 1,
+   "bat": false,
+   "do": "nen_moi rỗng."
+  },
+  {
+   "id": "mat_do_lop_moi",
+   "mo_ta": "Số lớp đồ hoạ MỚI xuất hiện trong bất kỳ 10 giây nào (chữ/thẻ/hình/mẫu/web/video phủ, không tính phụ đề).",
+   "don_vi": "lớp/10s",
+   "gia_tri": 4,
+   "bat": false,
+   "do": "cửa sổ trượt 10 s trên t0 các lớp; max > gia_tri → canh_bao kèm khoảng giây đông nhất."
+  },
+  {
+   "id": "khoang_tho_toi_thieu",
+   "mo_ta": "Tỉ lệ thời lượng KHÔNG có lớp đồ hoạ nào (ngoài phụ đề).",
+   "don_vi": "%",
+   "gia_tri": 25,
+   "bat": false,
+   "do": "hợp các [t0,t1] lớp đồ hoạ (trừ phụ đề, nền mới, lớp phủ toàn khung mờ) → 100 − phủ/dur."
+  },
+  {
+   "id": "so_kieu_do_hoa_toi_da",
+   "mo_ta": "Số KIỂU đồ hoạ khác nhau mỗi phút (mỗi id mẫu/kiểu lớp tính một).",
+   "don_vi": "kiểu/phút",
+   "gia_tri": 6,
+   "bat": false,
+   "do": "tập {mau id | kieu lớp} / (dur/60)."
+  },
+  {
+   "id": "trinh_dien_toi_da",
+   "mo_ta": "Hiệu ứng 'trình diễn' (glitch, light leak, vệt sáng, chớp, chữ 3D/phát sáng, chuyển cảnh mạnh) mỗi phút.",
+   "don_vi": "lần/phút",
+   "gia_tri": 2,
+   "bat": false,
+   "do": "đếm lớp mẫu nhóm chuyen_canh/khung hoặc id chứa glitch|leak|vet-sang|chop|3d|phat-sang / (dur/60)."
+  }
+ ]
+}

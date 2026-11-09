@@ -1,0 +1,230 @@
+<!--
+  © 2026 Studio dựng video. STUDIO-DUNG-VIDEO · BAN QUYEN.
+  Phần mềm có bản quyền. CẤM sao chép, sửa đổi, dịch ngược, phân phối lại dưới mọi hình thức.
+  Mọi hành vi dùng/chia sẻ trái phép đều bị truy vết theo mã bản quyền gắn trong bản giao.
+-->
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Studio dựng video</title>
+<link rel="icon" href="/studio.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Be+Vietnam+Pro:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="khung" id="khung">
+
+  <!-- ============ TRÁI: hồ sơ kênh ============ -->
+  <aside class="trai" aria-label="Hồ sơ kênh">
+    <div class="trai-dau">
+      <svg class="dau-app" viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="5" width="26" height="22" rx="5"/><path class="le" d="M9 5v22M23 5v22"/><path class="vet" d="M13 20l6-8"/></svg>
+      <span class="ten-app">Studio</span>
+    </div>
+    <button class="nut-viec-moi" id="nutViecMoi" type="button">
+      <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg><span>Việc mới</span><kbd>Ctrl N</kbd>
+    </button>
+    <p class="nhan-muc">Hồ sơ kênh</p>
+    <nav class="ds-ho-so" id="dsHoSo"></nav>
+    <button class="nut-tao-ho-so" id="nutTaoHoSo" type="button">
+      <span class="o-cong">+</span>Tạo hồ sơ kênh
+    </button>
+    <button class="trai-chan" id="nutHeThong" type="button" title="Bản quyền, cập nhật, Claude Code">
+      <span class="dong"><i class="cham" id="chamBQ"></i><span id="chuBQ">Đang kiểm tra bản quyền</span></span>
+      <span class="dong mo"><i class="cham" id="chamCL"></i><span id="chuCL">Claude Code</span><span class="pb" id="chuPB"></span></span>
+      <span class="dong mo"><i class="cham" id="chamMay"></i><span id="chuMay">Đang kiểm tra máy</span></span>
+      <span class="dong mo o-thap" id="dongO" hidden><i class="cham xau"></i><span id="chuO"></span></span>
+    </button>
+  </aside>
+
+  <!-- ============ GIỮA: trò chuyện / hồ sơ ============ -->
+  <main class="giua" id="giua">
+    <header class="giua-dau">
+      <span class="o-mau" id="dauMau"></span>
+      <div class="giua-tieu">
+        <span class="giua-kenh" id="dauKenh"></span>
+        <input class="giua-ten" id="dauTen" spellcheck="false" aria-label="Tên việc">
+      </div>
+      <div class="giua-lam" id="dauLam" hidden><i class="nhip"></i><span id="dauLamChu">Claude đang làm</span><button class="nut-nho" id="nutDung" type="button">Dừng</button></div>
+      <button class="nut-icon" id="nutXoaViec" type="button" title="Xoá đoạn chat này"><svg viewBox="0 0 24 24"><path d="M5 7h14M10 7V5h4v2M7 7l1 12h8l1-12"/></svg></button>
+      <button class="nut-icon" id="nutGiong" type="button" title="Giọng nói AI"><svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M6 11a6 6 0 0 0 12 0M12 17v4"/></svg></button>
+      <button class="nut-icon" id="nutMoHoSo" type="button" title="Mở hồ sơ kênh"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c.8-3.6 3.6-5.5 7-5.5s6.2 1.9 7 5.5"/></svg></button>
+      <button class="nut-icon" id="nutPhai" type="button" title="Ẩn/hiện thanh công cụ"><svg viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="15" rx="2.5"/><path d="M14.5 4.5v15"/></svg></button>
+    </header>
+
+    <div class="bang-bao" id="bangBao" hidden></div>
+
+    <!-- trò chuyện -->
+    <section class="tro-chuyen" id="troChuyen">
+      <div class="cuon" id="cuon">
+        <div class="ds-tin" id="dsTin"></div>
+        <div class="dang-lam" id="dangLam" hidden><span class="cham3"><i></i><i></i><i></i></span><b class="dl-gio" id="dangLamGio">00:00</b><span class="dl-chu"><span id="dangLamChu"></span><small id="dangLamPhu"></small></span><button class="nut-nho" id="nutDung2" type="button">Dừng</button></div>
+      </div>
+
+      <div class="chao" id="chao" hidden>
+        <span class="chao-mau" id="chaoMau"></span>
+        <h1 id="chaoChu"></h1>
+        <p id="chaoPhu"></p>
+      </div>
+
+      <div class="cho-tl" id="choTL" hidden><i></i>Claude đang chờ bạn trả lời câu hỏi phía trên</div>
+      <form class="soan" id="soan" autocomplete="off">
+        <div class="dg-dau" id="dgDau" hidden>
+          <div class="dg-che-do" role="group" aria-label="Cách soạn việc">
+            <button type="button" id="dgNutDonGian" aria-pressed="false">Đơn giản</button>
+            <button type="button" id="dgNutDayDu" aria-pressed="false">Đầy đủ</button>
+          </div>
+          <span class="dg-kenh" id="dgKenh"></span>
+        </div>
+        <div class="dg-than" id="dgThan" hidden>
+          <section class="dg-muc dg-muc-chinh" data-muc="chinh">
+            <div class="dg-tieu"><b>1</b><h3 id="dgTen_chinh">Video chính</h3><em id="dgEm_chinh">Bắt buộc</em><button class="dg-them" type="button" data-chon="chinh">Thêm clip</button></div>
+            <div class="dg-ds" id="dgDs_chinh"></div>
+            <button class="dg-rong" id="dgRong_chinh" type="button" data-chon="chinh"><strong id="dgRongTen_chinh">Thêm video chính</strong><span id="dgRongMo_chinh">Clip người nói. Nhiều clip sẽ nối theo thứ tự ở đây thành một video. Kéo thả vào đây cũng được.</span></button>
+          </section>
+          <section class="dg-muc" data-muc="phu">
+            <div class="dg-tieu"><b>2</b><h3>Tư liệu phụ</h3><em>Tuỳ chọn</em><button class="dg-them" type="button" data-chon="phu">Thêm tệp</button></div>
+            <div class="dg-ds" id="dgDs_phu"></div>
+            <button class="dg-rong" id="dgRong_phu" type="button" data-chon="phu"><strong>Thêm tư liệu</strong><span>Cảnh chèn, ảnh, âm thanh hoặc kịch bản.</span></button>
+            <button class="dg-phu-nut" type="button" data-chon="thu-muc">Kết nối cả thư mục tư liệu</button>
+          </section>
+          <section class="dg-muc" data-muc="mau">
+            <div class="dg-tieu"><b>3</b><h3>Video mẫu</h3><em>Tuỳ chọn</em><button class="dg-them" type="button" data-chon="mau">Thêm mẫu</button></div>
+            <div class="dg-ds" id="dgDs_mau"></div>
+            <button class="dg-rong" id="dgRong_mau" type="button" data-chon="mau"><strong>Thêm video mẫu</strong><span>Máy đo mẫu ngay trong việc này, không cần học trước.</span></button>
+            <div class="dg-link">
+              <input id="dgLink" type="url" inputmode="url" autocomplete="off" spellcheck="false" placeholder="Hoặc dán link TikTok, Facebook, YouTube" aria-label="Link video mẫu">
+              <button type="button" id="dgNutLink">Thêm link</button>
+            </div>
+            <label class="dg-bai" id="dgBaiO" hidden>Ưu tiên bài học của kênh <select id="dgBai" aria-label="Bài học ưu tiên"></select></label>
+          </section>
+        </div>
+        <div class="soan-dinh" id="soanDinh"></div>
+        <div class="dg-khoi-yc">
+          <div class="dg-tieu" id="dgYc" hidden><b>4</b><h3>Yêu cầu chung</h3><em>Tuỳ chọn</em></div>
+        <textarea id="o" rows="1" placeholder="Thả video, ảnh, âm thanh, file kịch bản vào đây — hoặc nhập yêu cầu…" aria-label="Yêu cầu cho Claude"></textarea>
+        </div>
+        <div class="soan-chan">
+          <button class="nut-icon nho" id="nutKem" type="button" title="Thêm video, ảnh, âm thanh, file kịch bản"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button>
+          <button class="nut-chip" id="nutThuMuc" type="button" title="Kết nối một thư mục tư liệu để Claude đọc"><svg viewBox="0 0 24 24"><path d="M3.5 7.5a2 2 0 0 1 2-2h4l2 2h7a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/></svg>Thư mục</button>
+          <button class="nut-chip" id="nutMau" type="button" title="Đưa một video mẫu — AI băm nhỏ để copy phong cách edit (chữ, màu, chuyển cảnh, nhịp)"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="14" rx="2.5"/><path d="M10 9.5v5l4-2.5z"/></svg>Video mẫu</button>
+          <button class="nut-chip" id="nutMoKho" type="button"><svg viewBox="0 0 24 24"><path d="M4 7.5 12 4l8 3.5-8 3.5z"/><path d="M4 12l8 3.5 8-3.5M4 16.5 12 20l8-3.5"/></svg>Kho</button>
+          <button class="nut-chip" id="nutNhanh" type="button" aria-pressed="false" title="Làm nhanh: dựng bằng ffmpeg, quy trình gọn — vẫn đủ cắt ghép, chữ, khoảng lặng, ừm à, SFX, ảnh, b-roll, cảnh trám (không xoá nền, không tự xuất CapCut)"><svg viewBox="0 0 24 24"><path d="M13 3 5 13.5h6L10 21l8-10.5h-6z"/></svg>Làm nhanh</button>
+          <span class="soan-goi">Enter gửi · Shift+Enter xuống dòng</span>
+          <button class="nut-gui" id="nutGui" type="submit" aria-label="Gửi"><span class="dg-chu-gui" id="dgChuGui">Dựng video</span><svg viewBox="0 0 24 24"><path d="M12 19V5M5.5 11.5 12 5l6.5 6.5"/></svg></button>
+        </div>
+        <input type="file" id="chonTep" accept="video/*,image/*,audio/*,.mkv,.mts,.insv,.xlsx,.xls,.docx,.pptx,.csv,.tsv,.txt,.md,.srt,.rtf,.pdf" multiple hidden>
+      </form>
+      <div class="goi-y" id="goiY" hidden>
+        <button type="button" data-goi="dung">Dựng video quay thô</button>
+        <button type="button" data-goi="hoc">Học từ video TikTok / Facebook</button>
+        <button type="button" data-goi="bia">Làm ảnh bìa</button>
+        <button type="button" data-goi="hoi">Hoàn thiện hồ sơ kênh (6 câu hỏi)</button>
+      </div>
+    </section>
+
+    <!-- hồ sơ -->
+    <section class="ho-so" id="hoSo" hidden>
+      <div class="hs-dau">
+        <span class="hs-mau" id="hsMau"></span>
+        <div>
+          <p class="nhan-muc" id="hsMa"></p>
+          <h1 id="hsTen"></h1>
+        </div>
+        <button class="nut-nho" id="hsLuuTru" type="button" title="Cất hồ sơ khỏi danh sách (không xoá dữ liệu)">Lưu trữ</button>
+        <button class="nut-nho" id="hsXoa" type="button" title="Xoá hẳn hồ sơ và các đoạn chat của nó (video đã giao vẫn giữ)">Xoá hồ sơ</button>
+        <button class="nut nut-phu" id="hsDong" type="button">Về trò chuyện</button>
+      </div>
+      <nav class="hs-the" id="hsThe">
+        <button data-the="thuong-hieu" class="chon">Thương hiệu</button>
+        <button data-the="gu">Gu riêng</button>
+        <button data-the="hoc">Học từ video</button>
+        <button data-the="lich-su">Lịch sử &amp; góp ý</button>
+      </nav>
+      <div class="hs-than" id="hsThan"></div>
+    </section>
+  </main>
+
+  <!-- ============ PHẢI: công cụ ============ -->
+  <aside class="phai" id="phai" aria-label="Thanh công cụ">
+    <nav class="phai-the" id="phaiThe">
+      <button data-p="quy-trinh" class="chon">Quy trình</button>
+      <button data-p="kho">Kho</button>
+      <button class="nut-icon phai-rong" id="nutKhoRong" type="button" title="Đẩy rộng kho ra giữa màn hình (Esc để thu lại)" aria-pressed="false" hidden><svg viewBox="0 0 24 24"><path d="M9 5H4v5M4 5l6 6M15 19h5v-5M20 19l-6-6"/></svg></button>
+    </nav>
+    <div class="phai-than" id="pQuyTrinh"></div>
+    <div class="phai-than kho" id="pKho" hidden>
+      <div class="kho-tim"><input type="search" id="khoTim" placeholder="Tìm: whoosh, hồi hộp, so sánh…" aria-label="Tìm trong kho"></div>
+      <div class="kho-nhom" id="khoNhom"></div>
+      <p class="kho-goi">Kéo vào ô chat, hoặc bấm <b>+</b>, để bảo Claude dùng đúng thứ này.</p>
+      <div class="kho-ds" id="khoDs"></div>
+      <iframe id="khoMoi" class="kho-moi" title="Kho tài nguyên" hidden></iframe>
+      <button id="khoMoRong" class="kho-mo-rong" type="button" hidden>⤢ Đẩy rộng kho</button>
+    </div>
+  </aside>
+</div>
+
+<!-- tạo hồ sơ -->
+<dialog class="hop" id="hopTao">
+  <form method="dialog" id="formTao">
+    <h2>Hồ sơ kênh mới</h2>
+    <p class="hop-mo">Mỗi kênh một hồ sơ: màu, font, gu và góp ý riêng. Tư duy nghề (bộ não gốc) dùng chung.</p>
+    <label>Tên kênh<input id="taoKenh" required placeholder="Ví dụ: Kênh Bếp Nhà Lan"></label>
+    <label>Mã hồ sơ<input id="taoMa" pattern="[a-z0-9-]+" placeholder="tự tạo từ tên kênh"></label>
+    <div class="nhan-truong">Màu kênh</div>
+    <div class="o-mau-chon" id="taoMauDs"></div>
+    <div class="nhan-truong">Bắt đầu từ bộ phong cách</div>
+    <div class="ds-bo" id="taoBo"></div>
+    <div class="nhan-truong">Vài câu để AI hiểu kênh (bỏ trống cũng được, sửa sau trong hồ sơ)</div>
+    <label>Kênh nói về gì, cho ai xem?<input id="taoVe" placeholder="vd: mẹo bán hàng online cho chủ shop nhỏ"></label>
+    <label>Muốn người xem cảm thấy gì?<input id="taoCam" placeholder="vd: tin cậy, gần gũi · hoặc: năng lượng, vui"></label>
+    <label>Điều KHÔNG muốn thấy trong video?<input id="taoCam2" placeholder="vd: chữ quá nhiều, nhạc to, chuyển cảnh lố"></label>
+    <label>Kênh / video bạn thích cách dựng (dán 1–3 link)<input id="taoLink" placeholder="https://www.tiktok.com/@…"></label>
+    <div class="hop-chan">
+      <button class="nut nut-phu" value="huy" type="button" id="taoHuy">Huỷ</button>
+      <button class="nut nut-chinh" id="taoOk" type="submit">Tạo hồ sơ</button>
+    </div>
+  </form>
+</dialog>
+
+<!-- giọng nói AI -->
+<dialog class="hop" id="hopGiong">
+  <div>
+    <h2>Giọng nói AI</h2>
+    <div class="giong-than" id="giongThan"></div>
+    <div class="hop-chan"><button class="nut nut-phu" type="button" id="giongDong">Đóng</button></div>
+  </div>
+</dialog>
+
+<!-- xoá việc (1.2.21: có ô xoá cả dự án + bản tải lên) -->
+<dialog class="hop hop-xoa" id="hopXoa">
+  <form method="dialog">
+    <h2>Xoá đoạn chat này?</h2>
+    <p class="hop-mo" id="xoaMo"></p>
+    <label class="o-chon"><input type="checkbox" id="xoaDuAn"> <span>Xoá cả <b>thư mục dự án</b> (cache, bản dựng, bìa) và <b>bản tải lên</b> của việc này — giải phóng dung lượng. Video đã giao ra Downloads vẫn giữ.</span></label>
+    <div class="hop-chan">
+      <button class="nut nut-phu" value="huy" type="button" id="xoaHuy">Huỷ</button>
+      <button class="nut nut-chinh nut-do" id="xoaOk" type="submit">Xoá</button>
+    </div>
+  </form>
+</dialog>
+
+<!-- hệ thống -->
+<dialog class="hop" id="hopHT">
+  <div>
+    <h2>Máy, bản quyền &amp; cập nhật</h2>
+    <div class="ht-muc" id="htThan"></div>
+    <div class="hop-chan"><button class="nut nut-phu" type="button" id="htDong">Đóng</button></div>
+  </div>
+</dialog>
+
+<div class="lop-tha" id="lopTha" hidden><div><svg viewBox="0 0 48 48"><path d="M24 10v22M14 22l10 10 10-10M10 38h28"/></svg>Thả video, ảnh, âm thanh hoặc file kịch bản vào việc này</div></div>
+<div class="xem-lon" id="xemLon" hidden><img alt=""></div>
+<div class="thong-bao" id="thongBao" role="status" aria-live="polite"></div>
+<audio id="nghe" preload="none"></audio>
+<script src="/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+{
+  "version": "1.2.21",
+  "files": {
+    "scripts/ban_quyen.py": {
+      "original_sha256": "e880647d7fff5b3ff767542acfffc8e7895927a940bc0b808203d3b378e5a436",
+      "local_sha256": "4df6c49f45e1f83877e973f7e17f3af70930b93ad51dfd4d070394db6a5ac029"
+    },
+    "scripts/nao.py": {
+      "original_sha256": "c47ad6af01aba0eab22a050cd97910ec65182099e7bc6ed08e8d0839af56d858",
+      "local_sha256": "38c42920566b3d575ccb0042497338f88e63cf8006bc7f56117ba3c25c6be1a6"
+    },
+    "studio/web/app.js": {
+      "original_sha256": "5a71a85385ca4303efce312f0e8cb49735d4193651e6ce9459bb0709b23323b8",
+      "local_sha256": "d3d05bc605d6da341e086248a093f0813e1a540cba7f861c4c47d992c72a4365"
+    },
+    "studio/web/style.css": {
+      "original_sha256": "fd7a31f5679d3dee8d70fdda4cae56f9603b4c07874cf04e0091e68e39ddc009",
+      "local_sha256": "96e86dbee83f150ca7fb7f3f6e13ec8456c41d6fc76a67b915b3bfb7b68b8cad"
+    },
+    "studio/server.py": {
+      "original_sha256": "f2f80e10e3101b884dad0159f2e5c104685e0bf7de54a13f5a884c5d2e0561a9",
+      "local_sha256": "800bb8757936828b01f06c1bf4aca847b4cb53dc307252aa5c36045c0f946288"
+    }
+  }
+}

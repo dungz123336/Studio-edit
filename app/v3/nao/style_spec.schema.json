@@ -1,0 +1,634 @@
+{
+ "$schema": "http://json-schema.org/draft-07/schema#",
+ "title": "style-spec.json — cách làm học từ video mẫu (không chép chữ/logo/mặt)",
+ "type": "object",
+ "required": [
+  "palette",
+  "type_scale",
+  "layout",
+  "motion_vocab",
+  "rhythm_rules",
+  "dau_an_khong_chep"
+ ],
+ "additionalProperties": false,
+ "properties": {
+  "phien_ban": {
+   "type": "integer",
+   "default": 1
+  },
+  "nguon": {
+   "type": "string",
+   "description": "tên file video mẫu (không bắt buộc)"
+  },
+  "palette": {
+   "type": "object",
+   "required": [
+    "nhan",
+    "sang",
+    "toi"
+   ],
+   "additionalProperties": false,
+   "properties": {
+    "nhan": {
+     "type": "string",
+     "pattern": "^#[0-9A-Fa-f]{6}([0-9A-Fa-f]{2})?$"
+    },
+    "nhan2": {
+     "type": "string",
+     "pattern": "^#[0-9A-Fa-f]{6}([0-9A-Fa-f]{2})?$"
+    },
+    "sang": {
+     "type": "string",
+     "pattern": "^#[0-9A-Fa-f]{6}([0-9A-Fa-f]{2})?$"
+    },
+    "toi": {
+     "type": "string",
+     "pattern": "^#[0-9A-Fa-f]{6}([0-9A-Fa-f]{2})?$"
+    },
+    "phu": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "maxItems": 4
+    },
+    "ti_le_dung": {
+     "type": "object",
+     "description": "tỉ lệ diện tích ước lượng mỗi màu, 0..1",
+     "additionalProperties": {
+      "type": "number"
+     }
+    }
+   }
+  },
+  "type_scale": {
+   "type": "object",
+   "additionalProperties": false,
+   "properties": {
+    "tieu_de": {
+     "$ref": "#/definitions/co_chu"
+    },
+    "nhan": {
+     "$ref": "#/definitions/co_chu"
+    },
+    "phu_de": {
+     "$ref": "#/definitions/co_chu"
+    },
+    "so_font_khac_nhau": {
+     "type": "integer",
+     "minimum": 1,
+     "maximum": 5
+    },
+    "nhom_font": {
+     "type": "array",
+     "items": {
+      "type": "string",
+      "enum": [
+       "sans_dam",
+       "sans_thuong",
+       "serif",
+       "display",
+       "viet_tay",
+       "mono"
+      ]
+     }
+    }
+   }
+  },
+  "layout": {
+   "type": "object",
+   "additionalProperties": false,
+   "properties": {
+    "anchors": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "required": [
+       "vai",
+       "anchor",
+       "x",
+       "y"
+      ],
+      "properties": {
+       "vai": {
+        "type": "string",
+        "enum": [
+         "tieu_de",
+         "nhan",
+         "phu_de",
+         "the",
+         "hinh",
+         "khac"
+        ]
+       },
+       "anchor": {
+        "type": "string",
+        "enum": [
+         "tl",
+         "tc",
+         "tr",
+         "ml",
+         "mc",
+         "mr",
+         "bl",
+         "bc",
+         "br"
+        ]
+       },
+       "x": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 1
+       },
+       "y": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 1
+       },
+       "so_voi": {
+        "type": "string",
+        "enum": [
+         "khung",
+         "mat",
+         "duoi_cam",
+         "tren_dau"
+        ]
+       },
+       "tan_suat": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 1
+       }
+      }
+     }
+    },
+    "rong_max_chu": {
+     "type": "number",
+     "minimum": 0.2,
+     "maximum": 1
+    },
+    "khung_nguoi": {
+     "type": "string",
+     "enum": [
+      "toan_khung",
+      "nua_duoi",
+      "goc",
+      "tach_nen",
+      "khac"
+     ]
+    },
+    "le_an_toan": {
+     "type": "object",
+     "properties": {
+      "tren": {
+       "type": "number"
+      },
+      "duoi": {
+       "type": "number"
+      },
+      "trai": {
+       "type": "number"
+      },
+      "phai": {
+       "type": "number"
+      }
+     }
+    }
+   }
+  },
+  "motion_vocab": {
+   "type": "object",
+   "additionalProperties": false,
+   "properties": {
+    "vao": {
+     "type": "array",
+     "items": {
+      "$ref": "#/definitions/dong_tac"
+     }
+    },
+    "ra": {
+     "type": "array",
+     "items": {
+      "$ref": "#/definitions/dong_tac"
+     }
+    },
+    "tach": {
+     "type": "string",
+     "enum": [
+      "none",
+      "tu",
+      "ky_tu"
+     ]
+    },
+    "so_le": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 0.5
+    },
+    "keyframes_thuong_dung": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "nhip_dong": {
+     "type": "string",
+     "enum": [
+      "cham",
+      "vua",
+      "nhanh",
+      "rat_nhanh"
+     ]
+    }
+   }
+  },
+  "graphics_vocab": {
+   "type": "object",
+   "additionalProperties": false,
+   "properties": {
+    "the": {
+     "type": "object",
+     "properties": {
+      "hinh": {
+       "type": "string",
+       "enum": [
+        "pill",
+        "rect",
+        "circle"
+       ]
+      },
+      "co_vien": {
+       "type": "number"
+      },
+      "bo": {
+       "type": "number"
+      },
+      "nen_mo": {
+       "type": "boolean"
+      },
+      "co_icon": {
+       "type": "boolean"
+      }
+     }
+    },
+    "chu": {
+     "type": "object",
+     "properties": {
+      "vien": {
+       "type": "boolean"
+      },
+      "bong": {
+       "type": "boolean"
+      },
+      "nen_khoi": {
+       "type": "boolean"
+      },
+      "gradient": {
+       "type": "boolean"
+      },
+      "hoa": {
+       "type": "boolean"
+      }
+     }
+    },
+    "duong": {
+     "type": "array",
+     "items": {
+      "type": "string",
+      "enum": [
+       "gach_chan",
+       "mui_ten",
+       "khung",
+       "khoanh"
+      ]
+     }
+    },
+    "hinh_minh_hoa": {
+     "type": "string",
+     "enum": [
+      "khong",
+      "it",
+      "nhieu"
+     ]
+    },
+    "nen_moi": {
+     "type": "string",
+     "enum": [
+      "khong",
+      "mau",
+      "gradient",
+      "anh",
+      "video",
+      "mo"
+     ]
+    }
+   }
+  },
+  "camera_vocab": {
+   "type": "object",
+   "additionalProperties": false,
+   "properties": {
+    "dung": {
+     "type": "boolean"
+    },
+    "z_thuong": {
+     "type": "array",
+     "items": {
+      "type": "number",
+      "minimum": 1,
+      "maximum": 2
+     },
+     "maxItems": 3
+    },
+    "kieu": {
+     "type": "string",
+     "enum": [
+      "cat_nhay",
+      "truot",
+      "tron"
+     ]
+    },
+    "tan_suat_giay": {
+     "type": "number",
+     "minimum": 0
+    }
+   }
+  },
+  "sfx_vocab": {
+   "type": "object",
+   "additionalProperties": false,
+   "properties": {
+    "dung": {
+     "type": "boolean"
+    },
+    "nghia": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "description": "nghĩa sfx hay dùng, vd 'whoosh ngắn', 'pop', 'ding'"
+    },
+    "nhac": {
+     "type": "string",
+     "description": "nghĩa nhạc nền, vd 'lofi nhẹ'"
+    },
+    "nhac_db": {
+     "type": "number"
+    }
+   }
+  },
+  "rhythm_rules": {
+   "type": "object",
+   "additionalProperties": false,
+   "properties": {
+    "giay_moi_lop_chu": {
+     "type": "number",
+     "minimum": 0.3
+    },
+    "so_lop_dong_thoi_toi_da": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "khoang_trong_toi_da_giay": {
+     "type": "number",
+     "minimum": 0
+    },
+    "phu_de": {
+     "type": "string",
+     "enum": [
+      "cum",
+      "tu",
+      "tat"
+     ]
+    },
+    "phu_de_toi_da_chu": {
+     "type": "integer",
+     "minimum": 4
+    },
+    "hook_giay": {
+     "type": "number",
+     "minimum": 0
+    },
+    "chuyen_canh": {
+     "type": "array",
+     "items": {
+      "type": "string",
+      "enum": [
+       "flash",
+       "zoom",
+       "cut"
+      ]
+     }
+    },
+    "karaoke": {
+     "type": "boolean",
+     "description": "phụ đề có tô màu từ đang nói không"
+    },
+    "phu_de_hien": {
+     "type": "string",
+     "enum": [
+      "noi",
+      "dan",
+      "cum"
+     ],
+     "description": "noi = cụm hiện + tô từ đang nói; dan = từng từ hiện dần ở lại; cum = cả cụm hiện, không tô"
+    }
+   }
+  },
+  "bia": {
+   "type": "object",
+   "additionalProperties": false,
+   "properties": {
+    "so_chu": {
+     "type": "integer"
+    },
+    "nguoi": {
+     "type": "boolean"
+    },
+    "nen": {
+     "type": "string",
+     "enum": [
+      "mau",
+      "gradient",
+      "khung_mo",
+      "anh"
+     ]
+    },
+    "bo_cuc": {
+     "type": "string"
+    }
+   }
+  },
+  "dau_an_khong_chep": {
+   "type": "array",
+   "description": "những thứ thuộc riêng video mẫu: câu chữ, tên kênh, logo, watermark, khuôn mặt — liệt kê để máy tránh",
+   "items": {
+    "type": "string"
+   }
+  },
+  "ghi_chu": {
+   "type": "string",
+   "maxLength": 600
+  },
+  "am_nhac": {
+   "type": "object",
+   "additionalProperties": false,
+   "properties": {
+    "co": {
+     "type": "boolean"
+    },
+    "muc": {
+     "type": "string",
+     "enum": [
+      "nhe",
+      "vua",
+      "noi",
+      "khong"
+     ]
+    },
+    "nghia": {
+     "type": "string"
+    }
+   }
+  },
+  "cat": {
+   "type": "object",
+   "additionalProperties": false,
+   "properties": {
+    "nhip": {
+     "type": "string",
+     "enum": [
+      "nhanh",
+      "vua",
+      "cham"
+     ]
+    },
+    "giu_lang_giay": {
+     "type": "number",
+     "minimum": 0
+    }
+   }
+  },
+  "do_hoa": {
+   "type": "object",
+   "additionalProperties": false,
+   "description": "sở thích của kênh về lượng đồ hoạ (AI quyết chi tiết)",
+   "properties": {
+    "muc": {
+     "type": "string",
+     "enum": [
+      "thua",
+      "vua",
+      "day"
+     ]
+    },
+    "thich": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "description": "loại đồ hoạ kênh thích: cảnh trám, nền mới, icon, hình minh hoạ, chuyển cảnh…"
+    },
+    "tranh": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    }
+   }
+  }
+ },
+ "definitions": {
+  "co_chu": {
+   "type": "object",
+   "properties": {
+    "co": {
+     "type": "number",
+     "minimum": 10,
+     "description": "px trên khung 1080×1920"
+    },
+    "dam": {
+     "type": "integer",
+     "minimum": 100,
+     "maximum": 900
+    },
+    "hoa": {
+     "type": "boolean"
+    },
+    "gian": {
+     "type": "number"
+    },
+    "dong": {
+     "type": "number"
+    },
+    "mau": {
+     "type": "string",
+     "pattern": "^#[0-9A-Fa-f]{6}([0-9A-Fa-f]{2})?$",
+     "description": "màu chữ của vai này (đo được)"
+    },
+    "vien": {
+     "type": "boolean"
+    },
+    "bong": {
+     "type": "boolean"
+    },
+    "nen_mau": {
+     "type": "string",
+     "description": "màu nền khối/pill sau chữ nếu có"
+    },
+    "font_goi_y": {
+     "type": "string",
+     "description": "họ font nhìn thấy (vd 'sans đậm hẹp', 'serif', 'script')"
+    }
+   }
+  },
+  "dong_tac": {
+   "type": "object",
+   "required": [
+    "kieu"
+   ],
+   "properties": {
+    "kieu": {
+     "type": "string",
+     "enum": [
+      "fade",
+      "slide",
+      "pop",
+      "blur",
+      "wipe",
+      "typewriter",
+      "word_by_word",
+      "mask_reveal",
+      "doi_ky_tu",
+      "none"
+     ]
+    },
+    "dai": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 2
+    },
+    "ease": {
+     "type": "string",
+     "enum": [
+      "linear",
+      "in",
+      "out",
+      "in_out",
+      "back",
+      "spring",
+      "expo"
+     ]
+    },
+    "tan_suat": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    }
+   }
+  }
+ },
+ "patternProperties": {
+  "^_": {}
+ }
+}

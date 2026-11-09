@@ -1,0 +1,3098 @@
+[
+ {
+  "ma": "flicker",
+  "goc": "Flicker / Flicker / Shine / Shine / Filmic Reel",
+  "dong": 5,
+  "lop": [
+   {
+    "chu": "Flicker",
+    "co": 0.08264,
+    "dx": 0.00254,
+    "dy": -0.08627,
+    "mau": "#FFDC00",
+    "vien": null,
+    "day": null,
+    "bong": "#000000",
+    "gian": -0.05,
+    "hieu_ung": [
+     "loe-sang"
+    ],
+    "font_goc": "timesbi.ttf"
+   },
+   {
+    "chu": "Flicker",
+    "co": 0.08264,
+    "dx": 0.00254,
+    "dy": 0.12873,
+    "mau": "#009F52",
+    "vien": null,
+    "day": null,
+    "bong": "#000000",
+    "gian": -0.05,
+    "hieu_ung": [
+     "loe-sang"
+    ],
+    "font_goc": "timesbi.ttf"
+   },
+   {
+    "chu": "Shine",
+    "co": 0.05172,
+    "dx": -0.00457,
+    "dy": -0.02777,
+    "mau": "#FFFFFF",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": -0.05,
+    "hieu_ung": [
+     "lui-nhoe"
+    ],
+    "font_goc": "georgiaz.ttf"
+   },
+   {
+    "chu": "Shine",
+    "co": 0.05172,
+    "dx": -0.00457,
+    "dy": 0.18723,
+    "mau": "#FFFFFF",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": -0.05,
+    "hieu_ung": [
+     "lui-nhoe"
+    ],
+    "font_goc": "georgiaz.ttf"
+   },
+   {
+    "chu": "Filmic Reel",
+    "co": 0.04715,
+    "dx": -0.00457,
+    "dy": -0.32227,
+    "mau": "#FFF200",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": -0.05,
+    "hieu_ung": [
+     "lui-nhoe"
+    ],
+    "font_goc": "font.ttf"
+   }
+  ],
+  "hieu_ung": [
+   "loe-sang",
+   "lui-nhoe"
+  ],
+  "ten": "5 dòng · nhiều màu · loe-sang+lui-nhoe",
+  "loai": "chu"
+ },
+ {
+  "ma": "focus",
+  "goc": "focus / Blue Style / rising / texto 1",
+  "dong": 4,
+  "lop": [
+   {
+    "chu": "focus",
+    "co": 0.09054,
+    "dx": 0.02398,
+    "dy": 0.07358,
+    "mau": "#FFFFFF",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [
+     "hien-dan"
+    ],
+    "font_goc": "font.ttf"
+   },
+   {
+    "chu": "Blue Style",
+    "co": 0.0677,
+    "dx": -0.0258,
+    "dy": -0.15592,
+    "mau": "#0089FF",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [
+     "bong-bong"
+    ],
+    "font_goc": "font.ttf"
+   },
+   {
+    "chu": "rising",
+    "co": 0.0497,
+    "dx": 0.02398,
+    "dy": 0.12708,
+    "mau": "#0053FF",
+    "vien": null,
+    "day": null,
+    "bong": "#000000",
+    "gian": -0.1,
+    "hieu_ung": [
+     "hien-dan"
+    ],
+    "font_goc": "arialbi.ttf"
+   },
+   {
+    "chu": "texto 1",
+    "co": 0.0319,
+    "dx": -0.13513,
+    "dy": -0.19892,
+    "mau": "#FFFFFF",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [
+     "bang-lat"
+    ],
+    "font_goc": "Poppins-Black.ttf"
+   }
+  ],
+  "hieu_ung": [
+   "bang-lat",
+   "bong-bong",
+   "hien-dan"
+  ],
+  "ten": "4 dòng · nhiều màu · bang-lat+bong-bong",
+  "loai": "chu"
+ },
+ {
+  "ma": "shine",
+  "goc": "Shine / Shiney / Up / Text V2",
+  "dong": 4,
+  "lop": [
+   {
+    "chu": "Shine",
+    "co": 0.08215,
+    "dx": 0.00092,
+    "dy": 0.09212,
+    "mau": "#0072FF",
+    "vien": null,
+    "day": null,
+    "bong": "#000000",
+    "gian": -0.05,
+    "hieu_ung": [
+     "lui-nhoe"
+    ],
+    "font_goc": "seguibli.ttf"
+   },
+   {
+    "chu": "Shiney",
+    "co": 0.07136,
+    "dx": 0.00981,
+    "dy": -0.10938,
+    "mau": "#0072FF",
+    "vien": null,
+    "day": null,
+    "bong": "#000000",
+    "gian": -0.05,
+    "hieu_ung": [],
+    "font_goc": "seguibli.ttf"
+   },
+   {
+    "chu": "Up",
+    "co": 0.03967,
+    "dx": -0.04175,
+    "dy": 0.00612,
+    "mau": "#FFFFFF",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": -0.05,
+    "hieu_ung": [
+     "nay-dan-hoi"
+    ],
+    "font_goc": "georgiaz.ttf"
+   },
+   {
+    "chu": "Text V2",
+    "co": 0.03451,
+    "dx": 0.00803,
+    "dy": -0.06238,
+    "mau": "#FFFFFF",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": -0.05,
+    "hieu_ung": [],
+    "font_goc": "seguibli.ttf"
+   }
+  ],
+  "hieu_ung": [
+   "lui-nhoe",
+   "nay-dan-hoi"
+  ],
+  "ten": "4 dòng · nhiều màu · lui-nhoe+nay-dan-hoi",
+  "loai": "chu"
+ },
+ {
+  "ma": "tien-te",
+  "goc": "Tiền tệ / Hạn mức / Tương lai / Vay",
+  "dong": 4,
+  "lop": [
+   {
+    "chu": "Tiền tệ",
+    "co": 0.08254,
+    "dx": 0.18394,
+    "dy": 0.10431,
+    "mau": "#FFDC00",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [
+     "bong-bong"
+    ],
+    "font_goc": "SVN-Helvetica Neue Heavy.ttf"
+   },
+   {
+    "chu": "Hạn mức",
+    "co": 0.06883,
+    "dx": -0.32806,
+    "dy": -0.14869,
+    "mau": "#FFDC00",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [
+     "vao-nhoe"
+    ],
+    "font_goc": "SVN-Helvetica Neue Heavy.ttf"
+   },
+   {
+    "chu": "Tương lai",
+    "co": 0.06388,
+    "dx": -0.03028,
+    "dy": 0.04031,
+    "mau": "#FFFFFF",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [
+     "zoom-nhe"
+    ],
+    "font_goc": "SVN-Hand Gothic Regular.otf"
+   },
+   {
+    "chu": "Vay",
+    "co": 0.04599,
+    "dx": 0.20083,
+    "dy": -0.08069,
+    "mau": "#FFFFFF",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [
+     "vao-nhoe"
+    ],
+    "font_goc": "SVN-Helvetica Neue Heavy.ttf"
+   }
+  ],
+  "hieu_ung": [
+   "bong-bong",
+   "vao-nhoe",
+   "zoom-nhe"
+  ],
+  "ten": "4 dòng · nhiều màu · bong-bong+vao-nhoe",
+  "loai": "chu"
+ },
+ {
+  "ma": "travel-tour",
+  "goc": "TRAVEL TOUR / JULY / 16 / START OF PRIMARY",
+  "dong": 4,
+  "lop": [
+   {
+    "chu": "TRAVEL TOUR",
+    "co": 0.01925,
+    "dx": 0.03291,
+    "dy": 0.01254,
+    "mau": "#2D2D2D",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0.1,
+    "hieu_ung": [],
+    "font_goc": "plumbcondensed-bold.ttf"
+   },
+   {
+    "chu": "JULY",
+    "co": 0.01289,
+    "dx": -0.02487,
+    "dy": -0.02346,
+    "mau": "#2D2D2D",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0.1,
+    "hieu_ung": [],
+    "font_goc": "plumbcondensed-bold.ttf"
+   },
+   {
+    "chu": "16",
+    "co": 0.01289,
+    "dx": -0.08442,
+    "dy": -0.02346,
+    "mau": "#2D2D2D",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0.1,
+    "hieu_ung": [],
+    "font_goc": "plumbcondensed-bold.ttf"
+   },
+   {
+    "chu": "START OF PRIMARY",
+    "co": 0.00841,
+    "dx": 0.08446,
+    "dy": 0.04454,
+    "mau": "#1E1E1E",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0.1,
+    "hieu_ung": [],
+    "font_goc": "plumbcondensed-bold.ttf"
+   }
+  ],
+  "hieu_ung": [],
+  "ten": "4 dòng · nhiều màu",
+  "loai": "canh"
+ },
+ {
+  "ma": "3d-appl-message",
+  "goc": "3D Appl+  Message / MESSAGES / now",
+  "dong": 3,
+  "lop": [
+   {
+    "chu": "3D Appl+  Message",
+    "co": 0.04495,
+    "dx": -0.04926,
+    "dy": 0.07947,
+    "mau": "#444444",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [],
+    "font_goc": "Helvetica_0.ttf"
+   },
+   {
+    "chu": "MESSAGES",
+    "co": 0.03526,
+    "dx": -0.13548,
+    "dy": -0.07503,
+    "mau": "#8E8A8A",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [],
+    "font_goc": "Helvetica_0.ttf"
+   },
+   {
+    "chu": "now",
+    "co": 0.02975,
+    "dx": 0.30274,
+    "dy": -0.07603,
+    "mau": "#8E8A8A",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [],
+    "font_goc": "Helvetica_0.ttf"
+   }
+  ],
+  "hieu_ung": [],
+  "ten": "3 dòng · nhiều màu",
+  "loai": "canh"
+ },
+ {
+  "ma": "event-of-year",
+  "goc": "EVENT OF YEAR / 10 NOVEMBER / coming soon",
+  "dong": 3,
+  "lop": [
+   {
+    "chu": "EVENT OF YEAR",
+    "co": 0.03264,
+    "dx": 0.0,
+    "dy": 0.00575,
+    "mau": "#FFFFFF",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [],
+    "font_goc": "impact.ttf"
+   },
+   {
+    "chu": "10 NOVEMBER",
+    "co": 0.01649,
+    "dx": 0.0,
+    "dy": -0.04325,
+    "mau": "#2F2F2F",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [],
+    "font_goc": "impact.ttf"
+   },
+   {
+    "chu": "coming soon",
+    "co": 0.01063,
+    "dx": 0.0,
+    "dy": 0.04975,
+    "mau": "#FFFFFF",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [],
+    "font_goc": "impact.ttf"
+   }
+  ],
+  "hieu_ung": [],
+  "ten": "3 dòng · nhiều màu",
+  "loai": "canh"
+ },
+ {
+  "ma": "poppins",
+  "goc": "Poppins / Texto1 / Texto2",
+  "dong": 3,
+  "lop": [
+   {
+    "chu": "Poppins",
+    "co": 0.077,
+    "dx": -0.00096,
+    "dy": -0.00011,
+    "mau": "#FFDC00",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [
+     "bong-bong"
+    ],
+    "font_goc": "font.ttf"
+   },
+   {
+    "chu": "Texto1",
+    "co": 0.02849,
+    "dx": -0.12362,
+    "dy": -0.05261,
+    "mau": "#FFFFFF",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [
+     "zoom-nhe"
+    ],
+    "font_goc": "FuturaCyrillicBook.ttf"
+   },
+   {
+    "chu": "Texto2",
+    "co": 0.02849,
+    "dx": 0.1306,
+    "dy": 0.05339,
+    "mau": "#FFFFFF",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [
+     "zoom-nhe"
+    ],
+    "font_goc": "FuturaCyrillicBook.ttf"
+   }
+  ],
+  "hieu_ung": [
+   "bong-bong",
+   "zoom-nhe"
+  ],
+  "ten": "3 dòng · nhiều màu · bong-bong+zoom-nhe",
+  "loai": "chu"
+ },
+ {
+  "ma": "xin-chao",
+  "goc": "xin chào / mọi người / đã đến với chương trình",
+  "dong": 3,
+  "lop": [
+   {
+    "chu": "xin chào",
+    "co": 0.06417,
+    "dx": -0.09124,
+    "dy": -0.00829,
+    "mau": "#5DA7FF",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": -0.05,
+    "hieu_ung": [
+     "nhay-len"
+    ],
+    "font_goc": "SVN-Helvetica Neue Heavy.ttf"
+   },
+   {
+    "chu": "mọi người",
+    "co": 0.05056,
+    "dx": 0.1541,
+    "dy": 0.00921,
+    "mau": "#FFFFFF",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": -0.05,
+    "hieu_ung": [
+     "bang-lat"
+    ],
+    "font_goc": "SVN-Sofia.ttf"
+   },
+   {
+    "chu": "đã đến với chương trình",
+    "co": 0.01624,
+    "dx": -0.06901,
+    "dy": 0.04021,
+    "mau": "#FFFFFF",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": -0.05,
+    "hieu_ung": [
+     "phong-toi"
+    ],
+    "font_goc": "timesbi.ttf"
+   }
+  ],
+  "hieu_ung": [
+   "bang-lat",
+   "nhay-len",
+   "phong-toi"
+  ],
+  "ten": "3 dòng · nhiều màu · bang-lat+nhay-len",
+  "loai": "chu"
+ },
+ {
+  "ma": "1-720-43",
+  "goc": "$1.720,43 / Total money",
+  "dong": 2,
+  "lop": [
+   {
+    "chu": "$1.720,43",
+    "co": 0.02411,
+    "dx": 0.00402,
+    "dy": 0.00237,
+    "mau": "#FFFFFF",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [],
+    "font_goc": "Helvetica-Bold_0.ttf"
+   },
+   {
+    "chu": "Total money",
+    "co": 0.00671,
+    "dx": -0.05198,
+    "dy": -0.03063,
+    "mau": "#666666",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [],
+    "font_goc": "HelveticaNeue-Roman.otf"
+   }
+  ],
+  "hieu_ung": [],
+  "ten": "2 dòng · nhiều màu",
+  "loai": "canh"
+ },
+ {
+  "ma": "3d-appl-message-2",
+  "goc": "3D Appl+  Message / MESSAGES",
+  "dong": 2,
+  "lop": [
+   {
+    "chu": "3D Appl+  Message",
+    "co": 0.04495,
+    "dx": 0.03284,
+    "dy": 0.05885,
+    "mau": "#444444",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [],
+    "font_goc": "Helvetica_0.ttf"
+   },
+   {
+    "chu": "MESSAGES",
+    "co": 0.03526,
+    "dx": -0.05338,
+    "dy": -0.09565,
+    "mau": "#8E8A8A",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [],
+    "font_goc": "Helvetica_0.ttf"
+   }
+  ],
+  "hieu_ung": [],
+  "ten": "2 dòng · nhiều màu",
+  "loai": "canh"
+ },
+ {
+  "ma": "apple-style",
+  "goc": "Apple Style / + sound",
+  "dong": 2,
+  "lop": [
+   {
+    "chu": "Apple Style",
+    "co": 0.05211,
+    "dx": 0.00066,
+    "dy": -0.00699,
+    "mau": "#FFFFFF",
+    "vien": "#FCFF00",
+    "day": 0.0051,
+    "bong": null,
+    "gian": -0.05,
+    "hieu_ung": [
+     "roi-nhanh"
+    ],
+    "font_goc": "Helvetica-Bold_0.ttf"
+   },
+   {
+    "chu": "+ sound",
+    "co": 0.02178,
+    "dx": -0.00378,
+    "dy": 0.04001,
+    "mau": "#2FFBFB",
+    "vien": "#FCFF00",
+    "day": 0.0051,
+    "bong": null,
+    "gian": -0.05,
+    "hieu_ung": [
+     "roi-nhanh"
+    ],
+    "font_goc": "Helvetica-Bold_0.ttf"
+   }
+  ],
+  "hieu_ung": [
+   "roi-nhanh"
+  ],
+  "ten": "2 dòng · nhiều màu · roi-nhanh",
+  "loai": "chu"
+ },
+ {
+  "ma": "blue-style",
+  "goc": "Blue Style / elegante",
+  "dong": 2,
+  "lop": [
+   {
+    "chu": "Blue Style",
+    "co": 0.05727,
+    "dx": 0.00391,
+    "dy": -0.01497,
+    "mau": "#0089FF",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": -0.1,
+    "hieu_ung": [
+     "bong-bong"
+    ],
+    "font_goc": "timesbi.ttf"
+   },
+   {
+    "chu": "elegante",
+    "co": 0.05081,
+    "dx": -0.00497,
+    "dy": 0.01903,
+    "mau": "#FFFFFF",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [
+     "bang-lat"
+    ],
+    "font_goc": "font.ttf"
+   }
+  ],
+  "hieu_ung": [
+   "bang-lat",
+   "bong-bong"
+  ],
+  "ten": "2 dòng · nhiều màu · bang-lat+bong-bong",
+  "loai": "chu"
+ },
+ {
+  "ma": "blue-style-2",
+  "goc": "Blue Style / texto 1",
+  "dong": 2,
+  "lop": [
+   {
+    "chu": "Blue Style",
+    "co": 0.22572,
+    "dx": 0.06667,
+    "dy": 0.02606,
+    "mau": "#0089FF",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [
+     "bong-bong"
+    ],
+    "font_goc": "font.ttf"
+   },
+   {
+    "chu": "texto 1",
+    "co": 0.10633,
+    "dx": -0.30044,
+    "dy": -0.11744,
+    "mau": "#FFFFFF",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [
+     "bang-lat"
+    ],
+    "font_goc": "Poppins-Black.ttf"
+   }
+  ],
+  "hieu_ung": [
+   "bang-lat",
+   "bong-bong"
+  ],
+  "ten": "2 dòng · nhiều màu · bang-lat+bong-bong",
+  "loai": "chu"
+ },
+ {
+  "ma": "chua",
+  "goc": "chưa / BẤTNGỜ",
+  "dong": 2,
+  "lop": [
+   {
+    "chu": "chưa",
+    "co": 0.0629,
+    "dx": 0.0387,
+    "dy": 0.00185,
+    "mau": "#FCFF00",
+    "vien": "#000000",
+    "day": 0.0805,
+    "bong": null,
+    "gian": -0.05,
+    "hieu_ung": [],
+    "font_goc": "timesbi.ttf"
+   },
+   {
+    "chu": "BẤTNGỜ",
+    "co": 0.05843,
+    "dx": -0.04485,
+    "dy": -0.00215,
+    "mau": "#FCFF00",
+    "vien": "#FCFF00",
+    "day": 0.0051,
+    "bong": null,
+    "gian": -0.05,
+    "hieu_ung": [],
+    "font_goc": "seguibli.ttf"
+   }
+  ],
+  "hieu_ung": [],
+  "ten": "2 dòng · viền chồng",
+  "loai": "chu"
+ },
+ {
+  "ma": "dap-an-sai",
+  "goc": "Đáp Án Sai / Không Bao Giờ",
+  "dong": 2,
+  "lop": [
+   {
+    "chu": "Đáp Án Sai",
+    "co": 0.06041,
+    "dx": -0.0,
+    "dy": -0.05049,
+    "mau": "#FFFFFF",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [
+     "den-hong"
+    ],
+    "font_goc": "impact.ttf"
+   },
+   {
+    "chu": "Không Bao Giờ",
+    "co": 0.05518,
+    "dx": -0.0,
+    "dy": 0.06051,
+    "mau": "#FFFFFF",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [
+     "phong-toi"
+    ],
+    "font_goc": "SVN-Neutraface 2.otf"
+   }
+  ],
+  "hieu_ung": [
+   "den-hong",
+   "phong-toi"
+  ],
+  "ten": "2 dòng · den-hong+phong-toi",
+  "loai": "chu"
+ },
+ {
+  "ma": "elegante",
+  "goc": "elegante / Yellow Style",
+  "dong": 2,
+  "lop": [
+   {
+    "chu": "elegante",
+    "co": 0.06414,
+    "dx": 0.00355,
+    "dy": 0.01442,
+    "mau": "#FFFFFF",
+    "vien": null,
+    "day": null,
+    "bong": "#000000",
+    "gian": 0,
+    "hieu_ung": [
+     "bang-lat"
+    ],
+    "font_goc": "font.ttf"
+   },
+   {
+    "chu": "Yellow Style",
+    "co": 0.05727,
+    "dx": -0.00445,
+    "dy": -0.01808,
+    "mau": "#FCFF00",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": -0.1,
+    "hieu_ung": [
+     "bong-bong"
+    ],
+    "font_goc": "timesbi.ttf"
+   }
+  ],
+  "hieu_ung": [
+   "bang-lat",
+   "bong-bong"
+  ],
+  "ten": "2 dòng · nhiều màu · bang-lat+bong-bong",
+  "loai": "chu"
+ },
+ {
+  "ma": "flicker-2",
+  "goc": "Flicker / Shine",
+  "dong": 2,
+  "lop": [
+   {
+    "chu": "Flicker",
+    "co": 0.27563,
+    "dx": 0.0065,
+    "dy": -0.05483,
+    "mau": "#FFDC00",
+    "vien": null,
+    "day": null,
+    "bong": "#000000",
+    "gian": 0,
+    "hieu_ung": [
+     "loe-sang"
+    ],
+    "font_goc": "timesbi.ttf"
+   },
+   {
+    "chu": "Shine",
+    "co": 0.17238,
+    "dx": -0.01661,
+    "dy": 0.14017,
+    "mau": "#FFFFFF",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [
+     "lui-nhoe"
+    ],
+    "font_goc": "georgiaz.ttf"
+   }
+  ],
+  "hieu_ung": [
+   "loe-sang",
+   "lui-nhoe"
+  ],
+  "ten": "2 dòng · nhiều màu · loe-sang+lui-nhoe",
+  "loai": "chu"
+ },
+ {
+  "ma": "flicker-3",
+  "goc": "Flicker / Shine",
+  "dong": 2,
+  "lop": [
+   {
+    "chu": "Flicker",
+    "co": 0.27563,
+    "dx": 0.0065,
+    "dy": -0.05483,
+    "mau": "#009F52",
+    "vien": null,
+    "day": null,
+    "bong": "#000000",
+    "gian": 0,
+    "hieu_ung": [
+     "loe-sang"
+    ],
+    "font_goc": "timesbi.ttf"
+   },
+   {
+    "chu": "Shine",
+    "co": 0.17238,
+    "dx": -0.01661,
+    "dy": 0.14017,
+    "mau": "#FFFFFF",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [
+     "lui-nhoe"
+    ],
+    "font_goc": "georgiaz.ttf"
+   }
+  ],
+  "hieu_ung": [
+   "loe-sang",
+   "lui-nhoe"
+  ],
+  "ten": "2 dòng · nhiều màu · loe-sang+lui-nhoe",
+  "loai": "chu"
+ },
+ {
+  "ma": "focus-2",
+  "goc": "focus / rising",
+  "dong": 2,
+  "lop": [
+   {
+    "chu": "focus",
+    "co": 0.30185,
+    "dx": 0.0,
+    "dy": -0.04116,
+    "mau": "#FFFFFF",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [
+     "hien-dan"
+    ],
+    "font_goc": "font.ttf"
+   },
+   {
+    "chu": "rising",
+    "co": 0.16586,
+    "dx": 0.0,
+    "dy": 0.13634,
+    "mau": "#0053FF",
+    "vien": null,
+    "day": null,
+    "bong": "#000000",
+    "gian": 0,
+    "hieu_ung": [
+     "hien-dan"
+    ],
+    "font_goc": "arialbi.ttf"
+   }
+  ],
+  "hieu_ung": [
+   "hien-dan"
+  ],
+  "ten": "2 dòng · nhiều màu · hien-dan",
+  "loai": "chu"
+ },
+ {
+  "ma": "han-muc",
+  "goc": "Hạn mức / Vay",
+  "dong": 2,
+  "lop": [
+   {
+    "chu": "Hạn mức",
+    "co": 0.22935,
+    "dx": -0.5434,
+    "dy": -0.0699,
+    "mau": "#FFDC00",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [
+     "vao-nhoe"
+    ],
+    "font_goc": "SVN-Helvetica Neue Heavy.ttf"
+   },
+   {
+    "chu": "Vay",
+    "co": 0.15322,
+    "dx": 1.21749,
+    "dy": 0.1566,
+    "mau": "#FFFFFF",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [
+     "vao-nhoe"
+    ],
+    "font_goc": "SVN-Helvetica Neue Heavy.ttf"
+   }
+  ],
+  "hieu_ung": [
+   "vao-nhoe"
+  ],
+  "ten": "2 dòng · nhiều màu · vao-nhoe",
+  "loai": "chu"
+ },
+ {
+  "ma": "shine-2",
+  "goc": "Shine / Up",
+  "dong": 2,
+  "lop": [
+   {
+    "chu": "Shine",
+    "co": 0.27368,
+    "dx": 0.02711,
+    "dy": 0.05419,
+    "mau": "#0072FF",
+    "vien": null,
+    "day": null,
+    "bong": "#000000",
+    "gian": 0,
+    "hieu_ung": [
+     "lui-nhoe"
+    ],
+    "font_goc": "seguibli.ttf"
+   },
+   {
+    "chu": "Up",
+    "co": 0.13232,
+    "dx": -0.116,
+    "dy": -0.23181,
+    "mau": "#FFFFFF",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [
+     "nay-dan-hoi"
+    ],
+    "font_goc": "georgiaz.ttf"
+   }
+  ],
+  "hieu_ung": [
+   "lui-nhoe",
+   "nay-dan-hoi"
+  ],
+  "ten": "2 dòng · nhiều màu · lui-nhoe+nay-dan-hoi",
+  "loai": "chu"
+ },
+ {
+  "ma": "shiney",
+  "goc": "Shiney / Text V2",
+  "dong": 2,
+  "lop": [
+   {
+    "chu": "Shiney",
+    "co": 0.2379,
+    "dx": 0.00135,
+    "dy": -0.02965,
+    "mau": "#0072FF",
+    "vien": null,
+    "day": null,
+    "bong": "#000000",
+    "gian": 0,
+    "hieu_ung": [],
+    "font_goc": "seguibli.ttf"
+   },
+   {
+    "chu": "Text V2",
+    "co": 0.11501,
+    "dx": -0.00576,
+    "dy": 0.12685,
+    "mau": "#FFFFFF",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [],
+    "font_goc": "seguibli.ttf"
+   }
+  ],
+  "hieu_ung": [],
+  "ten": "2 dòng · nhiều màu",
+  "loai": "chu"
+ },
+ {
+  "ma": "sticker",
+  "goc": "Sticker / Sticker",
+  "dong": 2,
+  "lop": [
+   {
+    "chu": "Sticker",
+    "co": 0.07136,
+    "dx": 0.0,
+    "dy": -0.07433,
+    "mau": "#0072FF",
+    "vien": "#FFFFFF",
+    "day": 0.0658,
+    "bong": "#000000",
+    "gian": -0.05,
+    "hieu_ung": [],
+    "font_goc": "seguibli.ttf"
+   },
+   {
+    "chu": "Sticker",
+    "co": 0.07136,
+    "dx": 0.0,
+    "dy": -0.07433,
+    "mau": "#0072FF",
+    "vien": null,
+    "day": null,
+    "bong": "#000000",
+    "gian": -0.05,
+    "hieu_ung": [],
+    "font_goc": "seguibli.ttf"
+   },
+   {
+    "chu": "Sticker",
+    "co": 0.07136,
+    "dx": 0.0,
+    "dy": 0.14867,
+    "mau": "#0072FF",
+    "vien": null,
+    "day": null,
+    "bong": "#000000",
+    "gian": -0.05,
+    "hieu_ung": [],
+    "font_goc": "seguibli.ttf"
+   }
+  ],
+  "hieu_ung": [],
+  "ten": "2 dòng · viền chồng",
+  "loai": "chu"
+ },
+ {
+  "ma": "the-chap",
+  "goc": "Thế chấp / Tài sản",
+  "dong": 2,
+  "lop": [
+   {
+    "chu": "Thế chấp",
+    "co": 0.04686,
+    "dx": 0.00365,
+    "dy": 0.00648,
+    "mau": "#FCFF00",
+    "vien": null,
+    "day": null,
+    "bong": "#000000",
+    "gian": -0.05,
+    "hieu_ung": [
+     "bong-bong",
+     "roi-truot"
+    ],
+    "font_goc": "SVN-Helvetica Neue Heavy.ttf"
+   },
+   {
+    "chu": "Tài sản",
+    "co": 0.0246,
+    "dx": -0.01324,
+    "dy": -0.02352,
+    "mau": "#FFFFFF",
+    "vien": null,
+    "day": null,
+    "bong": "#000000",
+    "gian": 0,
+    "hieu_ung": [
+     "nay-dan-hoi",
+     "roi-truot"
+    ],
+    "font_goc": "SVN-Helvetica Neue Heavy.ttf"
+   }
+  ],
+  "hieu_ung": [
+   "bong-bong",
+   "nay-dan-hoi",
+   "roi-truot"
+  ],
+  "ten": "2 dòng · nhiều màu · bong-bong+nay-dan-hoi",
+  "loai": "chu"
+ },
+ {
+  "ma": "tien-te-2",
+  "goc": "Tiền tệ / Tương lai",
+  "dong": 2,
+  "lop": [
+   {
+    "chu": "Tiền tệ",
+    "co": 0.27514,
+    "dx": 0.26701,
+    "dy": 0.07978,
+    "mau": "#FFDC00",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [
+     "bong-bong"
+    ],
+    "font_goc": "SVN-Helvetica Neue Heavy.ttf"
+   },
+   {
+    "chu": "Tương lai",
+    "co": 0.21292,
+    "dx": -0.44588,
+    "dy": -0.13322,
+    "mau": "#FFFFFF",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [
+     "zoom-nhe"
+    ],
+    "font_goc": "SVN-Hand Gothic Regular.otf"
+   }
+  ],
+  "hieu_ung": [
+   "bong-bong",
+   "zoom-nhe"
+  ],
+  "ten": "2 dòng · nhiều màu · bong-bong+zoom-nhe",
+  "loai": "chu"
+ },
+ {
+  "ma": "yeah-sr",
+  "goc": "yeah sr / for real?",
+  "dong": 2,
+  "lop": [
+   {
+    "chu": "yeah sr",
+    "co": 0.02557,
+    "dx": 0.06178,
+    "dy": 0.0405,
+    "mau": "#FFFFFF",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [
+     "chu-rung"
+    ],
+    "font_goc": "Helvetica_0.ttf"
+   },
+   {
+    "chu": "for real?",
+    "co": 0.02557,
+    "dx": -0.06178,
+    "dy": -0.0405,
+    "mau": "#FFFFFF",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [
+     "chu-rung"
+    ],
+    "font_goc": "Helvetica_0.ttf"
+   }
+  ],
+  "hieu_ung": [
+   "chu-rung"
+  ],
+  "ten": "2 dòng · chu-rung",
+  "loai": "chu"
+ },
+ {
+  "ma": "aesthetic-text",
+  "goc": "aesthetic text",
+  "dong": 1,
+  "lop": [
+   {
+    "chu": "aesthetic text",
+    "co": 0.10431,
+    "dx": 0.0,
+    "dy": -0.0,
+    "mau": "#FFFFFF",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [
+     "den-hong"
+    ],
+    "font_goc": "impact.ttf"
+   }
+  ],
+  "hieu_ung": [
+   "den-hong"
+  ],
+  "ten": "1 dòng · den-hong",
+  "loai": "chu"
+ },
+ {
+  "ma": "ask-me-anything",
+  "goc": "Ask me anything...",
+  "dong": 1,
+  "lop": [
+   {
+    "chu": "Ask me anything...",
+    "co": 0.0174,
+    "dx": 0.0,
+    "dy": 0.0,
+    "mau": "#9D9C9C",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [],
+    "font_goc": "en.ttf"
+   }
+  ],
+  "hieu_ung": [],
+  "ten": "1 dòng",
+  "loai": "canh"
+ },
+ {
+  "ma": "ask-me-anything-2",
+  "goc": "Ask me anything...",
+  "dong": 1,
+  "lop": [
+   {
+    "chu": "Ask me anything...",
+    "co": 0.0174,
+    "dx": 0.0,
+    "dy": 0.0,
+    "mau": "#F2F2F2",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [],
+    "font_goc": "en.ttf"
+   }
+  ],
+  "hieu_ung": [],
+  "ten": "1 dòng",
+  "loai": "canh"
+ },
+ {
+  "ma": "bebas-neue",
+  "goc": "BEBAS NEUE",
+  "dong": 1,
+  "lop": [
+   {
+    "chu": "BEBAS NEUE",
+    "co": 0.06191,
+    "dx": 0.0,
+    "dy": 0.0,
+    "mau": "#FFFFFF",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [
+     "phong-toi"
+    ],
+    "font_goc": "BebasNeue-Regular.ttf"
+   }
+  ],
+  "hieu_ung": [
+   "phong-toi"
+  ],
+  "ten": "1 dòng · phong-toi",
+  "loai": "chu"
+ },
+ {
+  "ma": "better",
+  "goc": "BETTER",
+  "dong": 1,
+  "lop": [
+   {
+    "chu": "BETTER",
+    "co": 0.14097,
+    "dx": 0.0,
+    "dy": 0.0,
+    "mau": "#FFFFFF",
+    "vien": "#FCFF00",
+    "day": 0.0051,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [],
+    "font_goc": "seguibli.ttf"
+   }
+  ],
+  "hieu_ung": [],
+  "ten": "1 dòng",
+  "loai": "chu"
+ },
+ {
+  "ma": "blue-style-3",
+  "goc": "Blue Style",
+  "dong": 1,
+  "lop": [
+   {
+    "chu": "Blue Style",
+    "co": 0.22572,
+    "dx": 0.0,
+    "dy": -0.0,
+    "mau": "#60B7FF",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [
+     "bong-bong"
+    ],
+    "font_goc": "font.ttf"
+   }
+  ],
+  "hieu_ung": [
+   "bong-bong"
+  ],
+  "ten": "1 dòng · bong-bong",
+  "loai": "chu"
+ },
+ {
+  "ma": "blue-style-4",
+  "goc": "Blue Style",
+  "dong": 1,
+  "lop": [
+   {
+    "chu": "Blue Style",
+    "co": 0.22572,
+    "dx": 0.0,
+    "dy": -0.0,
+    "mau": "#FFFFFF",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [
+     "bong-bong"
+    ],
+    "font_goc": "font.ttf"
+   }
+  ],
+  "hieu_ung": [
+   "bong-bong"
+  ],
+  "ten": "1 dòng · bong-bong",
+  "loai": "chu"
+ },
+ {
+  "ma": "boi-chu-y",
+  "goc": "Bôi chú ý",
+  "dong": 1,
+  "lop": [
+   {
+    "chu": "Bôi chú ý",
+    "co": 0.09722,
+    "dx": 0.0,
+    "dy": -0.0,
+    "mau": "#FFFFFF",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": -0.05,
+    "hieu_ung": [
+     "bang-lat"
+    ],
+    "font_goc": "SVN-Bulgary.otf"
+   }
+  ],
+  "hieu_ung": [
+   "bang-lat"
+  ],
+  "ten": "1 dòng · bang-lat",
+  "loai": "chu"
+ },
+ {
+  "ma": "cartoon",
+  "goc": "CARTOON",
+  "dong": 1,
+  "lop": [
+   {
+    "chu": "CARTOON",
+    "co": 0.05189,
+    "dx": 0.0,
+    "dy": 0.0,
+    "mau": "#F9FF00",
+    "vien": "#FFFFFF",
+    "day": 0.1466,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [],
+    "font_goc": "Funny & Cute.ttf"
+   },
+   {
+    "chu": "CARTOON",
+    "co": 0.05189,
+    "dx": 0.0,
+    "dy": 0.0,
+    "mau": "#F9FF00",
+    "vien": "#000000",
+    "day": 0.1136,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [],
+    "font_goc": "Funny & Cute.ttf"
+   },
+   {
+    "chu": "CARTOON",
+    "co": 0.05189,
+    "dx": 0.0,
+    "dy": 0.0,
+    "mau": "#F9FF00",
+    "vien": "#221F00",
+    "day": 0.0669,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [],
+    "font_goc": "Funny & Cute.ttf"
+   }
+  ],
+  "hieu_ung": [],
+  "ten": "1 dòng · viền chồng",
+  "loai": "chu"
+ },
+ {
+  "ma": "cartoon-2",
+  "goc": "CARTOON",
+  "dong": 1,
+  "lop": [
+   {
+    "chu": "CARTOON",
+    "co": 0.05189,
+    "dx": 0.0,
+    "dy": -0.0,
+    "mau": "#F9FF00",
+    "vien": "#FFFFFF",
+    "day": 0.172,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [],
+    "font_goc": "Funny & Cute.ttf"
+   },
+   {
+    "chu": "CARTOON",
+    "co": 0.05189,
+    "dx": 0.0,
+    "dy": -0.0,
+    "mau": "#F9FF00",
+    "vien": "#001844",
+    "day": 0.1271,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [],
+    "font_goc": "Funny & Cute.ttf"
+   },
+   {
+    "chu": "CARTOON",
+    "co": 0.05189,
+    "dx": 0.0,
+    "dy": -0.0,
+    "mau": "#FFFFFF",
+    "vien": "#0068FF",
+    "day": 0.0669,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [],
+    "font_goc": "Funny & Cute.ttf"
+   }
+  ],
+  "hieu_ung": [],
+  "ten": "1 dòng · viền chồng · nhiều màu",
+  "loai": "chu"
+ },
+ {
+  "ma": "cartoon-3",
+  "goc": "CARTOON",
+  "dong": 1,
+  "lop": [
+   {
+    "chu": "CARTOON",
+    "co": 0.12975,
+    "dx": 0.00415,
+    "dy": 0.00117,
+    "mau": "#FFFFFF",
+    "vien": "#FFD200",
+    "day": 0.12,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [],
+    "font_goc": "font.ttf"
+   },
+   {
+    "chu": "CARTOON",
+    "co": 0.12975,
+    "dx": -0.00207,
+    "dy": 0.00517,
+    "mau": "#FFFFFF",
+    "vien": "#840303",
+    "day": 0.0669,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [],
+    "font_goc": "font.ttf"
+   },
+   {
+    "chu": "CARTOON",
+    "co": 0.12975,
+    "dx": -0.00207,
+    "dy": -0.00633,
+    "mau": "#FFFFFF",
+    "vien": "#E80A0B",
+    "day": 0.0669,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [],
+    "font_goc": "font.ttf"
+   }
+  ],
+  "hieu_ung": [],
+  "ten": "1 dòng · viền chồng",
+  "loai": "chu"
+ },
+ {
+  "ma": "cartoon-4",
+  "goc": "CARTOON",
+  "dong": 1,
+  "lop": [
+   {
+    "chu": "CARTOON",
+    "co": 0.09577,
+    "dx": 0.0,
+    "dy": -0.0,
+    "mau": "#C1C612",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [],
+    "font_goc": "Funny & Cute.ttf"
+   }
+  ],
+  "hieu_ung": [],
+  "ten": "1 dòng",
+  "loai": "chu"
+ },
+ {
+  "ma": "co-mot",
+  "goc": "Có một",
+  "dong": 1,
+  "lop": [
+   {
+    "chu": "Có một",
+    "co": 0.02382,
+    "dx": 0.0,
+    "dy": 0.0,
+    "mau": "#F2F2F2",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [
+     "truot-len"
+    ],
+    "font_goc": "SVN-Hand Gothic Regular.otf"
+   }
+  ],
+  "hieu_ung": [
+   "truot-len"
+  ],
+  "ten": "1 dòng · truot-len",
+  "loai": "chu"
+ },
+ {
+  "ma": "co-mot-2",
+  "goc": "Có một",
+  "dong": 1,
+  "lop": [
+   {
+    "chu": "Có một",
+    "co": 0.1295,
+    "dx": 0.0,
+    "dy": 0.0,
+    "mau": "#FFFFFF",
+    "vien": null,
+    "day": null,
+    "bong": "#000000",
+    "gian": 0,
+    "hieu_ung": [
+     "truot-xuong"
+    ],
+    "font_goc": "seguibl.ttf"
+   }
+  ],
+  "hieu_ung": [
+   "truot-xuong"
+  ],
+  "ten": "1 dòng · truot-xuong",
+  "loai": "chu"
+ },
+ {
+  "ma": "dang-tren-facebook",
+  "goc": "Đăng trên FACEBOOK",
+  "dong": 1,
+  "lop": [
+   {
+    "chu": "Đăng trên FACEBOOK",
+    "co": 0.12982,
+    "dx": 0.0,
+    "dy": 0.0,
+    "mau": "#FF0000",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [
+     "mo-sach"
+    ],
+    "font_goc": "impact.ttf"
+   }
+  ],
+  "hieu_ung": [
+   "mo-sach"
+  ],
+  "ten": "1 dòng · mo-sach",
+  "loai": "chu"
+ },
+ {
+  "ma": "dap-an-sai-2",
+  "goc": "Đáp Án Sai",
+  "dong": 1,
+  "lop": [
+   {
+    "chu": "Đáp Án Sai",
+    "co": 0.20136,
+    "dx": 0.0,
+    "dy": -0.0,
+    "mau": "#FFFFFF",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [
+     "den-hong"
+    ],
+    "font_goc": "impact.ttf"
+   }
+  ],
+  "hieu_ung": [
+   "den-hong"
+  ],
+  "ten": "1 dòng · den-hong",
+  "loai": "chu"
+ },
+ {
+  "ma": "dap-an-sai-3",
+  "goc": "Đáp Án Sai",
+  "dong": 1,
+  "lop": [
+   {
+    "chu": "Đáp Án Sai",
+    "co": 0.2394,
+    "dx": 0.0,
+    "dy": -0.0,
+    "mau": "#FF0000",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [
+     "den-hong"
+    ],
+    "font_goc": "impact.ttf"
+   }
+  ],
+  "hieu_ung": [
+   "den-hong"
+  ],
+  "ten": "1 dòng · den-hong",
+  "loai": "chu"
+ },
+ {
+  "ma": "filmic-reel",
+  "goc": "Filmic Reel",
+  "dong": 1,
+  "lop": [
+   {
+    "chu": "Filmic Reel",
+    "co": 0.15731,
+    "dx": 0.0,
+    "dy": 0.0,
+    "mau": "#FFF200",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [
+     "lui-nhoe"
+    ],
+    "font_goc": "font.ttf"
+   }
+  ],
+  "hieu_ung": [
+   "lui-nhoe"
+  ],
+  "ten": "1 dòng · lui-nhoe",
+  "loai": "chu"
+ },
+ {
+  "ma": "flicker-4",
+  "goc": "Flicker",
+  "dong": 1,
+  "lop": [
+   {
+    "chu": "Flicker",
+    "co": 0.32608,
+    "dx": 0.0,
+    "dy": 0.0,
+    "mau": "#E5FF89",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [
+     "loe-sang"
+    ],
+    "font_goc": "timesbi.ttf"
+   }
+  ],
+  "hieu_ung": [
+   "loe-sang"
+  ],
+  "ten": "1 dòng · loe-sang",
+  "loai": "chu"
+ },
+ {
+  "ma": "flicker-5",
+  "goc": "Flicker",
+  "dong": 1,
+  "lop": [
+   {
+    "chu": "Flicker",
+    "co": 0.27563,
+    "dx": 0.0,
+    "dy": 0.0,
+    "mau": "#FFDC00",
+    "vien": "#FFFFFF",
+    "day": 0.015,
+    "bong": "#000000",
+    "gian": 0,
+    "hieu_ung": [
+     "loe-sang"
+    ],
+    "font_goc": "timesbi.ttf"
+   }
+  ],
+  "hieu_ung": [
+   "loe-sang"
+  ],
+  "ten": "1 dòng · loe-sang",
+  "loai": "chu"
+ },
+ {
+  "ma": "flicker-6",
+  "goc": "Flicker",
+  "dong": 1,
+  "lop": [
+   {
+    "chu": "Flicker",
+    "co": 0.32608,
+    "dx": 0.0,
+    "dy": 0.0,
+    "mau": "#00FF8A",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [
+     "loe-sang"
+    ],
+    "font_goc": "timesbi.ttf"
+   }
+  ],
+  "hieu_ung": [
+   "loe-sang"
+  ],
+  "ten": "1 dòng · loe-sang",
+  "loai": "chu"
+ },
+ {
+  "ma": "flicker-7",
+  "goc": "Flicker",
+  "dong": 1,
+  "lop": [
+   {
+    "chu": "Flicker",
+    "co": 0.27563,
+    "dx": 0.0,
+    "dy": 0.0,
+    "mau": "#00FF8A",
+    "vien": "#FFFFFF",
+    "day": 0.015,
+    "bong": "#000000",
+    "gian": 0,
+    "hieu_ung": [
+     "loe-sang"
+    ],
+    "font_goc": "timesbi.ttf"
+   }
+  ],
+  "hieu_ung": [
+   "loe-sang"
+  ],
+  "ten": "1 dòng · loe-sang",
+  "loai": "chu"
+ },
+ {
+  "ma": "flicker-style",
+  "goc": "Flicker Style",
+  "dong": 1,
+  "lop": [
+   {
+    "chu": "Flicker Style",
+    "co": 0.05211,
+    "dx": 0.0,
+    "dy": 0.0,
+    "mau": "#FFFFFF",
+    "vien": "#FCFF00",
+    "day": 0.0051,
+    "bong": null,
+    "gian": -0.05,
+    "hieu_ung": [],
+    "font_goc": "Helvetica-Bold_0.ttf"
+   }
+  ],
+  "hieu_ung": [],
+  "ten": "1 dòng",
+  "loai": "chu"
+ },
+ {
+  "ma": "generate-site",
+  "goc": "Generate Site",
+  "dong": 1,
+  "lop": [
+   {
+    "chu": "Generate Site",
+    "co": 0.02742,
+    "dx": 0.0,
+    "dy": 0.0,
+    "mau": "#F2F2F2",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [],
+    "font_goc": "en.ttf"
+   }
+  ],
+  "hieu_ung": [],
+  "ten": "1 dòng",
+  "loai": "canh"
+ },
+ {
+  "ma": "glass-button",
+  "goc": "Glass Button",
+  "dong": 1,
+  "lop": [
+   {
+    "chu": "Glass Button",
+    "co": 0.05833,
+    "dx": 0.0,
+    "dy": 0.0,
+    "mau": "#FFFFFF",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [
+     "den-hong"
+    ],
+    "font_goc": "arialbi.ttf"
+   }
+  ],
+  "hieu_ung": [
+   "den-hong"
+  ],
+  "ten": "1 dòng · den-hong",
+  "loai": "chu"
+ },
+ {
+  "ma": "han-muc-2",
+  "goc": "Hạn mức",
+  "dong": 1,
+  "lop": [
+   {
+    "chu": "Hạn mức",
+    "co": 0.22935,
+    "dx": 0.0,
+    "dy": 0.0,
+    "mau": "#E6EEAE",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [
+     "vao-nhoe"
+    ],
+    "font_goc": "SVN-Helvetica Neue Heavy.ttf"
+   }
+  ],
+  "hieu_ung": [
+   "vao-nhoe"
+  ],
+  "ten": "1 dòng · vao-nhoe",
+  "loai": "chu"
+ },
+ {
+  "ma": "in-review",
+  "goc": "In Review",
+  "dong": 1,
+  "lop": [
+   {
+    "chu": "In Review",
+    "co": 0.02917,
+    "dx": 0.0,
+    "dy": 0.0,
+    "mau": "#FF8000",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [],
+    "font_goc": "Helvetica-Bold_0.ttf"
+   }
+  ],
+  "hieu_ung": [],
+  "ten": "1 dòng",
+  "loai": "canh"
+ },
+ {
+  "ma": "in-review-2",
+  "goc": "In Review",
+  "dong": 1,
+  "lop": [
+   {
+    "chu": "In Review",
+    "co": 0.02917,
+    "dx": 0.0,
+    "dy": 0.0,
+    "mau": "#35C85C",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [],
+    "font_goc": "Helvetica-Bold_0.ttf"
+   }
+  ],
+  "hieu_ung": [],
+  "ten": "1 dòng",
+  "loai": "canh"
+ },
+ {
+  "ma": "khong-bao-gio",
+  "goc": "Không Bao Giờ",
+  "dong": 1,
+  "lop": [
+   {
+    "chu": "Không Bao Giờ",
+    "co": 0.18399,
+    "dx": 0.0,
+    "dy": 0.0,
+    "mau": "#FFFFFF",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [
+     "phong-toi"
+    ],
+    "font_goc": "SVN-Neutraface 2.otf"
+   }
+  ],
+  "hieu_ung": [
+   "phong-toi"
+  ],
+  "ten": "1 dòng · phong-toi",
+  "loai": "chu"
+ },
+ {
+  "ma": "do-la",
+  "goc": "$$$$",
+  "dong": 1,
+  "lop": [
+   {
+    "chu": "$$$$",
+    "co": 0.38841,
+    "dx": 0.0,
+    "dy": -0.0,
+    "mau": "#A0CCFF",
+    "vien": "#0062A8",
+    "day": 0.0133,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [],
+    "font_goc": "Inter_18pt-ExtraBoldItalic.ttf"
+   }
+  ],
+  "hieu_ung": [],
+  "ten": "1 dòng",
+  "loai": "chu"
+ },
+ {
+  "ma": "know",
+  "goc": "KNOW",
+  "dong": 1,
+  "lop": [
+   {
+    "chu": "KNOW",
+    "co": 0.14097,
+    "dx": 0.0,
+    "dy": 0.0,
+    "mau": "#FFFFFF",
+    "vien": "#FCFF00",
+    "day": 0.0051,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [],
+    "font_goc": "seguibli.ttf"
+   }
+  ],
+  "hieu_ung": [],
+  "ten": "1 dòng",
+  "loai": "chu"
+ },
+ {
+  "ma": "level",
+  "goc": "LEVEL",
+  "dong": 1,
+  "lop": [
+   {
+    "chu": "LEVEL",
+    "co": 0.17254,
+    "dx": 0.0,
+    "dy": 0.0,
+    "mau": "#8100FF",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [],
+    "font_goc": "seguibl.ttf"
+   }
+  ],
+  "hieu_ung": [],
+  "ten": "1 dòng",
+  "loai": "chu"
+ },
+ {
+  "ma": "loc-phat",
+  "goc": "Lộc Phát",
+  "dong": 1,
+  "lop": [
+   {
+    "chu": "Lộc Phát",
+    "co": 0.02314,
+    "dx": 0.0,
+    "dy": 0.0,
+    "mau": "#FFFFFF",
+    "vien": "#FCFF00",
+    "day": 0.0051,
+    "bong": null,
+    "gian": -0.05,
+    "hieu_ung": [],
+    "font_goc": "SVN-Blenda Script.ttf"
+   }
+  ],
+  "hieu_ung": [],
+  "ten": "1 dòng",
+  "loai": "chu"
+ },
+ {
+  "ma": "neon-button",
+  "goc": "Neon Button",
+  "dong": 1,
+  "lop": [
+   {
+    "chu": "Neon Button",
+    "co": 0.13951,
+    "dx": 0.0,
+    "dy": 0.0,
+    "mau": "#0053FF",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [
+     "den-hong"
+    ],
+    "font_goc": "arialbi.ttf"
+   }
+  ],
+  "hieu_ung": [
+   "den-hong"
+  ],
+  "ten": "1 dòng · den-hong",
+  "loai": "chu"
+ },
+ {
+  "ma": "neon-button-2",
+  "goc": "Neon Button",
+  "dong": 1,
+  "lop": [
+   {
+    "chu": "Neon Button",
+    "co": 0.13951,
+    "dx": 0.0,
+    "dy": 0.0,
+    "mau": "#FF0000",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [
+     "den-hong"
+    ],
+    "font_goc": "arialbi.ttf"
+   }
+  ],
+  "hieu_ung": [
+   "den-hong"
+  ],
+  "ten": "1 dòng · den-hong",
+  "loai": "chu"
+ },
+ {
+  "ma": "next",
+  "goc": "NEXT",
+  "dong": 1,
+  "lop": [
+   {
+    "chu": "NEXT",
+    "co": 0.17254,
+    "dx": 0.0,
+    "dy": 0.0,
+    "mau": "#FFFFFF",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [],
+    "font_goc": "seguibl.ttf"
+   }
+  ],
+  "hieu_ung": [],
+  "ten": "1 dòng",
+  "loai": "chu"
+ },
+ {
+  "ma": "now",
+  "goc": "now",
+  "dong": 1,
+  "lop": [
+   {
+    "chu": "now",
+    "co": 0.02975,
+    "dx": 0.0,
+    "dy": 0.0,
+    "mau": "#8E8A8A",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [],
+    "font_goc": "Helvetica_0.ttf"
+   }
+  ],
+  "hieu_ung": [],
+  "ten": "1 dòng",
+  "loai": "canh"
+ },
+ {
+  "ma": "old-vibes",
+  "goc": "Old Vibes",
+  "dong": 1,
+  "lop": [
+   {
+    "chu": "Old Vibes",
+    "co": 0.28162,
+    "dx": 0.0,
+    "dy": 0.0,
+    "mau": "#CB00FF",
+    "vien": null,
+    "day": null,
+    "bong": "#000000",
+    "gian": 0,
+    "hieu_ung": [
+     "nhay-len"
+    ],
+    "font_goc": "Ballet-Regular-VariableFont_opsz.ttf"
+   }
+  ],
+  "hieu_ung": [
+   "nhay-len"
+  ],
+  "ten": "1 dòng · nhay-len",
+  "loai": "chu"
+ },
+ {
+  "ma": "outline-text",
+  "goc": "OUTLINE TEXT",
+  "dong": 1,
+  "lop": [
+   {
+    "chu": "OUTLINE TEXT",
+    "co": 0.17568,
+    "dx": 0.0,
+    "dy": 0.0,
+    "mau": "#FCFF00",
+    "vien": "#FCFF00",
+    "day": 0.0051,
+    "bong": null,
+    "gian": -0.05,
+    "hieu_ung": [],
+    "font_goc": "Helvetica-Bold_0.ttf"
+   }
+  ],
+  "hieu_ung": [],
+  "ten": "1 dòng",
+  "loai": "chu"
+ },
+ {
+  "ma": "outline-text-2",
+  "goc": "OUTLINE TEXT",
+  "dong": 1,
+  "lop": [
+   {
+    "chu": "OUTLINE TEXT",
+    "co": 0.17568,
+    "dx": 0.0,
+    "dy": 0.0,
+    "mau": "#FF4A60",
+    "vien": "#FCFF00",
+    "day": 0.0271,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [],
+    "font_goc": "Helvetica-Bold_0.ttf"
+   }
+  ],
+  "hieu_ung": [],
+  "ten": "1 dòng",
+  "loai": "chu"
+ },
+ {
+  "ma": "poppins-2",
+  "goc": "Poppins",
+  "dong": 1,
+  "lop": [
+   {
+    "chu": "Poppins",
+    "co": 0.32608,
+    "dx": 0.0,
+    "dy": 0.0,
+    "mau": "#E5FF89",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [
+     "bong-bong"
+    ],
+    "font_goc": "font.ttf"
+   }
+  ],
+  "hieu_ung": [
+   "bong-bong"
+  ],
+  "ten": "1 dòng · bong-bong",
+  "loai": "chu"
+ },
+ {
+  "ma": "rework",
+  "goc": "Rework",
+  "dong": 1,
+  "lop": [
+   {
+    "chu": "Rework",
+    "co": 0.02917,
+    "dx": 0.0,
+    "dy": 0.0,
+    "mau": "#D73131",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [],
+    "font_goc": "Helvetica-Bold_0.ttf"
+   }
+  ],
+  "hieu_ung": [],
+  "ten": "1 dòng",
+  "loai": "canh"
+ },
+ {
+  "ma": "rising",
+  "goc": "rising",
+  "dong": 1,
+  "lop": [
+   {
+    "chu": "rising",
+    "co": 0.16586,
+    "dx": 0.0,
+    "dy": 0.0,
+    "mau": "#5E033E",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [
+     "hien-dan"
+    ],
+    "font_goc": "arialbi.ttf"
+   }
+  ],
+  "hieu_ung": [
+   "hien-dan"
+  ],
+  "ten": "1 dòng · hien-dan",
+  "loai": "chu"
+ },
+ {
+  "ma": "search",
+  "goc": "Search...",
+  "dong": 1,
+  "lop": [
+   {
+    "chu": "Search...",
+    "co": 0.0174,
+    "dx": 0.0,
+    "dy": 0.0,
+    "mau": "#9D9C9C",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [],
+    "font_goc": "en.ttf"
+   }
+  ],
+  "hieu_ung": [],
+  "ten": "1 dòng",
+  "loai": "canh"
+ },
+ {
+  "ma": "shine-3",
+  "goc": "Shine",
+  "dong": 1,
+  "lop": [
+   {
+    "chu": "Shine",
+    "co": 0.32608,
+    "dx": 0.0,
+    "dy": 0.0,
+    "mau": "#D4E2FF",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [
+     "lui-nhoe"
+    ],
+    "font_goc": "seguibli.ttf"
+   }
+  ],
+  "hieu_ung": [
+   "lui-nhoe"
+  ],
+  "ten": "1 dòng · lui-nhoe",
+  "loai": "chu"
+ },
+ {
+  "ma": "shiney-2",
+  "goc": "Shiney",
+  "dong": 1,
+  "lop": [
+   {
+    "chu": "Shiney",
+    "co": 0.32608,
+    "dx": 0.0,
+    "dy": 0.0,
+    "mau": "#D4E2FF",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [],
+    "font_goc": "seguibli.ttf"
+   }
+  ],
+  "hieu_ung": [],
+  "ten": "1 dòng",
+  "loai": "chu"
+ },
+ {
+  "ma": "sticker-2",
+  "goc": "Sticker",
+  "dong": 1,
+  "lop": [
+   {
+    "chu": "Sticker",
+    "co": 0.2379,
+    "dx": 0.0,
+    "dy": 0.0,
+    "mau": "#0072FF",
+    "vien": "#FFFFFF",
+    "day": 0.0658,
+    "bong": "#000000",
+    "gian": 0,
+    "hieu_ung": [],
+    "font_goc": "seguibli.ttf"
+   },
+   {
+    "chu": "Sticker",
+    "co": 0.2379,
+    "dx": 0.0,
+    "dy": 0.0,
+    "mau": "#0072FF",
+    "vien": null,
+    "day": null,
+    "bong": "#000000",
+    "gian": 0,
+    "hieu_ung": [],
+    "font_goc": "seguibli.ttf"
+   }
+  ],
+  "hieu_ung": [],
+  "ten": "1 dòng · viền chồng",
+  "loai": "chu"
+ },
+ {
+  "ma": "sticker-3",
+  "goc": "Sticker",
+  "dong": 1,
+  "lop": [
+   {
+    "chu": "Sticker",
+    "co": 0.32608,
+    "dx": 0.0,
+    "dy": 0.0,
+    "mau": "#D4E2FF",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [],
+    "font_goc": "seguibli.ttf"
+   }
+  ],
+  "hieu_ung": [],
+  "ten": "1 dòng",
+  "loai": "chu"
+ },
+ {
+  "ma": "sticker-4",
+  "goc": "Sticker",
+  "dong": 1,
+  "lop": [
+   {
+    "chu": "Sticker",
+    "co": 0.2379,
+    "dx": 0.0,
+    "dy": 0.0,
+    "mau": "#0A6BE3",
+    "vien": "#0072FF",
+    "day": 0.0209,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [],
+    "font_goc": "seguibli.ttf"
+   }
+  ],
+  "hieu_ung": [],
+  "ten": "1 dòng",
+  "loai": "chu"
+ },
+ {
+  "ma": "style",
+  "goc": "Style.",
+  "dong": 1,
+  "lop": [
+   {
+    "chu": "Style.",
+    "co": 0.26104,
+    "dx": 0.0,
+    "dy": 0.0,
+    "mau": "#FFF200",
+    "vien": null,
+    "day": null,
+    "bong": "#000000",
+    "gian": 0,
+    "hieu_ung": [
+     "lui-nhoe"
+    ],
+    "font_goc": "font.ttf"
+   }
+  ],
+  "hieu_ung": [
+   "lui-nhoe"
+  ],
+  "ten": "1 dòng · lui-nhoe",
+  "loai": "chu"
+ },
+ {
+  "ma": "style-2",
+  "goc": "STYLE 2",
+  "dong": 1,
+  "lop": [
+   {
+    "chu": "STYLE 2",
+    "co": 0.12975,
+    "dx": 0.00415,
+    "dy": 0.00117,
+    "mau": "#FFFFFF",
+    "vien": "#FFD200",
+    "day": 0.12,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [],
+    "font_goc": "font.ttf"
+   },
+   {
+    "chu": "STYLE 2",
+    "co": 0.12975,
+    "dx": -0.00207,
+    "dy": 0.00517,
+    "mau": "#FFFFFF",
+    "vien": "#840303",
+    "day": 0.0669,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [],
+    "font_goc": "font.ttf"
+   },
+   {
+    "chu": "STYLE 2",
+    "co": 0.12975,
+    "dx": -0.00207,
+    "dy": -0.00633,
+    "mau": "#FFFFFF",
+    "vien": "#E80A0B",
+    "day": 0.0669,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [],
+    "font_goc": "font.ttf"
+   }
+  ],
+  "hieu_ung": [],
+  "ten": "1 dòng · viền chồng",
+  "loai": "chu"
+ },
+ {
+  "ma": "su-that",
+  "goc": "sự thật",
+  "dong": 1,
+  "lop": [
+   {
+    "chu": "sự thật",
+    "co": 0.15147,
+    "dx": -0.0,
+    "dy": -0.0,
+    "mau": "#F2F2F2",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [
+     "nhoe-trai"
+    ],
+    "font_goc": "SVN-Steady.otf"
+   }
+  ],
+  "hieu_ung": [
+   "nhoe-trai"
+  ],
+  "ten": "1 dòng · nhoe-trai",
+  "loai": "chu"
+ },
+ {
+  "ma": "su-that-rang",
+  "goc": "sự thật rằng",
+  "dong": 1,
+  "lop": [
+   {
+    "chu": "sự thật rằng",
+    "co": 0.15627,
+    "dx": 0.0,
+    "dy": -0.0,
+    "mau": "#FF0002",
+    "vien": null,
+    "day": null,
+    "bong": "#000000",
+    "gian": 0,
+    "hieu_ung": [
+     "vao-nhoe"
+    ],
+    "font_goc": "seguibli.ttf"
+   }
+  ],
+  "hieu_ung": [
+   "vao-nhoe"
+  ],
+  "ten": "1 dòng · vao-nhoe",
+  "loai": "chu"
+ },
+ {
+  "ma": "subtitle-text",
+  "goc": "Subtitle Text",
+  "dong": 1,
+  "lop": [
+   {
+    "chu": "Subtitle Text",
+    "co": 0.04414,
+    "dx": 0.0,
+    "dy": 0.0,
+    "mau": "#FFFFFF",
+    "vien": "#FCFF00",
+    "day": 0.0051,
+    "bong": null,
+    "gian": -0.05,
+    "hieu_ung": [
+     "nay-song",
+     "nay-song"
+    ],
+    "font_goc": "Helvetica-Bold_0.ttf"
+   }
+  ],
+  "hieu_ung": [
+   "nay-song"
+  ],
+  "ten": "1 dòng · nay-song",
+  "loai": "chu"
+ },
+ {
+  "ma": "takim",
+  "goc": "TAKIM",
+  "dong": 1,
+  "lop": [
+   {
+    "chu": "TAKIM",
+    "co": 0.11326,
+    "dx": 0.0,
+    "dy": -0.0,
+    "mau": "#FFFFFF",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [],
+    "font_goc": "impact.ttf"
+   }
+  ],
+  "hieu_ung": [],
+  "ten": "1 dòng",
+  "loai": "canh"
+ },
+ {
+  "ma": "the-chap-2",
+  "goc": "Thế chấp",
+  "dong": 1,
+  "lop": [
+   {
+    "chu": "Thế chấp",
+    "co": 0.15627,
+    "dx": 0.0,
+    "dy": 0.0,
+    "mau": "#E6EEAE",
+    "vien": null,
+    "day": null,
+    "bong": "#000000FF",
+    "gian": 0,
+    "hieu_ung": [
+     "bong-bong",
+     "roi-truot"
+    ],
+    "font_goc": "SVN-Helvetica Neue Heavy.ttf"
+   }
+  ],
+  "hieu_ung": [
+   "bong-bong",
+   "roi-truot"
+  ],
+  "ten": "1 dòng · bong-bong+roi-truot",
+  "loai": "chu"
+ },
+ {
+  "ma": "thoi-gian",
+  "goc": "THỜI GIAN",
+  "dong": 1,
+  "lop": [
+   {
+    "chu": "THỜI GIAN",
+    "co": 0.07093,
+    "dx": 0.0,
+    "dy": 0.0,
+    "mau": "#0089FF",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": -0.05,
+    "hieu_ung": [
+     "bong-bong"
+    ],
+    "font_goc": "SVN-Helvetica Neue Heavy.ttf"
+   }
+  ],
+  "hieu_ung": [
+   "bong-bong"
+  ],
+  "ten": "1 dòng · bong-bong",
+  "loai": "chu"
+ },
+ {
+  "ma": "thoi-gian-2",
+  "goc": "THỜI GIAN",
+  "dong": 1,
+  "lop": [
+   {
+    "chu": "THỜI GIAN",
+    "co": 0.22572,
+    "dx": 0.0,
+    "dy": -0.0,
+    "mau": "#60B7FF",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [
+     "bong-bong"
+    ],
+    "font_goc": "SVN-Helvetica Neue Heavy.ttf"
+   }
+  ],
+  "hieu_ung": [
+   "bong-bong"
+  ],
+  "ten": "1 dòng · bong-bong",
+  "loai": "chu"
+ },
+ {
+  "ma": "thoi-gian-3",
+  "goc": "THỜI GIAN",
+  "dong": 1,
+  "lop": [
+   {
+    "chu": "THỜI GIAN",
+    "co": 0.22572,
+    "dx": 0.0,
+    "dy": -0.0,
+    "mau": "#FFFFFF",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [
+     "bong-bong"
+    ],
+    "font_goc": "SVN-Helvetica Neue Heavy.ttf"
+   }
+  ],
+  "hieu_ung": [
+   "bong-bong"
+  ],
+  "ten": "1 dòng · bong-bong",
+  "loai": "chu"
+ },
+ {
+  "ma": "tien-te-3",
+  "goc": "Tiền tệ",
+  "dong": 1,
+  "lop": [
+   {
+    "chu": "Tiền tệ",
+    "co": 0.32608,
+    "dx": 0.0,
+    "dy": 0.0,
+    "mau": "#E5FF89",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [
+     "bong-bong"
+    ],
+    "font_goc": "SVN-Helvetica Neue Heavy.ttf"
+   }
+  ],
+  "hieu_ung": [
+   "bong-bong"
+  ],
+  "ten": "1 dòng · bong-bong",
+  "loai": "chu"
+ },
+ {
+  "ma": "what-if-i-told-you",
+  "goc": "What if I told You",
+  "dong": 1,
+  "lop": [
+   {
+    "chu": "What if I told You",
+    "co": 0.10541,
+    "dx": 0.0,
+    "dy": 0.0,
+    "mau": "#333131",
+    "vien": "#FCFF00",
+    "day": 0.0051,
+    "bong": null,
+    "gian": -0.05,
+    "hieu_ung": [
+     "roi-nhanh"
+    ],
+    "font_goc": "FormativeTrial-Semi-BoldItalic-BF656fed902b57d.otf"
+   }
+  ],
+  "hieu_ung": [
+   "roi-nhanh"
+  ],
+  "ten": "1 dòng · roi-nhanh",
+  "loai": "chu"
+ },
+ {
+  "ma": "what-if-i-told-you-2",
+  "goc": "What if I told You",
+  "dong": 1,
+  "lop": [
+   {
+    "chu": "What if I told You",
+    "co": 0.10541,
+    "dx": 0.0,
+    "dy": 0.0,
+    "mau": "#FFFFFF",
+    "vien": "#FCFF00",
+    "day": 0.0051,
+    "bong": null,
+    "gian": -0.05,
+    "hieu_ung": [
+     "roi-nhanh"
+    ],
+    "font_goc": "FormativeTrial-Semi-BoldItalic-BF656fed902b57d.otf"
+   }
+  ],
+  "hieu_ung": [
+   "roi-nhanh"
+  ],
+  "ten": "1 dòng · roi-nhanh",
+  "loai": "chu"
+ },
+ {
+  "ma": "xin-chao-2",
+  "goc": "xin chào",
+  "dong": 1,
+  "lop": [
+   {
+    "chu": "xin chào",
+    "co": 0.22594,
+    "dx": 0.0,
+    "dy": -0.0,
+    "mau": "#FFFFFF",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [
+     "nhay-len"
+    ],
+    "font_goc": "SVN-Helvetica Neue Heavy.ttf"
+   }
+  ],
+  "hieu_ung": [
+   "nhay-len"
+  ],
+  "ten": "1 dòng · nhay-len",
+  "loai": "chu"
+ },
+ {
+  "ma": "yellow-style",
+  "goc": "Yellow Style",
+  "dong": 1,
+  "lop": [
+   {
+    "chu": "Yellow Style",
+    "co": 0.22572,
+    "dx": 0.0,
+    "dy": -0.0,
+    "mau": "#E6EEAE",
+    "vien": null,
+    "day": null,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [
+     "bong-bong"
+    ],
+    "font_goc": "timesbi.ttf"
+   }
+  ],
+  "hieu_ung": [
+   "bong-bong"
+  ],
+  "ten": "1 dòng · bong-bong",
+  "loai": "chu"
+ },
+ {
+  "ma": "you",
+  "goc": "YOU",
+  "dong": 1,
+  "lop": [
+   {
+    "chu": "YOU",
+    "co": 0.14097,
+    "dx": 0.0,
+    "dy": 0.0,
+    "mau": "#FFFFFF",
+    "vien": "#FCFF00",
+    "day": 0.0051,
+    "bong": null,
+    "gian": 0,
+    "hieu_ung": [],
+    "font_goc": "seguibli.ttf"
+   }
+  ],
+  "hieu_ung": [],
+  "ten": "1 dòng",
+  "loai": "chu"
+ }
+]

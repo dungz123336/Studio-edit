@@ -1,0 +1,768 @@
+{
+  "_doc": "Đo sẵn lúc dựng kho. Mọi file đã chuẩn hoá RMS về -20 dBFS. Dùng rms_db để tính hệ số trộn — ĐỪNG đo LUFS cho tiếng ngắn dưới 0,4s, cổng chặn EBU R128 sẽ trả về -70.",
+  "chuan_rms_db": -20.0,
+  "file": {
+    "sfx/vut-01.wav": {
+      "ho": "vut",
+      "giay": 0.42,
+      "rms_db": -20.0,
+      "dinh_db": -6.31
+    },
+    "sfx/vut-02.wav": {
+      "ho": "vut",
+      "giay": 0.5,
+      "rms_db": -20.0,
+      "dinh_db": -7.88
+    },
+    "sfx/vut-03.wav": {
+      "ho": "vut",
+      "giay": 0.58,
+      "rms_db": -20.0,
+      "dinh_db": -8.6
+    },
+    "sfx/vut-04.wav": {
+      "ho": "vut",
+      "giay": 0.36,
+      "rms_db": -20.0,
+      "dinh_db": -7.33
+    },
+    "sfx/vut-05.wav": {
+      "ho": "vut",
+      "giay": 0.66,
+      "rms_db": -20.0,
+      "dinh_db": -9.51
+    },
+    "sfx/vut-06.wav": {
+      "ho": "vut",
+      "giay": 0.75,
+      "rms_db": -20.0,
+      "dinh_db": -9.0
+    },
+    "sfx/vut-07.wav": {
+      "ho": "vut",
+      "giay": 0.48,
+      "rms_db": -20.0,
+      "dinh_db": -8.12
+    },
+    "sfx/vut-08.wav": {
+      "ho": "vut",
+      "giay": 0.55,
+      "rms_db": -20.0,
+      "dinh_db": -8.48
+    },
+    "sfx/vut-09.wav": {
+      "ho": "vut",
+      "giay": 0.3,
+      "rms_db": -20.0,
+      "dinh_db": -7.84
+    },
+    "sfx/vut-10.wav": {
+      "ho": "vut",
+      "giay": 0.85,
+      "rms_db": -20.0,
+      "dinh_db": -9.49
+    },
+    "sfx/click-01.wav": {
+      "ho": "click",
+      "giay": 0.05,
+      "rms_db": -21.8,
+      "dinh_db": -1.01
+    },
+    "sfx/click-02.wav": {
+      "ho": "click",
+      "giay": 0.04,
+      "rms_db": -24.58,
+      "dinh_db": -1.01
+    },
+    "sfx/click-03.wav": {
+      "ho": "click",
+      "giay": 0.06,
+      "rms_db": -22.86,
+      "dinh_db": -1.01
+    },
+    "sfx/click-04.wav": {
+      "ho": "click",
+      "giay": 0.03,
+      "rms_db": -22.11,
+      "dinh_db": -1.01
+    },
+    "sfx/click-05.wav": {
+      "ho": "click",
+      "giay": 0.07,
+      "rms_db": -22.69,
+      "dinh_db": -1.01
+    },
+    "sfx/click-06.wav": {
+      "ho": "click",
+      "giay": 0.045,
+      "rms_db": -20.66,
+      "dinh_db": -1.01
+    },
+    "sfx/bup-01.wav": {
+      "ho": "bup",
+      "giay": 0.16,
+      "rms_db": -20.0,
+      "dinh_db": -8.19
+    },
+    "sfx/bup-02.wav": {
+      "ho": "bup",
+      "giay": 0.12,
+      "rms_db": -20.0,
+      "dinh_db": -8.49
+    },
+    "sfx/bup-03.wav": {
+      "ho": "bup",
+      "giay": 0.2,
+      "rms_db": -20.0,
+      "dinh_db": -8.46
+    },
+    "sfx/bup-04.wav": {
+      "ho": "bup",
+      "giay": 0.1,
+      "rms_db": -20.0,
+      "dinh_db": -8.48
+    },
+    "sfx/bup-05.wav": {
+      "ho": "bup",
+      "giay": 0.24,
+      "rms_db": -20.0,
+      "dinh_db": -8.47
+    },
+    "sfx/bup-06.wav": {
+      "ho": "bup",
+      "giay": 0.14,
+      "rms_db": -20.0,
+      "dinh_db": -8.25
+    },
+    "sfx/subdrop-01.wav": {
+      "ho": "subdrop",
+      "giay": 0.9,
+      "rms_db": -20.0,
+      "dinh_db": -9.21
+    },
+    "sfx/subdrop-02.wav": {
+      "ho": "subdrop",
+      "giay": 1.2,
+      "rms_db": -20.0,
+      "dinh_db": -10.15
+    },
+    "sfx/subdrop-03.wav": {
+      "ho": "subdrop",
+      "giay": 0.7,
+      "rms_db": -20.0,
+      "dinh_db": -8.25
+    },
+    "sfx/subdrop-04.wav": {
+      "ho": "subdrop",
+      "giay": 1.5,
+      "rms_db": -20.0,
+      "dinh_db": -10.86
+    },
+    "sfx/subdrop-05.wav": {
+      "ho": "subdrop",
+      "giay": 0.6,
+      "rms_db": -20.0,
+      "dinh_db": -7.65
+    },
+    "sfx/dang-len-01.wav": {
+      "ho": "dang-len",
+      "giay": 1.6,
+      "rms_db": -20.0,
+      "dinh_db": -2.68
+    },
+    "sfx/dang-len-02.wav": {
+      "ho": "dang-len",
+      "giay": 2.2,
+      "rms_db": -20.0,
+      "dinh_db": -3.35
+    },
+    "sfx/dang-len-03.wav": {
+      "ho": "dang-len",
+      "giay": 1.1,
+      "rms_db": -20.0,
+      "dinh_db": -3.43
+    },
+    "sfx/dang-len-04.wav": {
+      "ho": "dang-len",
+      "giay": 2.8,
+      "rms_db": -20.0,
+      "dinh_db": -3.37
+    },
+    "sfx/dang-len-05.wav": {
+      "ho": "dang-len",
+      "giay": 1.35,
+      "rms_db": -20.0,
+      "dinh_db": -3.29
+    },
+    "sfx/dang-len-06.wav": {
+      "ho": "dang-len",
+      "giay": 3.4,
+      "rms_db": -20.0,
+      "dinh_db": -3.64
+    },
+    "sfx/dam-01.wav": {
+      "ho": "dam",
+      "giay": 1.1,
+      "rms_db": -20.0,
+      "dinh_db": -5.42
+    },
+    "sfx/dam-02.wav": {
+      "ho": "dam",
+      "giay": 1.4,
+      "rms_db": -20.0,
+      "dinh_db": -6.03
+    },
+    "sfx/dam-03.wav": {
+      "ho": "dam",
+      "giay": 0.85,
+      "rms_db": -20.0,
+      "dinh_db": -5.47
+    },
+    "sfx/dam-04.wav": {
+      "ho": "dam",
+      "giay": 1.8,
+      "rms_db": -20.0,
+      "dinh_db": -6.1
+    },
+    "sfx/dam-05.wav": {
+      "ho": "dam",
+      "giay": 0.7,
+      "rms_db": -20.0,
+      "dinh_db": -5.05
+    },
+    "sfx/chuong-01.wav": {
+      "ho": "chuong",
+      "giay": 1.4,
+      "rms_db": -20.0,
+      "dinh_db": -7.24
+    },
+    "sfx/chuong-02.wav": {
+      "ho": "chuong",
+      "giay": 1.8,
+      "rms_db": -20.0,
+      "dinh_db": -7.13
+    },
+    "sfx/chuong-03.wav": {
+      "ho": "chuong",
+      "giay": 1.1,
+      "rms_db": -20.0,
+      "dinh_db": -7.39
+    },
+    "sfx/chuong-04.wav": {
+      "ho": "chuong",
+      "giay": 2.2,
+      "rms_db": -20.0,
+      "dinh_db": -6.94
+    },
+    "sfx/chuong-05.wav": {
+      "ho": "chuong",
+      "giay": 1.0,
+      "rms_db": -20.0,
+      "dinh_db": -7.21
+    },
+    "sfx/glitch-01.wav": {
+      "ho": "glitch",
+      "giay": 0.28,
+      "rms_db": -20.0,
+      "dinh_db": -1.74
+    },
+    "sfx/glitch-02.wav": {
+      "ho": "glitch",
+      "giay": 0.18,
+      "rms_db": -20.0,
+      "dinh_db": -2.71
+    },
+    "sfx/glitch-03.wav": {
+      "ho": "glitch",
+      "giay": 0.42,
+      "rms_db": -20.0,
+      "dinh_db": -3.07
+    },
+    "sfx/glitch-04.wav": {
+      "ho": "glitch",
+      "giay": 0.12,
+      "rms_db": -20.0,
+      "dinh_db": -3.04
+    },
+    "sfx/glitch-05.wav": {
+      "ho": "glitch",
+      "giay": 0.55,
+      "rms_db": -20.0,
+      "dinh_db": -1.78
+    },
+    "sfx/go-phim-01.wav": {
+      "ho": "go-phim",
+      "giay": 0.09,
+      "rms_db": -20.0,
+      "dinh_db": -6.75
+    },
+    "sfx/go-phim-02.wav": {
+      "ho": "go-phim",
+      "giay": 0.07,
+      "rms_db": -20.0,
+      "dinh_db": -6.88
+    },
+    "sfx/go-phim-03.wav": {
+      "ho": "go-phim",
+      "giay": 0.11,
+      "rms_db": -20.0,
+      "dinh_db": -6.81
+    },
+    "sfx/go-phim-04.wav": {
+      "ho": "go-phim",
+      "giay": 0.06,
+      "rms_db": -20.0,
+      "dinh_db": -6.91
+    },
+    "sfx/bong-bong-01.wav": {
+      "ho": "bong-bong",
+      "giay": 0.16,
+      "rms_db": -20.0,
+      "dinh_db": -7.3
+    },
+    "sfx/bong-bong-02.wav": {
+      "ho": "bong-bong",
+      "giay": 0.22,
+      "rms_db": -20.0,
+      "dinh_db": -5.92
+    },
+    "sfx/bong-bong-03.wav": {
+      "ho": "bong-bong",
+      "giay": 0.12,
+      "rms_db": -20.0,
+      "dinh_db": -8.54
+    },
+    "sfx/bong-bong-04.wav": {
+      "ho": "bong-bong",
+      "giay": 0.28,
+      "rms_db": -20.0,
+      "dinh_db": -4.88
+    },
+    "sfx/dem-nhip-01.wav": {
+      "ho": "dem-nhip",
+      "giay": 0.08,
+      "rms_db": -20.0,
+      "dinh_db": -7.9
+    },
+    "sfx/dem-nhip-02.wav": {
+      "ho": "dem-nhip",
+      "giay": 0.08,
+      "rms_db": -20.0,
+      "dinh_db": -7.88
+    },
+    "sfx/dem-nhip-03.wav": {
+      "ho": "dem-nhip",
+      "giay": 0.08,
+      "rms_db": -20.0,
+      "dinh_db": -7.87
+    },
+    "sfx/dem-nhip-04.wav": {
+      "ho": "dem-nhip",
+      "giay": 0.08,
+      "rms_db": -20.0,
+      "dinh_db": -7.85
+    },
+    "sfx/dem-nhip-05.wav": {
+      "ho": "dem-nhip",
+      "giay": 0.08,
+      "rms_db": -20.0,
+      "dinh_db": -7.94
+    },
+    "sfx/hoi-tho-01.wav": {
+      "ho": "hoi-tho",
+      "giay": 0.8,
+      "rms_db": -20.0,
+      "dinh_db": -7.68
+    },
+    "sfx/hoi-tho-02.wav": {
+      "ho": "hoi-tho",
+      "giay": 1.4,
+      "rms_db": -20.0,
+      "dinh_db": -6.95
+    },
+    "sfx/hoi-tho-03.wav": {
+      "ho": "hoi-tho",
+      "giay": 2.2,
+      "rms_db": -20.0,
+      "dinh_db": -6.37
+    },
+    "music/nen-binh-yen-cham.wav": {
+      "mood": "binh-yen",
+      "nhip": 58,
+      "giay": 42.0,
+      "rms_db": -20.0,
+      "dinh_db": -8.4
+    },
+    "music/nen-binh-yen-cham-tram.wav": {
+      "mood": "binh-yen",
+      "nhip": 58,
+      "giay": 42.0,
+      "rms_db": -20.0,
+      "dinh_db": -8.76
+    },
+    "music/nen-binh-yen-cham-cao.wav": {
+      "mood": "binh-yen",
+      "nhip": 58,
+      "giay": 42.0,
+      "rms_db": -20.0,
+      "dinh_db": -9.17
+    },
+    "music/nen-binh-yen-vua.wav": {
+      "mood": "binh-yen",
+      "nhip": 74,
+      "giay": 42.0,
+      "rms_db": -20.0,
+      "dinh_db": -8.29
+    },
+    "music/nen-binh-yen-vua-tram.wav": {
+      "mood": "binh-yen",
+      "nhip": 74,
+      "giay": 42.0,
+      "rms_db": -20.0,
+      "dinh_db": -7.88
+    },
+    "music/nen-binh-yen-vua-cao.wav": {
+      "mood": "binh-yen",
+      "nhip": 74,
+      "giay": 42.0,
+      "rms_db": -20.0,
+      "dinh_db": -8.67
+    },
+    "music/nen-binh-yen-nhanh.wav": {
+      "mood": "binh-yen",
+      "nhip": 96,
+      "giay": 42.0,
+      "rms_db": -20.0,
+      "dinh_db": -7.99
+    },
+    "music/nen-binh-yen-nhanh-tram.wav": {
+      "mood": "binh-yen",
+      "nhip": 96,
+      "giay": 42.0,
+      "rms_db": -20.0,
+      "dinh_db": -7.85
+    },
+    "music/nen-binh-yen-nhanh-cao.wav": {
+      "mood": "binh-yen",
+      "nhip": 96,
+      "giay": 42.0,
+      "rms_db": -20.0,
+      "dinh_db": -8.5
+    },
+    "music/nen-tap-trung-cham.wav": {
+      "mood": "tap-trung",
+      "nhip": 58,
+      "giay": 42.0,
+      "rms_db": -20.0,
+      "dinh_db": -9.1
+    },
+    "music/nen-tap-trung-cham-tram.wav": {
+      "mood": "tap-trung",
+      "nhip": 58,
+      "giay": 42.0,
+      "rms_db": -20.0,
+      "dinh_db": -7.92
+    },
+    "music/nen-tap-trung-cham-cao.wav": {
+      "mood": "tap-trung",
+      "nhip": 58,
+      "giay": 42.0,
+      "rms_db": -20.0,
+      "dinh_db": -7.35
+    },
+    "music/nen-tap-trung-vua.wav": {
+      "mood": "tap-trung",
+      "nhip": 74,
+      "giay": 42.0,
+      "rms_db": -20.0,
+      "dinh_db": -6.31
+    },
+    "music/nen-tap-trung-vua-tram.wav": {
+      "mood": "tap-trung",
+      "nhip": 74,
+      "giay": 42.0,
+      "rms_db": -20.0,
+      "dinh_db": -7.76
+    },
+    "music/nen-tap-trung-vua-cao.wav": {
+      "mood": "tap-trung",
+      "nhip": 74,
+      "giay": 42.0,
+      "rms_db": -20.0,
+      "dinh_db": -8.26
+    },
+    "music/nen-tap-trung-nhanh.wav": {
+      "mood": "tap-trung",
+      "nhip": 96,
+      "giay": 42.0,
+      "rms_db": -20.0,
+      "dinh_db": -8.91
+    },
+    "music/nen-tap-trung-nhanh-tram.wav": {
+      "mood": "tap-trung",
+      "nhip": 96,
+      "giay": 42.0,
+      "rms_db": -20.0,
+      "dinh_db": -7.07
+    },
+    "music/nen-tap-trung-nhanh-cao.wav": {
+      "mood": "tap-trung",
+      "nhip": 96,
+      "giay": 42.0,
+      "rms_db": -20.0,
+      "dinh_db": -8.58
+    },
+    "music/nen-nang-luong-cham.wav": {
+      "mood": "nang-luong",
+      "nhip": 58,
+      "giay": 42.0,
+      "rms_db": -20.0,
+      "dinh_db": -8.54
+    },
+    "music/nen-nang-luong-cham-tram.wav": {
+      "mood": "nang-luong",
+      "nhip": 58,
+      "giay": 42.0,
+      "rms_db": -20.0,
+      "dinh_db": -8.53
+    },
+    "music/nen-nang-luong-cham-cao.wav": {
+      "mood": "nang-luong",
+      "nhip": 58,
+      "giay": 42.0,
+      "rms_db": -20.0,
+      "dinh_db": -8.27
+    },
+    "music/nen-nang-luong-vua.wav": {
+      "mood": "nang-luong",
+      "nhip": 74,
+      "giay": 42.0,
+      "rms_db": -20.0,
+      "dinh_db": -8.77
+    },
+    "music/nen-nang-luong-vua-tram.wav": {
+      "mood": "nang-luong",
+      "nhip": 74,
+      "giay": 42.0,
+      "rms_db": -20.0,
+      "dinh_db": -7.75
+    },
+    "music/nen-nang-luong-vua-cao.wav": {
+      "mood": "nang-luong",
+      "nhip": 74,
+      "giay": 42.0,
+      "rms_db": -20.0,
+      "dinh_db": -8.46
+    },
+    "music/nen-nang-luong-nhanh.wav": {
+      "mood": "nang-luong",
+      "nhip": 96,
+      "giay": 42.0,
+      "rms_db": -20.0,
+      "dinh_db": -8.95
+    },
+    "music/nen-nang-luong-nhanh-tram.wav": {
+      "mood": "nang-luong",
+      "nhip": 96,
+      "giay": 42.0,
+      "rms_db": -20.0,
+      "dinh_db": -8.4
+    },
+    "music/nen-nang-luong-nhanh-cao.wav": {
+      "mood": "nang-luong",
+      "nhip": 96,
+      "giay": 42.0,
+      "rms_db": -20.0,
+      "dinh_db": -8.25
+    },
+    "music/nen-suy-tu-cham.wav": {
+      "mood": "suy-tu",
+      "nhip": 58,
+      "giay": 42.0,
+      "rms_db": -20.0,
+      "dinh_db": -9.05
+    },
+    "music/nen-suy-tu-cham-tram.wav": {
+      "mood": "suy-tu",
+      "nhip": 58,
+      "giay": 42.0,
+      "rms_db": -20.0,
+      "dinh_db": -8.84
+    },
+    "music/nen-suy-tu-cham-cao.wav": {
+      "mood": "suy-tu",
+      "nhip": 58,
+      "giay": 42.0,
+      "rms_db": -20.0,
+      "dinh_db": -8.97
+    },
+    "music/nen-suy-tu-vua.wav": {
+      "mood": "suy-tu",
+      "nhip": 74,
+      "giay": 42.0,
+      "rms_db": -20.0,
+      "dinh_db": -8.73
+    },
+    "music/nen-suy-tu-vua-tram.wav": {
+      "mood": "suy-tu",
+      "nhip": 74,
+      "giay": 42.0,
+      "rms_db": -20.0,
+      "dinh_db": -8.55
+    },
+    "music/nen-suy-tu-vua-cao.wav": {
+      "mood": "suy-tu",
+      "nhip": 74,
+      "giay": 42.0,
+      "rms_db": -20.0,
+      "dinh_db": -9.5
+    },
+    "music/nen-suy-tu-nhanh.wav": {
+      "mood": "suy-tu",
+      "nhip": 96,
+      "giay": 42.0,
+      "rms_db": -20.0,
+      "dinh_db": -8.73
+    },
+    "music/nen-suy-tu-nhanh-tram.wav": {
+      "mood": "suy-tu",
+      "nhip": 96,
+      "giay": 42.0,
+      "rms_db": -20.0,
+      "dinh_db": -8.96
+    },
+    "music/nen-suy-tu-nhanh-cao.wav": {
+      "mood": "suy-tu",
+      "nhip": 96,
+      "giay": 42.0,
+      "rms_db": -20.0,
+      "dinh_db": -9.2
+    },
+    "music/nen-hoi-hop-cham.wav": {
+      "mood": "hoi-hop",
+      "nhip": 58,
+      "giay": 42.0,
+      "rms_db": -20.0,
+      "dinh_db": -7.8
+    },
+    "music/nen-hoi-hop-cham-tram.wav": {
+      "mood": "hoi-hop",
+      "nhip": 58,
+      "giay": 42.0,
+      "rms_db": -20.0,
+      "dinh_db": -9.25
+    },
+    "music/nen-hoi-hop-cham-cao.wav": {
+      "mood": "hoi-hop",
+      "nhip": 58,
+      "giay": 42.0,
+      "rms_db": -20.0,
+      "dinh_db": -9.15
+    },
+    "music/nen-hoi-hop-vua.wav": {
+      "mood": "hoi-hop",
+      "nhip": 74,
+      "giay": 42.0,
+      "rms_db": -20.0,
+      "dinh_db": -8.36
+    },
+    "music/nen-hoi-hop-vua-tram.wav": {
+      "mood": "hoi-hop",
+      "nhip": 74,
+      "giay": 42.0,
+      "rms_db": -20.0,
+      "dinh_db": -8.7
+    },
+    "music/nen-hoi-hop-vua-cao.wav": {
+      "mood": "hoi-hop",
+      "nhip": 74,
+      "giay": 42.0,
+      "rms_db": -20.0,
+      "dinh_db": -8.66
+    },
+    "music/nen-hoi-hop-nhanh.wav": {
+      "mood": "hoi-hop",
+      "nhip": 96,
+      "giay": 42.0,
+      "rms_db": -20.0,
+      "dinh_db": -8.39
+    },
+    "music/nen-hoi-hop-nhanh-tram.wav": {
+      "mood": "hoi-hop",
+      "nhip": 96,
+      "giay": 42.0,
+      "rms_db": -20.0,
+      "dinh_db": -7.18
+    },
+    "music/nen-hoi-hop-nhanh-cao.wav": {
+      "mood": "hoi-hop",
+      "nhip": 96,
+      "giay": 42.0,
+      "rms_db": -20.0,
+      "dinh_db": -7.62
+    },
+    "music/nen-tuoi-sang-cham.wav": {
+      "mood": "tuoi-sang",
+      "nhip": 58,
+      "giay": 42.0,
+      "rms_db": -20.0,
+      "dinh_db": -8.53
+    },
+    "music/nen-tuoi-sang-cham-tram.wav": {
+      "mood": "tuoi-sang",
+      "nhip": 58,
+      "giay": 42.0,
+      "rms_db": -20.0,
+      "dinh_db": -8.14
+    },
+    "music/nen-tuoi-sang-cham-cao.wav": {
+      "mood": "tuoi-sang",
+      "nhip": 58,
+      "giay": 42.0,
+      "rms_db": -20.0,
+      "dinh_db": -8.28
+    },
+    "music/nen-tuoi-sang-vua.wav": {
+      "mood": "tuoi-sang",
+      "nhip": 74,
+      "giay": 42.0,
+      "rms_db": -20.0,
+      "dinh_db": -8.59
+    },
+    "music/nen-tuoi-sang-vua-tram.wav": {
+      "mood": "tuoi-sang",
+      "nhip": 74,
+      "giay": 42.0,
+      "rms_db": -20.0,
+      "dinh_db": -7.86
+    },
+    "music/nen-tuoi-sang-vua-cao.wav": {
+      "mood": "tuoi-sang",
+      "nhip": 74,
+      "giay": 42.0,
+      "rms_db": -20.0,
+      "dinh_db": -8.79
+    },
+    "music/nen-tuoi-sang-nhanh.wav": {
+      "mood": "tuoi-sang",
+      "nhip": 96,
+      "giay": 42.0,
+      "rms_db": -20.0,
+      "dinh_db": -8.47
+    },
+    "music/nen-tuoi-sang-nhanh-tram.wav": {
+      "mood": "tuoi-sang",
+      "nhip": 96,
+      "giay": 42.0,
+      "rms_db": -20.0,
+      "dinh_db": -9.01
+    },
+    "music/nen-tuoi-sang-nhanh-cao.wav": {
+      "mood": "tuoi-sang",
+      "nhip": 96,
+      "giay": 42.0,
+      "rms_db": -20.0,
+      "dinh_db": -8.59
+    }
+  }
+}

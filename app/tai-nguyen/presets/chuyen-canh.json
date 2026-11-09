@@ -1,0 +1,122 @@
+[
+  {
+    "ten": "cat-thang",
+    "xfade": "cut",
+    "giay": 0.0,
+    "sfx_goi_y": "click-01"
+  },
+  {
+    "ten": "mo-dan",
+    "xfade": "fade",
+    "giay": 0.25,
+    "sfx_goi_y": "click-01"
+  },
+  {
+    "ten": "mo-trang",
+    "xfade": "fadewhite",
+    "giay": 0.2,
+    "sfx_goi_y": "click-01"
+  },
+  {
+    "ten": "mo-den",
+    "xfade": "fadeblack",
+    "giay": 0.3,
+    "sfx_goi_y": "vut-01"
+  },
+  {
+    "ten": "truot-trai",
+    "xfade": "slideleft",
+    "giay": 0.3,
+    "sfx_goi_y": "vut-01"
+  },
+  {
+    "ten": "truot-phai",
+    "xfade": "slideright",
+    "giay": 0.3,
+    "sfx_goi_y": "vut-01"
+  },
+  {
+    "ten": "truot-len",
+    "xfade": "slideup",
+    "giay": 0.3,
+    "sfx_goi_y": "vut-01"
+  },
+  {
+    "ten": "truot-xuong",
+    "xfade": "slidedown",
+    "giay": 0.3,
+    "sfx_goi_y": "vut-01"
+  },
+  {
+    "ten": "lau-trai",
+    "xfade": "wipeleft",
+    "giay": 0.28,
+    "sfx_goi_y": "vut-01"
+  },
+  {
+    "ten": "lau-len",
+    "xfade": "wipeup",
+    "giay": 0.28,
+    "sfx_goi_y": "vut-01"
+  },
+  {
+    "ten": "tron-mo",
+    "xfade": "smoothleft",
+    "giay": 0.35,
+    "sfx_goi_y": "vut-01"
+  },
+  {
+    "ten": "tron-len",
+    "xfade": "smoothup",
+    "giay": 0.35,
+    "sfx_goi_y": "vut-01"
+  },
+  {
+    "ten": "vong-tron",
+    "xfade": "circleopen",
+    "giay": 0.4,
+    "sfx_goi_y": "vut-01"
+  },
+  {
+    "ten": "hinh-chu-nhat",
+    "xfade": "rectcrop",
+    "giay": 0.35,
+    "sfx_goi_y": "vut-01"
+  },
+  {
+    "ten": "xoay-vao",
+    "xfade": "circlecrop",
+    "giay": 0.4,
+    "sfx_goi_y": "vut-01"
+  },
+  {
+    "ten": "nhieu-hat",
+    "xfade": "pixelize",
+    "giay": 0.3,
+    "sfx_goi_y": "vut-01"
+  },
+  {
+    "ten": "chieu-sang",
+    "xfade": "fadegrays",
+    "giay": 0.3,
+    "sfx_goi_y": "vut-01"
+  },
+  {
+    "ten": "chia-doc",
+    "xfade": "vertopen",
+    "giay": 0.35,
+    "sfx_goi_y": "vut-01"
+  },
+  {
+    "ten": "chia-ngang",
+    "xfade": "horzopen",
+    "giay": 0.35,
+    "sfx_goi_y": "vut-01"
+  },
+  {
+    "ten": "cheo",
+    "xfade": "diagtl",
+    "giay": 0.32,
+    "sfx_goi_y": "vut-01"
+  }
+]

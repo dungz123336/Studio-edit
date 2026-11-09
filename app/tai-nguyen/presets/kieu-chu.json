@@ -1,0 +1,430 @@
+[
+  {
+    "ten": "vien-chong-vang",
+    "kieu": "vien-chong",
+    "mau_chu": "#FFD200",
+    "vien": [
+      {
+        "mau": "#000000",
+        "day": 17
+      },
+      {
+        "mau": "#FFFFFF",
+        "day": 11
+      },
+      {
+        "mau": "#000000",
+        "day": 5
+      }
+    ],
+    "ghi_chu": "Ba lớp viền dày giảm dần tạo cảm giác nổi khối."
+  },
+  {
+    "ten": "vien-chong-trang",
+    "kieu": "vien-chong",
+    "mau_chu": "#FFFFFF",
+    "vien": [
+      {
+        "mau": "#000000",
+        "day": 17
+      },
+      {
+        "mau": "#FFFFFF",
+        "day": 11
+      },
+      {
+        "mau": "#000000",
+        "day": 5
+      }
+    ],
+    "ghi_chu": "Ba lớp viền dày giảm dần tạo cảm giác nổi khối."
+  },
+  {
+    "ten": "vien-chong-hong",
+    "kieu": "vien-chong",
+    "mau_chu": "#FF4A60",
+    "vien": [
+      {
+        "mau": "#000000",
+        "day": 17
+      },
+      {
+        "mau": "#FFFFFF",
+        "day": 11
+      },
+      {
+        "mau": "#000000",
+        "day": 5
+      }
+    ],
+    "ghi_chu": "Ba lớp viền dày giảm dần tạo cảm giác nổi khối."
+  },
+  {
+    "ten": "vien-chong-lam",
+    "kieu": "vien-chong",
+    "mau_chu": "#5DA7FF",
+    "vien": [
+      {
+        "mau": "#000000",
+        "day": 17
+      },
+      {
+        "mau": "#FFFFFF",
+        "day": 11
+      },
+      {
+        "mau": "#000000",
+        "day": 5
+      }
+    ],
+    "ghi_chu": "Ba lớp viền dày giảm dần tạo cảm giác nổi khối."
+  },
+  {
+    "ten": "vien-chong-luc",
+    "kieu": "vien-chong",
+    "mau_chu": "#7CFF9E",
+    "vien": [
+      {
+        "mau": "#000000",
+        "day": 17
+      },
+      {
+        "mau": "#FFFFFF",
+        "day": 11
+      },
+      {
+        "mau": "#000000",
+        "day": 5
+      }
+    ],
+    "ghi_chu": "Ba lớp viền dày giảm dần tạo cảm giác nổi khối."
+  },
+  {
+    "ten": "vien-chong-cam",
+    "kieu": "vien-chong",
+    "mau_chu": "#FF8A3D",
+    "vien": [
+      {
+        "mau": "#000000",
+        "day": 17
+      },
+      {
+        "mau": "#FFFFFF",
+        "day": 11
+      },
+      {
+        "mau": "#000000",
+        "day": 5
+      }
+    ],
+    "ghi_chu": "Ba lớp viền dày giảm dần tạo cảm giác nổi khối."
+  },
+  {
+    "ten": "vien-chong-tim",
+    "kieu": "vien-chong",
+    "mau_chu": "#B47CFF",
+    "vien": [
+      {
+        "mau": "#000000",
+        "day": 17
+      },
+      {
+        "mau": "#FFFFFF",
+        "day": 11
+      },
+      {
+        "mau": "#000000",
+        "day": 5
+      }
+    ],
+    "ghi_chu": "Ba lớp viền dày giảm dần tạo cảm giác nổi khối."
+  },
+  {
+    "ten": "vien-chong-chanh",
+    "kieu": "vien-chong",
+    "mau_chu": "#E5FF89",
+    "vien": [
+      {
+        "mau": "#000000",
+        "day": 17
+      },
+      {
+        "mau": "#FFFFFF",
+        "day": 11
+      },
+      {
+        "mau": "#000000",
+        "day": 5
+      }
+    ],
+    "ghi_chu": "Ba lớp viền dày giảm dần tạo cảm giác nổi khối."
+  },
+  {
+    "ten": "cat-khuyet-vang",
+    "kieu": "cat-khuyet",
+    "mau_to": "#FFD200",
+    "mau_nho": "#FFFFFF",
+    "lech_doc": 0.58,
+    "rong_toi_da": 0.72,
+    "ghi_chu": "Chữ nhỏ cắt xuyên GIỮA chữ to, không nằm trên/dưới."
+  },
+  {
+    "ten": "cat-khuyet-trang",
+    "kieu": "cat-khuyet",
+    "mau_to": "#FFFFFF",
+    "mau_nho": "#FFFFFF",
+    "lech_doc": 0.58,
+    "rong_toi_da": 0.72,
+    "ghi_chu": "Chữ nhỏ cắt xuyên GIỮA chữ to, không nằm trên/dưới."
+  },
+  {
+    "ten": "cat-khuyet-hong",
+    "kieu": "cat-khuyet",
+    "mau_to": "#FF4A60",
+    "mau_nho": "#FFFFFF",
+    "lech_doc": 0.58,
+    "rong_toi_da": 0.72,
+    "ghi_chu": "Chữ nhỏ cắt xuyên GIỮA chữ to, không nằm trên/dưới."
+  },
+  {
+    "ten": "cat-khuyet-lam",
+    "kieu": "cat-khuyet",
+    "mau_to": "#5DA7FF",
+    "mau_nho": "#FFFFFF",
+    "lech_doc": 0.58,
+    "rong_toi_da": 0.72,
+    "ghi_chu": "Chữ nhỏ cắt xuyên GIỮA chữ to, không nằm trên/dưới."
+  },
+  {
+    "ten": "cat-khuyet-luc",
+    "kieu": "cat-khuyet",
+    "mau_to": "#7CFF9E",
+    "mau_nho": "#FFFFFF",
+    "lech_doc": 0.58,
+    "rong_toi_da": 0.72,
+    "ghi_chu": "Chữ nhỏ cắt xuyên GIỮA chữ to, không nằm trên/dưới."
+  },
+  {
+    "ten": "lech-cheo-vang",
+    "kieu": "lech-cheo",
+    "mau_to": "#FFD200",
+    "mau_nho": "#FFFFFF",
+    "lech_x": 0.14,
+    "lech_y": -0.22,
+    "ghi_chu": "Lệch chéo, không lệch thẳng đứng."
+  },
+  {
+    "ten": "lech-cheo-trang",
+    "kieu": "lech-cheo",
+    "mau_to": "#FFFFFF",
+    "mau_nho": "#FFFFFF",
+    "lech_x": 0.14,
+    "lech_y": -0.22,
+    "ghi_chu": "Lệch chéo, không lệch thẳng đứng."
+  },
+  {
+    "ten": "lech-cheo-hong",
+    "kieu": "lech-cheo",
+    "mau_to": "#FF4A60",
+    "mau_nho": "#FFFFFF",
+    "lech_x": 0.14,
+    "lech_y": -0.22,
+    "ghi_chu": "Lệch chéo, không lệch thẳng đứng."
+  },
+  {
+    "ten": "lech-cheo-lam",
+    "kieu": "lech-cheo",
+    "mau_to": "#5DA7FF",
+    "mau_nho": "#FFFFFF",
+    "lech_x": 0.14,
+    "lech_y": -0.22,
+    "ghi_chu": "Lệch chéo, không lệch thẳng đứng."
+  },
+  {
+    "ten": "lech-cheo-luc",
+    "kieu": "lech-cheo",
+    "mau_to": "#7CFF9E",
+    "mau_nho": "#FFFFFF",
+    "lech_x": 0.14,
+    "lech_y": -0.22,
+    "ghi_chu": "Lệch chéo, không lệch thẳng đứng."
+  },
+  {
+    "ten": "lech-cheo-cam",
+    "kieu": "lech-cheo",
+    "mau_to": "#FF8A3D",
+    "mau_nho": "#FFFFFF",
+    "lech_x": 0.14,
+    "lech_y": -0.22,
+    "ghi_chu": "Lệch chéo, không lệch thẳng đứng."
+  },
+  {
+    "ten": "nen-khoi-vang",
+    "kieu": "nen-khoi",
+    "mau_nen": "#FFD200",
+    "mau_chu": "#101014",
+    "bo_goc": 14,
+    "dem": [
+      26,
+      14
+    ]
+  },
+  {
+    "ten": "nen-khoi-trang",
+    "kieu": "nen-khoi",
+    "mau_nen": "#FFFFFF",
+    "mau_chu": "#101014",
+    "bo_goc": 14,
+    "dem": [
+      26,
+      14
+    ]
+  },
+  {
+    "ten": "nen-khoi-hong",
+    "kieu": "nen-khoi",
+    "mau_nen": "#FF4A60",
+    "mau_chu": "#101014",
+    "bo_goc": 14,
+    "dem": [
+      26,
+      14
+    ]
+  },
+  {
+    "ten": "nen-khoi-lam",
+    "kieu": "nen-khoi",
+    "mau_nen": "#5DA7FF",
+    "mau_chu": "#101014",
+    "bo_goc": 14,
+    "dem": [
+      26,
+      14
+    ]
+  },
+  {
+    "ten": "nen-khoi-luc",
+    "kieu": "nen-khoi",
+    "mau_nen": "#7CFF9E",
+    "mau_chu": "#101014",
+    "bo_goc": 14,
+    "dem": [
+      26,
+      14
+    ]
+  },
+  {
+    "ten": "nen-khoi-cam",
+    "kieu": "nen-khoi",
+    "mau_nen": "#FF8A3D",
+    "mau_chu": "#101014",
+    "bo_goc": 14,
+    "dem": [
+      26,
+      14
+    ]
+  },
+  {
+    "ten": "nen-khoi-tim",
+    "kieu": "nen-khoi",
+    "mau_nen": "#B47CFF",
+    "mau_chu": "#101014",
+    "bo_goc": 14,
+    "dem": [
+      26,
+      14
+    ]
+  },
+  {
+    "ten": "nen-khoi-chanh",
+    "kieu": "nen-khoi",
+    "mau_nen": "#E5FF89",
+    "mau_chu": "#101014",
+    "bo_goc": 14,
+    "dem": [
+      26,
+      14
+    ]
+  },
+  {
+    "ten": "phu-de-chuan",
+    "kieu": "phu-de",
+    "mau_chu": "#FFFFFF",
+    "vien": [
+      {
+        "mau": "#000000",
+        "day": 8
+      }
+    ],
+    "bong": {
+      "lech": 3,
+      "mo": 6
+    }
+  },
+  {
+    "ten": "phu-de-nhan-vang",
+    "kieu": "phu-de",
+    "mau_chu": "#FFD200",
+    "vien": [
+      {
+        "mau": "#000000",
+        "day": 8
+      }
+    ],
+    "bong": {
+      "lech": 3,
+      "mo": 6
+    }
+  },
+  {
+    "ten": "phu-de-nhan-luc",
+    "kieu": "phu-de",
+    "mau_chu": "#7CFF9E",
+    "vien": [
+      {
+        "mau": "#000000",
+        "day": 8
+      }
+    ],
+    "bong": {
+      "lech": 3,
+      "mo": 6
+    }
+  },
+  {
+    "ten": "chip-buoc-toi",
+    "kieu": "chip",
+    "mau_nen": "#101014",
+    "mau_chu": "#FFFFFF",
+    "bo_goc": 999,
+    "dem": [
+      22,
+      10
+    ],
+    "ghi_chu": "Góc trên cho video quay màn hình."
+  },
+  {
+    "ten": "chip-buoc-vang",
+    "kieu": "chip",
+    "mau_nen": "#FFD200",
+    "mau_chu": "#101014",
+    "bo_goc": 999,
+    "dem": [
+      22,
+      10
+    ],
+    "ghi_chu": "Góc trên cho video quay màn hình."
+  },
+  {
+    "ten": "chip-buoc-lam",
+    "kieu": "chip",
+    "mau_nen": "#5DA7FF",
+    "mau_chu": "#101014",
+    "bo_goc": 999,
+    "dem": [
+      22,
+      10
+    ],
+    "ghi_chu": "Góc trên cho video quay màn hình."
+  }
+]

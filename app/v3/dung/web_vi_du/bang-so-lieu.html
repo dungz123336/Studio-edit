@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<style>
+  body { font-family: var(--font-nhan); color: var(--mau-sang); }
+  .bang { position: absolute; inset: 0; display: grid; grid-template-columns: 40% 60%; gap: 2%;
+          padding: 4% 4%; box-sizing: border-box; background: color-mix(in srgb, var(--mau-toi) 80%, transparent);
+          border-radius: 36px; border: 2px solid color-mix(in srgb, var(--mau-sang) 18%, transparent); }
+  .so { display: flex; flex-direction: column; justify-content: center; gap: 12px; min-width: 0; }
+  .nhan { font: 700 34px var(--font-nhan); opacity: .85; }
+  .lon { font: 900 120px/1 var(--font-tieu-de); color: var(--mau-nhan); font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .dv { font: 800 40px var(--font-nhan); color: var(--mau-nhan); }
+  .phu { font: 700 30px var(--font-nhan); color: var(--mau-nhan2); }
+  svg { width: 100%; height: 100%; overflow: visible; }
+  .truc { stroke: color-mix(in srgb, var(--mau-sang) 25%, transparent); stroke-width: 2; }
+  .cot { fill: color-mix(in srgb, var(--mau-nhan2) 55%, transparent); }
+  .duong { fill: none; stroke: var(--mau-nhan); stroke-width: 9; stroke-linecap: round; stroke-linejoin: round; }
+  .diem { fill: var(--mau-nhan); }
+  .thang { font: 700 24px var(--font-nhan); fill: var(--mau-sang); opacity: .75; text-anchor: middle; }
+</style>
+</head>
+<body>
+<div class="bang">
+  <div class="so">
+    <div class="nhan" id="nhan"></div>
+    <div class="lon" id="lon">0</div>
+    <div class="dv" id="dv"></div>
+    <div class="phu" id="phu"></div>
+  </div>
+  <svg id="bd" viewBox="0 0 600 400" preserveAspectRatio="none"></svg>
+</div>
+<script>
+const P = Object.assign({ tieu_de: "Doanh thu quý III", so: 1.25, so_le: 2, don_vi: "tỷ đồng", tang: "▲ 48% so với năm ngoái",
+  du_lieu: [12, 18, 15, 26, 31, 29, 44, 52], nhan_cot: ["T1","T2","T3","T4","T5","T6","T7","T8"] }, window.PROPS);
+const ns = "http://www.w3.org/2000/svg", bd = document.getElementById("bd");
+const mk = (t, a) => { const e = document.createElementNS(ns, t); for (const k in a) e.setAttribute(k, a[k]); bd.appendChild(e); return e; };
+nhan.textContent = P.tieu_de; phu.textContent = P.tang;
+const n = P.du_lieu.length, mx = Math.max(...P.du_lieu) * 1.1, X = i => 40 + i * (520 / (n - 1)), Y = v => 350 - v / mx * 320;
+mk("line", { x1: 20, y1: 350, x2: 580, y2: 350, class: "truc" });
+const cot = P.du_lieu.map((v, i) => mk("rect", { x: X(i) - 18, width: 36, y: 350, height: 0, rx: 8, class: "cot" }));
+const pts = P.du_lieu.map((v, i) => [X(i), Y(v)]);
+const duong = mk("path", { d: "M" + pts.map(p => p.join(" ")).join(" L"), class: "duong", pathLength: 1, "stroke-dasharray": 1 });
+const diem = pts.map(p => mk("circle", { cx: p[0], cy: p[1], r: 0, class: "diem" }));
+P.nhan_cot.forEach((s, i) => mk("text", { x: X(i), y: 385, class: "thang" }).textContent = s);
+const kep = u => Math.max(0, Math.min(1, u));
+const ra = u => 1 - Math.pow(1 - u, 3);                                              // ease-out cubic
+const nay = u => { const c = 1.70158; return 1 + (c + 1) * Math.pow(u - 1, 3) + c * Math.pow(u - 1, 2); };   // back-out
+window.veTai = (t, dur) => {
+  const u = ra(kep(t / 1.6));
+  lon.textContent = (P.so * u).toLocaleString("vi-VN", { minimumFractionDigits: P.so_le || 0, maximumFractionDigits: P.so_le || 0 });
+  dv.textContent = P.don_vi || "";
+  cot.forEach((r, i) => { const k = nay(kep((t - 0.15 - i * 0.08) / 0.5)); const h = (350 - Y(P.du_lieu[i])) * k;
+    r.setAttribute("y", 350 - h); r.setAttribute("height", Math.max(0, h)); });
+  duong.setAttribute("stroke-dashoffset", 1 - ra(kep((t - 0.4) / 1.4)));
+  diem.forEach((c, i) => c.setAttribute("r", 10 * nay(kep((t - 0.4 - 1.4 * i / (n - 1)) / 0.3))));
+};
+</script>
+</body>
+</html>

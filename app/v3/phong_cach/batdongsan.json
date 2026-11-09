@@ -1,0 +1,529 @@
+{
+ "_ban_quyen": "© 2026 Studio dựng video. STUDIO-DUNG-VIDEO · BAN QUYEN. Cấm sao chép/sửa/phân phối lại.",
+ "id": "batdongsan",
+ "ten": "Bất động sản · nội thất sang",
+ "lenh": [
+  "/batdongsan",
+  "/bat-dong-san",
+  "/bds",
+  "/nhadat",
+  "/noithat"
+ ],
+ "mo_ta": "Biên tập cao cấp: serif nghiêng Lora + Manrope, kem – xanh đá – vàng champagne, chuyển động chậm, title giữa khung, nhãn thông số (diện tích/vị trí) dạng chip mảnh, grade điện ảnh nhẹ, nhạc piano/ambient, CTA lịch xem nhà.",
+ "hop_voi": [
+  "bất động sản",
+  "giới thiệu căn hộ/dự án",
+  "nội thất/kiến trúc",
+  "thương hiệu cao cấp",
+  "khách sạn/resort"
+ ],
+ "tu_khoa": [
+  "bất động sản",
+  "bđs",
+  "nhà",
+  "căn hộ",
+  "chung cư",
+  "dự án",
+  "đất",
+  "nội thất",
+  "kiến trúc",
+  "biệt thự",
+  "thiết kế nhà",
+  "mặt bằng",
+  "cho thuê",
+  "m2"
+ ],
+ "gan_voi": [
+  "dienanh",
+  "sanpham"
+ ],
+ "khi_khong_dung": "Bán hàng nhanh giá rẻ (dùng sanpham); nội dung trẻ năng lượng cao.",
+ "vi_sao": "HE.bo-token-mau preset 'bien-tap' (chuyên gia, tài chính, BĐS, sang; kem–than–đất; Lora nghiêng, Manrope); BIA.hien-dai-kiem-che ('hiện đại = kiềm chế': 1–2 màu chữ, chênh cỡ lớn, không sticker); B1 hàng 11 (hold 1,5–5 s, pan nhẹ, caption serif tối giản).",
+ "grade": "grade.dien-anh",
+ "cam": [
+  "meme",
+  "chuyen_canh.chop-trang"
+ ],
+ "bia_kieu": [
+  "title_dien_anh",
+  "mot_vat_noi_bat",
+  "so_lon"
+ ],
+ "outro": {
+  "kieu": "cta",
+  "lop": "mau_the.ket-thuc"
+ },
+ "nhac_mood": "binh-yen",
+ "cho_phep_den_trang": false,
+ "minh_hoa": "minh-hoa/batdongsan.jpg",
+ "minh_hoa_ghi_chu": "Minh hoạ là khung hình THẬT (video quay thật) đã áp đúng grade, màu, font và lớp hiệu ứng của gói — chữ trong ảnh chỉ là câu mẫu; khi dựng, Claude viết chữ theo lời thật trong video của bạn.",
+ "tham_khao_v2": {
+  "uu_tien_lop": [
+   "mau_the.chuong",
+   "mau_the.nhan-dan",
+   "hieu_ung_chu.mo-ao",
+   "mau_the.so-lon",
+   "mau_the.danh-sach",
+   "mau_the.ket-thuc"
+  ],
+  "uu_tien_chuyen": [
+   "hieu_ung_hinh.vet-sang"
+  ],
+  "ngu_phap": "S4",
+  "chuyen_mac_dinh": "hoa_tan_cham"
+ },
+ "spec": {
+  "phien_ban": 1,
+  "nguon": "goi:batdongsan",
+  "palette": {
+   "nhan": "#C9A86A",
+   "sang": "#F4EFE6",
+   "toi": "#1E2A2A"
+  },
+  "type_scale": {
+   "phu_de": {
+    "co": 54.0,
+    "dam": 500,
+    "hoa": false,
+    "font": "Manrope-Medium.ttf"
+   },
+   "nhan": {
+    "co": 96.0,
+    "dam": 600,
+    "hoa": false,
+    "font": "Manrope-SemiBold.ttf",
+    "font_phu": "Lora-SemiBoldItalic.ttf"
+   },
+   "tieu_de": {
+    "co": 150.0,
+    "dam": 600,
+    "hoa": false,
+    "font": "Lora-SemiBoldItalic.ttf"
+   },
+   "nhom_font": [
+    "sans_thuong",
+    "sans_dam",
+    "serif"
+   ],
+   "so_font_khac_nhau": 3
+  },
+  "layout": {
+   "anchors": [
+    {
+     "vai": "phu_de",
+     "anchor": "bc",
+     "x": 0.5,
+     "y": 0.72,
+     "so_voi": "khung",
+     "tan_suat": 1.0
+    },
+    {
+     "vai": "nhan",
+     "anchor": "mc",
+     "x": 0.5,
+     "y": 0.62,
+     "so_voi": "duoi_cam",
+     "tan_suat": 0.6
+    },
+    {
+     "vai": "the",
+     "anchor": "mc",
+     "x": 0.5,
+     "y": 0.45,
+     "so_voi": "khung",
+     "tan_suat": 0.5
+    }
+   ],
+   "rong_max_chu": 0.84,
+   "khung_nguoi": "toan_khung"
+  },
+  "motion_vocab": {
+   "vao": [
+    {
+     "kieu": "pop",
+     "dai": 0.3,
+     "ease": "back",
+     "tan_suat": 0.75,
+     "lop_v2": "mau_the.*"
+    },
+    {
+     "kieu": "blur",
+     "dai": 0.5,
+     "ease": "out",
+     "tan_suat": 0.25,
+     "lop_v2": "hieu_ung_chu.mo-ao"
+    }
+   ],
+   "ra": [
+    {
+     "kieu": "fade",
+     "dai": 0.2,
+     "ease": "out",
+     "tan_suat": 1.0
+    }
+   ],
+   "tach": "none",
+   "nhip_dong": "cham",
+   "so_le": 0.1
+  },
+  "graphics_vocab": {
+   "chu": {
+    "vien": false,
+    "bong": true,
+    "nen_khoi": true,
+    "gradient": false,
+    "hoa": false
+   },
+   "duong": [],
+   "hinh_minh_hoa": "nhieu",
+   "nen_moi": "khong",
+   "the": {
+    "hinh": "pill",
+    "co_vien": 0,
+    "bo": 999,
+    "nen_mo": false,
+    "co_icon": false
+   }
+  },
+  "camera_vocab": {
+   "dung": false,
+   "z_thuong": [
+    1.0,
+    1.04
+   ],
+   "kieu": "tron",
+   "tan_suat_giay": 2.75
+  },
+  "sfx_vocab": {
+   "dung": true,
+   "nghia": [
+    "whoosh nhẹ"
+   ],
+   "nhac": "binh-yen",
+   "nhac_db": -18.0
+  },
+  "rhythm_rules": {
+   "giay_moi_lop_chu": 2.75,
+   "so_lop_dong_thoi_toi_da": 1,
+   "khoang_trong_toi_da_giay": 8.0,
+   "phu_de": "cum",
+   "phu_de_toi_da_chu": 8,
+   "hook_giay": 3,
+   "chuyen_canh": [
+    "cut"
+   ]
+  },
+  "bia": {
+   "so_chu": 4,
+   "nguoi": false,
+   "nen": "khung_mo",
+   "bo_cuc": "title_dien_anh, mot_vat_noi_bat, so_lon"
+  },
+  "dau_an_khong_chep": [],
+  "ghi_chu": "Biên tập cao cấp: serif nghiêng Lora + Manrope, kem – xanh đá – vàng champagne, chuyển động chậm, title giữa khung, nhãn thông số (diện tích/vị trí) dạng chip mảnh, grade điện ảnh nhẹ, nhạc piano/ambient, CTA lịch xem nhà. Cấm: meme, chuyen_canh.chop-trang."
+ },
+ "quyet_dinh": {
+  "phien": 1,
+  "ly_do": "Biên tập cao cấp: serif nghiêng Lora + Manrope, kem – xanh đá – vàng champagne, chuyển động chậm, title giữa khung, nhãn thông số (diện tích/vị trí) dạng chip mảnh, grade điện ảnh nhẹ, nhạc piano/ambient, CTA lịch xem nhà. Cấm: meme, chuyen_canh.chop-trang.",
+  "font": {
+   "tieu_de": "Lora-SemiBoldItalic.ttf",
+   "phu_de": "Manrope-Medium.ttf",
+   "nhan": "Manrope-SemiBold.ttf"
+  },
+  "bang_mau": {
+   "nhan": "#C9A86A",
+   "nhan2": "#F4EFE6",
+   "sang": "#F4EFE6",
+   "toi": "#1E2A2A"
+  },
+  "chu": {
+   "co": 96.0,
+   "dam": 600,
+   "dong": 1.15,
+   "can": "giua",
+   "mau": "#F4EFE6",
+   "font": "nhan",
+   "rong_max": 0.84,
+   "hoa": false,
+   "gian": 0,
+   "vien": null,
+   "bong": [
+    {
+     "x": 0,
+     "y": 6,
+     "mo": 0,
+     "mau": "#000000CC"
+    }
+   ],
+   "nen": {
+    "mau": "#1E2A2ACC",
+    "dem": [
+     28,
+     16
+    ],
+    "bo": 18
+   },
+   "gradient": null
+  },
+  "khoi": {
+   "cach_dong": 0.95,
+   "can": "giua",
+   "rong_max": 0.84
+  },
+  "the": {
+   "hinh": "pill",
+   "mau": "#1E2A2ADD",
+   "bo": 300.0,
+   "dem": [
+    32,
+    20
+   ],
+   "vien": null,
+   "bong": [
+    {
+     "x": 0,
+     "y": 8,
+     "mo": 20,
+     "mau": "#00000080"
+    }
+   ],
+   "chu": {
+    "co": 48.0,
+    "dam": 600,
+    "mau": "#F4EFE6",
+    "font": "nhan",
+    "vien": null,
+    "bong": null,
+    "gradient": null
+   }
+  },
+  "hinh": {
+   "fit": "cover",
+   "bo": 0,
+   "vien": null,
+   "bong": [
+    {
+     "x": 0,
+     "y": 10,
+     "mo": 30,
+     "mau": "#00000080"
+    }
+   ]
+  },
+  "duong": {
+   "w": 8,
+   "ve": 0.4,
+   "ease": "out",
+   "mau": "#C9A86A"
+  },
+  "phu_de": {
+   "che_do": "cum",
+   "toi_da_chu": 32,
+   "karaoke": true,
+   "keo_dai": 0.15,
+   "lang_ngat": 0.5,
+   "tween": 0.2,
+   "nhuong_cho": 0.2,
+   "mau_noi": "#C9A86A",
+   "hien": "noi",
+   "khi_chong": "doi",
+   "an_khi_lop_chu": false,
+   "kieu_dang": {
+    "font": "phu_de",
+    "co": 54.0,
+    "dam": 500,
+    "mau": "#F4EFE6",
+    "dong": 1.15,
+    "can": "giua",
+    "hoa": false,
+    "gian": 0,
+    "rong_max": 0.86,
+    "vien": [
+     {
+      "w": 8,
+      "mau": "#1E2A2A"
+     }
+    ],
+    "bong": null,
+    "nen": null,
+    "gradient": null
+   },
+   "vi_tri": {
+    "anchor": "bc",
+    "x": 0.5,
+    "y": 0.72,
+    "so_voi": "khung"
+   },
+   "anim": {
+    "vao": {
+     "kieu": "pop",
+     "dai": 0.12,
+     "ease": "out",
+     "tu": {
+      "scale": 0.9,
+      "opacity": 0
+     }
+    },
+    "ra": {
+     "kieu": "none"
+    }
+   }
+  },
+  "anim": {
+   "vao": {
+    "kieu": "pop",
+    "dai": 0.3,
+    "ease": "back"
+   },
+   "ra": {
+    "kieu": "fade",
+    "dai": 0.2,
+    "ease": "out"
+   },
+   "so_le": 0.1,
+   "keyframe_dai": 0.25,
+   "keyframe_ease": "in_out",
+   "ken_burns": [
+    1.0,
+    1.06
+   ],
+   "nhoe_dong": 0,
+   "kieu": {
+    "slide": {
+     "x": -40,
+     "opacity": 0
+    },
+    "pop": {
+     "scale": 0.6,
+     "opacity": 0
+    },
+    "blur": {
+     "blur": 12,
+     "opacity": 0
+    },
+    "flip": {
+     "rot_y": -80,
+     "opacity": 0
+    },
+    "tilt": {
+     "rot_x": 70,
+     "opacity": 0
+    }
+   }
+  },
+  "camera": {
+   "ease": "out",
+   "dai": 0
+  },
+  "vi_tri": {
+   "hop_mac_dinh": {
+    "hinh": [
+     0.8,
+     0.4
+    ],
+    "py": [
+     0.5,
+     0.3
+    ],
+    "mau": [
+     0.8,
+     0.4
+    ],
+    "web": [
+     0.8,
+     0.3
+    ],
+    "video": [
+     1.0,
+     1.0
+    ]
+   },
+   "cach_nhom": 0.012,
+   "anchor": "mc",
+   "so_voi": "duoi_cam",
+   "xep": "doc"
+  },
+  "ne_mat": {
+   "thu_toi": 0.7,
+   "noi": 0.1
+  },
+  "am": {
+   "nhac": {
+    "db": -18.0,
+    "vao": 1.0,
+    "ra": 2.0,
+    "ne_giong": true
+   },
+   "sfx": {
+    "db": -8
+   },
+   "giong_lufs": -16,
+   "dinh_dbtp": -2.0,
+   "giong_db": 0,
+   "sidechain": {
+    "threshold": 0.05,
+    "ratio": 4,
+    "attack": 25,
+    "release": 400
+   }
+  },
+  "nen_moi": {
+   "mau": "#1E2A2A",
+   "mo_sigma": 24,
+   "toi": 0.15,
+   "kieu": "mau",
+   "mo": 0.3,
+   "vien_sang": null
+  },
+  "chuyen_canh": {
+   "flash_dai": 0.2,
+   "zoom_dai": 0.3
+  },
+  "cat": {
+   "nhip": "vua"
+  },
+  "bia": {
+   "so_phuong_an": 3,
+   "nen": {
+    "kieu": "khung_mo",
+    "mo": 0.4,
+    "toi": 0.3
+   },
+   "nguoi": {
+    "co": 1.1,
+    "x": 0.5,
+    "y": 0.62,
+    "vien_sang": null,
+    "bong": {
+     "x": 0,
+     "y": 24,
+     "mo": 40,
+     "mau": "#000000AA"
+    },
+    "lat": false
+   },
+   "chu": {
+    "co": 150.0,
+    "dam": 600,
+    "mau": "#F4EFE6",
+    "font": "tieu_de",
+    "hoa": false,
+    "can": "giua",
+    "gian": 0,
+    "dong": 1.05,
+    "rong_max": 0.86,
+    "vien": [
+     {
+      "w": 10,
+      "mau": "#1E2A2A"
+     }
+    ],
+    "bong": null,
+    "nen": null,
+    "gradient": null
+   },
+   "tuong_phan_toi_thieu": 3.0,
+   "de_mat_toi_da": 0.12
+  }
+ }
+}

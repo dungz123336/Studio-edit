@@ -1,0 +1,172 @@
+{
+ "phien_ban": 1,
+ "mo_ta": "Luật chất lượng — luôn chặn, không phụ thuộc hồ sơ. kiem.py đo bằng hộp đã giải + mat.json (không giải mã video); kiem_ky_thuat đo trên video thành phẩm. Ngưỡng (\"nguong\") là giới hạn vật lý/đọc được; cấu hình khách đè được từng số: cau-hinh.json → v3.luat.<id>.<khoá> (vd v3.luat.de_mat.thu_toi_thieu = 0.7). Thông điệp lỗi chỉ ghi số đo + ngưỡng, không câu khuyên.",
+ "luat": [
+  {
+   "id": "de_mat",
+   "chan": true,
+   "mo_ta": "Hộp lớp (chữ/thẻ/hình/video/đường/py) đè lên mặt người đang nói trong [t0,t1].",
+   "do": "mặt trung vị trong [t0,t1] (mat.json, quy đổi giây thành phẩm → gốc qua cat) ∩ hộp lớp > ti_le_giao_toi_da diện tích mặt. Engine dời về phía neo rồi thu tới thu_toi_thieu (quyết định kênh ne_mat.thu_toi đè được); vẫn đè → lỗi.",
+   "nguong": {
+    "ti_le_giao_toi_da": 0.05,
+    "thu_toi_thieu": 0.8
+   }
+  },
+  {
+   "id": "ngoai_vung_an_toan",
+   "chan": true,
+   "mo_ta": "Hộp lớp vượt vùng an toàn (9:16: trên 0.08, dưới 0.22, trái 0.04, phải 0.10).",
+   "do": "hộp px so với vùng an toàn của khung. Máy dời vào trong nếu hộp vừa; không vừa → lỗi.",
+   "nguong": {}
+  },
+  {
+   "id": "chu_tran_khung",
+   "chan": true,
+   "mo_ta": "Khối chữ rộng hơn khung hoặc hơn rong_max sau khi xuống dòng.",
+   "do": "bề rộng ước (0.6×co×số ký tự dòng dài nhất) hoặc hộp đã giải > W×rong_max. Máy thu cỡ tới thu_toi_thieu và ghi may_sua; vẫn tràn → lỗi.",
+   "nguong": {
+    "thu_toi_thieu": 0.8
+   }
+  },
+  {
+   "id": "doc_khong_kip",
+   "chan": true,
+   "mo_ta": "Chữ xuất hiện quá ngắn so với số từ.",
+   "do": "chữ nhấn: (t1−t0)/số từ < 0.3 s. Phụ đề bám lời: > 25% cụm hiện < 0.45 s mà ≥ 3 từ → lỗi; nhanh hơn 0.18 s/từ → chỉ cảnh báo (nhịp của người nói).",
+   "nguong": {
+    "giay_moi_tu_chu": 0.3,
+    "giay_moi_tu_phu_de": 0.18,
+    "ti_le_cum_vi_pham": 0.25,
+    "cum_toi_thieu_giay": 0.45
+   }
+  },
+  {
+   "id": "font_thieu_dau",
+   "chan": true,
+   "mo_ta": "Font không có glyph tiếng Việt (ệ, Ấ, ở, ữ, đ).",
+   "do": "cmap qua fontTools hoặc cờ du_dau của kho. cong_thuc.py tự thay font cùng nhóm và ghi may_sua; kiem.py xác nhận lại, vẫn thiếu → lỗi.",
+   "nguong": {
+    "ky_tu_thu": "ệẤởữđƯơ"
+   }
+  },
+  {
+   "id": "tai_nguyen_khong_co",
+   "chan": true,
+   "mo_ta": "id kho, đường dẫn, chỉ số nguồn hoặc file lớp py không tồn tại / kho không tìm được theo nghĩa.",
+   "do": "kho.tim.lay(id) / os.path.isfile / tim(nghia) top-1 rỗng.",
+   "nguong": {}
+  },
+  {
+   "id": "chong_lop",
+   "chan": true,
+   "mo_ta": "Hai lớp chữ/thẻ chồng nhau trên 30% diện tích trong cùng khoảng thời gian.",
+   "do": "giao hộp / diện tích hộp nhỏ hơn > 0.3 khi [t0,t1] giao nhau > 0.1 s.",
+   "nguong": {
+    "ti_le": 0.3,
+    "giao_giay_toi_thieu": 0.1
+   }
+  },
+  {
+   "id": "thoi_gian",
+   "chan": true,
+   "mo_ta": "t1 ≤ t0, giây ngoài [0, thời lượng], cat ngoài thời lượng nguồn, src không tồn tại.",
+   "do": "so với dur_sau và ffprobe nguồn.",
+   "nguong": {}
+  },
+  {
+   "id": "lech_tieng_hinh",
+   "chan": true,
+   "mo_ta": "Phụ đề/chữ theo lời lệch quá 0.25 s so với từ trong loi.json sau cắt.",
+   "do": "chỉ đo khi lớp có theo_loi hoặc phụ đề; so a/b sau quy đổi cat.",
+   "nguong": {
+    "giay": 0.25
+   }
+  },
+  {
+   "id": "khung_den",
+   "chan": true,
+   "mo_ta": "Thành phẩm có đoạn đen ≥ 0.5 s.",
+   "do": "kiem_ky_thuat: ffmpeg blackdetect d=0.5 pic_th=0.98 trên 540p 4 fps.",
+   "nguong": {
+    "giay": 0.5
+   }
+  },
+  {
+   "id": "dong_bang",
+   "chan": false,
+   "mo_ta": "Hình đứng yên ≥ 3 s (không phải ảnh chèn cố ý).",
+   "do": "kiem_ky_thuat: freezedetect n=-60dB d=3 → cảnh báo (vì có thể là ảnh chèn).",
+   "nguong": {
+    "giay": 3
+   }
+  },
+  {
+   "id": "am_qua_to",
+   "chan": true,
+   "mo_ta": "True peak > −1 dBTP hoặc LUFS tích hợp > −12.",
+   "do": "kiem_ky_thuat: ebur128 peak=true.",
+   "nguong": {
+    "dbtp": -1.0,
+    "lufs_toi_da": -12.0
+   }
+  },
+  {
+   "id": "web_loi",
+   "chan": true,
+   "mo_ta": "Lớp web: trang lỗi JS (exception, console.error), veTai treo/quá hạn, tài nguyên trang không tải được.",
+   "do": "dung/web.py bắt lỗi của trang trong lúc chụp khung → meta sprite `loi` → kiem.json loi_dung (+ canh_bao 'lúc dựng'). AI sửa trang rồi trọn lại.",
+   "nguong": {}
+  },
+  {
+   "id": "chinh_mau_khong_cho_phep",
+   "chan": true,
+   "mo_ta": "Công thức có mau_video (LUT/chỉnh màu) nhưng người dùng không cho chỉnh màu (viec.json cho_chinh_mau=false).",
+   "do": "ai/cong_thuc.py: mau_video có mà viec.cho_chinh_mau ≠ true → lỗi chặn.",
+   "nguong": {}
+  },
+  {
+   "id": "am_qua_nho",
+   "chan": false,
+   "mo_ta": "LUFS tích hợp < −22 → cảnh báo.",
+   "do": "ebur128.",
+   "nguong": {
+    "lufs_toi_thieu": -22.0
+   }
+  },
+  {
+   "id": "thieu_truong",
+   "chan": true,
+   "mo_ta": "Trường công thức AI bỏ trống mà quyết định kênh (quyet-dinh.json) cũng không có → máy không bịa số.",
+   "do": "ai/cong_thuc.py: lớp → bài học/Style Spec → quyet_dinh → lỗi có `duong` (vd lop[3].kieu_dang.co) và khoá quyết định thiếu (`quyet_dinh`), gộp các chỗ cùng khoá.",
+   "nguong": {}
+  },
+  {
+   "id": "quyet_dinh_sai",
+   "chan": true,
+   "mo_ta": "quyet-dinh-kenh.json (dự án) hoặc quyet-dinh.json (hồ sơ) không đúng khuôn ai/hop_dong.KHUON_QUYET_DINH.",
+   "do": "hop_dong.kiem_quyet_dinh: thieu_truong | sai_kieu | ngoai_mien | khong_biet theo từng `duong`.",
+   "nguong": {}
+  },
+  {
+   "id": "hop_dong",
+   "chan": true,
+   "mo_ta": "cong-thuc.json sai kiểu/miền/enum theo khuôn ai/hop_dong.KHUON_CONG_THUC.",
+   "do": "hop_dong.kiem_cong_thuc trước khi chuẩn hoá; mỗi lỗi có `duong` + `ma`.",
+   "nguong": {}
+  },
+  {
+   "id": "khong_mat",
+   "chan": false,
+   "mo_ta": "Lớp đặt so với mặt (so_voi mat|duoi_cam|tren_dau) nhưng không đo được mặt trong [t0,t1] → không kiểm hộp lớp đó, không dùng vị trí mặt giả.",
+   "do": "kiem.py: mat_trong_khoang rỗng → canh_bao.",
+   "nguong": {}
+  },
+  {
+   "id": "kho_khong_co",
+   "chan": false,
+   "mo_ta": "Kho trên máy không có mục loại cần tra (sfx/nhac/icon/nen/video/anh/font/lut) → MỘT cảnh báo gộp `kho_khong_co_<loai>`, không lỗi từng lớp.",
+   "do": "ai/cong_thuc.py GiaiTaiNguyen._co_loai.",
+   "nguong": {}
+  }
+ ]
+}
