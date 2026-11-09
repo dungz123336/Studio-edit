@@ -11,7 +11,7 @@
     },
     "studio/web/app.js": {
       "original_sha256": "5a71a85385ca4303efce312f0e8cb49735d4193651e6ce9459bb0709b23323b8",
-      "local_sha256": "d3d05bc605d6da341e086248a093f0813e1a540cba7f861c4c47d992c72a4365"
+      "local_sha256": "8d9998a429a63f95e6454ee25ddc7961675865c45d06e6b2f785de0b0f9f7b80"
     },
     "studio/web/style.css": {
       "original_sha256": "fd7a31f5679d3dee8d70fdda4cae56f9603b4c07874cf04e0091e68e39ddc009",
@@ -20,6 +20,10 @@
     "studio/server.py": {
       "original_sha256": "f2f80e10e3101b884dad0159f2e5c104685e0bf7de54a13f5a884c5d2e0561a9",
       "local_sha256": "800bb8757936828b01f06c1bf4aca847b4cb53dc307252aa5c36045c0f946288"
+    },
+    "studio/dong_co.py": {
+      "original_sha256": "dcfc29e7d9ff21aa2a0571407b681a4d7a47efc8ac269992059259d5785299e3",
+      "local_sha256": "1c65ba594686a233bc29d43b0acb3156602e694c0727e01d06cec16307057026"
     }
   }
 }

@@ -13,7 +13,7 @@ import du_lieu as D
 
 CONG_CU = "Bash,Read,Write,Edit,Glob,Grep,Skill,TodoWrite"
 LOI_MANG = re.compile(r"ENOTFOUND|ECONNRESET|ECONNREFUSED|ETIMEDOUT|EAI_AGAIN|Can.t reach|socket hang up|fetch failed|"
-                      r"network|Connection error|overloaded|\b(502|503|504|529)\b", re.I)
+                      r"network|Connection error|overloaded|\b(502|503|504|522|529)\b", re.I)
 
 
 def co_mang():
@@ -260,6 +260,49 @@ def _dich_loi_cli(s):
     if re.search(r"max turns|maximum number of turns", s, re.I):
         return "Lượt này chạm trần số bước (cài đặt toi_da_buoc) — gửi “tiếp tục” để làm nốt."
     return ""
+
+
+def _che_khoa_loi(s):
+    """Không đưa khóa xác thực từ thông báo lỗi CLI ra khung chat."""
+    s = re.sub(r"(?i)\bBearer\s+[A-Za-z0-9._~+/=-]{8,}", "Bearer [đã ẩn]", str(s or ""))
+    s = re.sub(r"\b(?:sk-ant-|sk-|ghp_|github_pat_)[A-Za-z0-9_-]{12,}", "[đã ẩn khóa]", s)
+    return re.sub(r"(?i)((?:api[_-]?key|authorization|token)[\s\"']*[:=][\s\"']*)[^\s,\"'&}]+",
+                  r"\1[đã ẩn]", s)
+
+
+def _loi_claude(m, du_phong=()):
+    """Claude Code có thể đặt lỗi ở errors/error thay vì trường result."""
+    dong = []
+    http_522 = str((m or {}).get("status_code") or (m or {}).get("status")) == "522"
+
+    def lay(x, sau=0):
+        nonlocal http_522
+        if sau > 4:
+            return
+        if isinstance(x, str) and x.strip() and x.strip() not in dong:
+            dong.append(x.strip())
+        elif isinstance(x, list):
+            for v in x[:10]:
+                lay(v, sau + 1)
+        elif isinstance(x, dict):
+            if str(x.get("status_code") or x.get("status") or x.get("code")) == "522":
+                http_522 = True
+            for k in ("message", "error", "errors", "text", "detail"):
+                lay(x.get(k), sau + 1)
+
+    for k in ("result", "errors", "error"):
+        lay((m or {}).get(k))
+    if not dong:
+        lay(du_phong)
+    chu = "\n".join(dong)
+    if http_522 or re.search(r"(?:API Error|HTTP|status(?:_code)?)[\s:=\"']{0,8}522\b", chu, re.I):
+        return "Máy chủ API đang dùng không phản hồi (HTTP 522). Studio sẽ chờ rồi thử lại; anh có thể bấm Dừng để ngừng chờ."
+    return _che_khoa_loi(chu)[:2000] or "Claude gặp lỗi (CLI không trả chi tiết)."
+
+
+def _mat_phien_claude(s):
+    return bool(re.search(r"No conversation found(?: with session ID)?|(?:conversation|session)\s+(?:ID\s+)?(?:not found|does not exist)",
+                          s or "", re.I))
 
 
 def tach_hoi(chu):
@@ -679,18 +722,27 @@ class DongCo:
                     if st["loi_mang"] and nhac < 6:
                         nhac += 1
                         st["loi_mang"] = False
-                        D.them_tin(vid, "he_thong", "Mất kết nối tới Claude — Studio tự làm tiếp khi có mạng lại (không cần gõ gì).")
+                        loi_522 = st.get("loi_mang_cho", 0) >= 120
+                        D.them_tin(vid, "he_thong", "Máy chủ API đang dùng chưa phản hồi (HTTP 522). Studio thử lại sau 2 phút; anh có thể bấm Dừng để ngừng chờ."
+                                   if loi_522 else "Mất kết nối tới Claude — Studio tự làm tiếp khi có mạng lại (không cần gõ gì).")
                         cho = 0
                         st["cho_luot"] = True                       # 1.2.19: chờ mạng cũng nhả chỗ nặng, và không bị coi là ĐỨNG IM
                         while not co_mang() and cho < 4 * 3600 and not st["bi_dung"]:
                             time.sleep(15); cho += 15
-                        st["cho_luot"] = False
                         if not st["bi_dung"] and not co_mang():
                             D.them_tin(vid, "he_thong", "Mất mạng quá 4 giờ — Studio ngừng chờ. Khi có mạng, gửi “tiếp tục” là Claude làm nốt (phần đã làm vẫn giữ).")
                         if st["bi_dung"] or not co_mang():
+                            st["cho_luot"] = False
                             break
-                        time.sleep(5)
-                        chu = ("[STUDIO] Mạng vừa bị ngắt giữa chừng nên lượt trước dừng. Giờ đã có mạng lại: kiểm tra việc đang dở "
+                        den_thu = time.monotonic() + st.pop("loi_mang_cho", 5)
+                        while time.monotonic() < den_thu and not st["bi_dung"]:
+                            time.sleep(min(1, max(0, den_thu - time.monotonic())))
+                        st["cho_luot"] = False
+                        if st["bi_dung"]:
+                            break
+                        chu = ("[STUDIO] Lượt trước dừng vì máy chủ API trả HTTP 522. Nếu kết nối đã hoạt động lại, kiểm tra việc đang dở "
+                               "(file đầu ra, phiếu) rồi làm tiếp từ đúng chỗ đó tới khi giao. Không làm lại bước đã xong.") if loi_522 else (
+                               "[STUDIO] Mạng vừa bị ngắt giữa chừng nên lượt trước dừng. Giờ đã có mạng lại: kiểm tra việc đang dở "
                                "(file đầu ra, phiếu) rồi làm tiếp từ đúng chỗ đó tới khi giao. Không làm lại bước đã xong.")
                         continue
                     with self.khoa:
@@ -721,8 +773,9 @@ class DongCo:
             except Exception:
                 pass
 
-    def _lam(self, vid, chu, st, im_loi_tam=False):
+    def _lam(self, vid, chu, st, im_loi_tam=False, _da_thu_phien_moi=False):
         """Trả True nếu gặp lỗi đăng nhập tạm thời (nên thử lại)."""
+        chu_goc = chu
         v = D.doc_viec(vid)
         phien = v.get("phien")
         if not phien and v.get("loi_goc") and v.get("loi_goc") != chu and len(chu) < 400 and (v.get("luot") or v.get("dang_lam") is not None):
@@ -766,8 +819,9 @@ class DongCo:
                                      **({} if D.WIN else {"start_new_session": True}))   # 1.2.13: nhóm riêng → Dừng giết được cả cây
         st["proc"].stdin.write(chu.encode("utf-8"))
         st["proc"].stdin.close()
-        loi_cuoi, co_kq, tam = [], False, False
+        loi_cuoi, co_kq, tam, loi_kq, loi_tong_hop = [], False, False, [], []
         st["loi_mang"] = False
+        st.pop("loi_mang_cho", None)
         st["hoat_dong"] = time.time()
 
         def _doc_stderr():                               # 1.2.19 (F6): stderr của Claude Code lưu lại để chẩn đoán
@@ -776,7 +830,7 @@ class DongCo:
             if du.strip():
                 try:
                     with open(os.path.join(D.DATA, f"claude-{vid}.log"), "a", encoding="utf-8") as f:
-                        f.write(time.strftime("\n===== %Y-%m-%d %H:%M:%S =====\n") + du[-20000:])
+                        f.write(time.strftime("\n===== %Y-%m-%d %H:%M:%S =====\n") + _che_khoa_loi(du[-20000:]))
                 except Exception:
                     pass
         t_err = threading.Thread(target=_doc_stderr, daemon=True); t_err.start()
@@ -792,7 +846,9 @@ class DongCo:
                 D.sua_viec(vid, lambda x: (x.__setitem__("phien", sid), x.__setitem__("model", mdl)))
             elif t == "assistant":
                 if (m.get("message") or {}).get("model") == "<synthetic>":
-                    continue          # lời báo lỗi do Claude Code tự sinh — đã có ở bản ghi result
+                    loi_tong_hop.extend(c.get("text", "") for c in (m.get("message") or {}).get("content", [])
+                                        if isinstance(c, dict) and c.get("type") == "text")
+                    continue          # giữ làm dự phòng khi result không có chi tiết lỗi
                 for c in (m.get("message") or {}).get("content") or []:
                     if c.get("type") == "text" and c.get("text", "").strip():
                         chu_, cau, lc = tach_hoi(c["text"].strip())
@@ -813,26 +869,41 @@ class DongCo:
                 co_kq = True
                 D.ghi_luot(vid, m)
                 if m.get("is_error"):
-                    kq = str(m.get("result") or "Claude gặp lỗi")
-                    if im_loi_tam and ("OAuth" in kq or "refresh" in kq.lower()):
-                        tam = True
-                        continue
-                    if LOI_MANG.search(kq) and not re.search(r"usage limit|rate limit", kq, re.I):
-                        st["loi_mang"] = True
-                        kq = "Mất kết nối tới Claude (mạng chập chờn). " + kq
-                    if re.search(r"usage limit|rate limit|limit reached|quota|out of (extra )?usage", kq, re.I):
-                        st["het_luot"] = True
-                        st["het_luot_den"] = gio_mo_lai(kq)
-                        kq = ("Tài khoản Claude đã hết lượt dùng trong khung giờ này (giới hạn theo gói). Việc đang dở vẫn giữ "
-                              "nguyên — Studio TỰ CHỜ tới giờ mở lại lượt rồi làm tiếp (hoặc nâng gói Claude).\n\n" + kq)
-                    D.them_tin(vid, "loi", kq)
-                    if phien and "session" in kq.lower():
-                        D.sua_viec(vid, lambda x: x.__setitem__("phien", None))
+                    loi_kq.append(m)
+            elif t == "error":
+                loi_kq.append(m)
         ma = st["proc"].wait()
         try:
             t_err.join(2)
         except Exception:
             pass
+        try:
+            D.sua_viec(vid, lambda x: x["luot"][-1].__setitem__("ma", ma) if x.get("luot") else None)
+        except Exception:
+            pass
+        # Đọc cả stderr trước khi diễn giải lỗi: --resume hỏng thường chỉ nói lý do ở stderr.
+        du_phong = loi_tong_hop + loi_cuoi
+        if loi_kq or (ma and not co_kq and not st["bi_dung"]):
+            kq = _loi_claude(loi_kq[-1] if loi_kq else {}, du_phong)
+            if phien and _mat_phien_claude(kq):
+                D.sua_viec(vid, lambda x: x.__setitem__("phien", None))
+                if not _da_thu_phien_moi and not st["bi_dung"]:
+                    D.them_tin(vid, "he_thong", "Phiên Claude cũ không còn ở thư mục này — Studio mở phiên mới và gửi lại yêu cầu vừa rồi một lần.")
+                    return self._lam(vid, chu_goc, st, im_loi_tam=im_loi_tam, _da_thu_phien_moi=True)
+            if im_loi_tam and ("OAuth" in kq or "refresh" in kq.lower()):
+                tam = True
+            else:
+                if LOI_MANG.search(kq) and not re.search(r"usage limit|rate limit", kq, re.I):
+                    st["loi_mang"] = True
+                    if re.search(r"\b522\b", kq):
+                        st["loi_mang_cho"] = 120
+                    kq = "Không kết nối được tới Claude. " + kq
+                if re.search(r"usage limit|rate limit|limit reached|quota|out of (extra )?usage", kq, re.I):
+                    st["het_luot"] = True
+                    st["het_luot_den"] = gio_mo_lai(kq)
+                    kq = ("Tài khoản Claude đã hết lượt dùng trong khung giờ này (giới hạn theo gói). Việc đang dở vẫn giữ "
+                          "nguyên — Studio TỰ CHỜ tới giờ mở lại lượt rồi làm tiếp (hoặc nâng gói Claude).\n\n" + kq)
+                D.them_tin(vid, "loi", kq)
         # lượt kết thúc bằng một câu hỏi thường (không theo mẫu) → vẫn báo Studio là Claude đang chờ trả lời
         try:
             cuoi = next((t for t in reversed(D.doc_viec(vid)["tin"]) if t["vai"] in ("claude", "hoi", "nguoi_dung", "video")), None)
@@ -840,10 +911,4 @@ class DongCo:
                 D.sua_viec(vid, lambda x: x.__setitem__("cho_tra_loi", True))
         except Exception:
             pass
-        try:                                                             # 1.2.19 (F6): mã thoát vào lượt gần nhất
-            D.sua_viec(vid, lambda x: x["luot"][-1].__setitem__("ma", ma) if x.get("luot") else None)
-        except Exception:
-            pass
-        if ma and not co_kq and not st["bi_dung"]:
-            D.them_tin(vid, "loi", "Claude dừng giữa chừng. " + _dich_loi_cli(" ".join(loi_cuoi)) + " " + " ".join(loi_cuoi)[-500:])
         return tam

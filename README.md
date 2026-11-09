@@ -37,6 +37,12 @@ git pull --ff-only
 
 Nút cập nhật có sẵn trong giao diện Studio chưa mặc nhiên dùng repository GitHub này. Hướng dẫn ở trên là cách cập nhật qua Git.
 
+## Khi Claude báo lỗi
+
+HTTP 522 nghĩa là máy chủ API không phản hồi qua Cloudflare. Tạo phiên mới vẫn dùng cùng kết nối API nên không khắc phục được sự cố máy chủ. Studio chờ hai phút giữa các lần thử; bấm **Dừng** nếu muốn ngừng chờ. Cần chờ nhà cung cấp khôi phục hoặc dùng một kết nối API hoạt động.
+
+Nếu chuyển thư mục và phiên Claude cũ không còn, Studio tự mở phiên mới rồi gửi lại yêu cầu vừa rồi một lần. Lịch sử công việc trên máy vẫn được giữ. Mục đo tốc độ máy là tùy chọn và không ngăn gửi yêu cầu cho Claude.
+
 ## Dữ liệu trên từng máy
 
 - `data/`: công việc, nhật ký và trạng thái Studio.

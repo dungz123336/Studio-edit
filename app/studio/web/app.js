@@ -138,6 +138,16 @@ async function layViec() {
 /* ---------- TRÁI ---------- */
 const dangChay = () => S.tq?.dong_co?.dang_chay || (S.tq?.dong_co?.viec_chay ? { [S.tq.dong_co.viec_chay]: { bat_dau: S.tq.dong_co.bat_dau } } : {});
 const viecChay = (vid) => !!dangChay()[vid];
+function tinhTrangMay(bs = {}) {
+  bs = bs || {};
+  const kq = bs.kq || [];
+  const hong = kq.filter((x) => x.ok === false && x.bat_buoc !== false);
+  const tuyChon = kq.filter((x) => x.ok === false && x.bat_buoc === false);
+  const cham = bs.dang_sua || bs.dang_kiem ? "cho" : !kq.length ? "" : hong.length ? "xau" : "tot";
+  const chu = bs.dang_sua ? "Đang tự sửa máy…" : bs.dang_kiem ? "Đang kiểm tra máy…" : !kq.length ? "Chưa kiểm tra máy"
+    : hong.length ? `Máy: ${hong.length} chỗ cần sửa` : tuyChon.length ? `Máy ổn · ${tuyChon.length} mục tuỳ chọn` : `Máy ổn · ${kq.length}/${kq.length} mục`;
+  return { kq, hong, tuyChon, cham, chu };
+}
 function veTrai() {
   const dc = S.tq.dong_co, dch = dangChay(), soChay = Object.keys(dch).length, chay = soChay > 0;
   const ds = $("#dsHoSo");
@@ -166,9 +176,9 @@ function veTrai() {
   const od = ht.o_dia || {}, nguong = Math.max(10, +ht.o_trong_toi_thieu_gb || 10), thap = od.trong_gb != null && od.trong_gb < nguong;
   $("#dongO").hidden = !thap;
   if (thap) $("#chuO").textContent = `Ổ dự án chỉ còn ${od.trong_gb} GB — bấm để dọn`;
-  const bs = S.tq.bac_si || {}, kq = bs.kq || [], loi = kq.filter((x) => x.ok === false).length;
-  $("#chamMay").className = "cham " + (bs.dang_sua || bs.dang_kiem ? "cho" : !kq.length ? "" : loi ? "xau" : "tot");
-  $("#chuMay").textContent = bs.dang_sua ? "Đang tự sửa máy…" : bs.dang_kiem && !kq.length ? "Đang kiểm tra máy" : loi ? `Máy: ${loi} chỗ cần sửa` : `Máy ổn · ${kq.length}/${kq.length} mục`;
+  const may = tinhTrangMay(S.tq.bac_si);
+  $("#chamMay").className = "cham " + may.cham;
+  $("#chuMay").textContent = may.chu;
 }
 function chuTren(hex) {
   const r = parseInt(hex.slice(1, 3), 16), g = parseInt(hex.slice(3, 5), 16), b = parseInt(hex.slice(5, 7), 16);
@@ -260,7 +270,7 @@ if (nho.lay("anPhai", "")) $("#khung").classList.add("an-phai");
 function veBangBao() {
   const b = $("#bangBao"), ht = S.tq.he_thong, dc = S.tq.dong_co;
   let h = "", do_ = false;
-  const bs = S.tq.bac_si || {}, hong = (bs.kq || []).filter((x) => x.ok === false && x.sua_duoc);
+  const bs = S.tq.bac_si || {}, hong = tinhTrangMay(bs).hong.filter((x) => x.sua_duoc);
   if (bs.dang_sua) h = `<p><b>Đang tự sửa máy…</b> Studio đang cài và sửa những gì còn thiếu, có thể mất vài phút. Cứ để cửa sổ mở.</p><pre class="nhat-ky-sua">${esc((bs.log || []).slice(-8).join("\n") || "Bắt đầu…")}</pre>`;
   else if (hong.length) { do_ = true; h = `<p><b>Máy còn ${hong.length} chỗ cần sửa</b> — ${hong.map((x) => esc(x.ten)).join(" · ")}.</p><p>Bấm nút dưới, Studio tự cài và sửa giúp bạn (ffmpeg, thư viện Python, kho…). Không cần biết code.</p><form id="formSua"><button class="nut nut-chinh">Tự sửa tất cả</button></form>`; }
   else if (ht.ban_quyen && !ht.ban_quyen.hop_le && ht.ban_quyen.loai === "toan-ven") { do_ = true; h = `<p><b>Bộ cài đã bị thay đổi</b> — vì an toàn, Studio tạm khoá. ${esc(ht.ban_quyen.chu || "")}.</p><p>Hãy <b>cài lại Studio</b> từ link trong thư giao hàng (hồ sơ kênh, bài đã học của bạn được giữ nguyên), hoặc nhắn Zalo người bán.</p>`; }
@@ -348,6 +358,18 @@ function md(s) {
   dongDs(); dongBang();
   return ra.join("");
 }
+function chuLoiDeDoc(noiDung) {
+  const chu = String(noiDung ?? "");
+  const loi522 = /\bAPI\s+Error\s*:\s*522\b|\bHTTP\s*(?:Error\s*)?[:=]?\s*522\b|["'](?:status|status_code|statusCode)["']\s*:\s*(?:522(?=\s*[,}])|["']522["'])/i.test(chu);
+  return loi522 ? "Máy chủ API đang dùng không phản hồi (HTTP 522). Chờ máy chủ hoạt động lại rồi thử tiếp." : chu;
+}
+function theLoi(t) {
+  const goc = String(t.noi_dung ?? ""), gon = chuLoiDeDoc(goc);
+  if (gon === goc) return el("div", { class: "tin-loi" }, goc);
+  return el("div", { class: "tin-loi", style: "overflow-wrap:anywhere" }, el("p", {}, gon),
+    el("details", {}, el("summary", {}, "Chi tiết kỹ thuật"),
+      el("pre", { style: "white-space:pre-wrap;overflow-wrap:anywhere;max-width:100%" }, goc)));
+}
 function veTroChuyen() {
   hienView();
   const tc = $("#troChuyen"), h = hoSo(S.hs);
@@ -401,7 +423,7 @@ function veTroChuyen() {
       nut.push(el("div", { class: "tin-nguoi" }, t.noi_dung || "", dinh.length ? el("div", { class: "dinh-ds" }, dinh) : null));
     } else if (t.vai === "claude") nut.push(el("div", { class: "tin-claude", html: md(t.noi_dung) }));
     else if (t.vai === "hoi") nut.push(theHoi(t, !tin.slice(i + 1).some((x) => x.vai === "nguoi_dung")));
-    else if (t.vai === "loi") nut.push(el("div", { class: "tin-loi" }, t.noi_dung));
+    else if (t.vai === "loi") nut.push(theLoi(t));
     else if (t.vai === "he_thong") nut.push(el("div", { class: "tin-ht" }, t.noi_dung));
     else if (t.vai === "video") nut.push(theVideo(t));
     else if (t.vai === "anh") nut.push(el("div", {}, t.noi_dung ? el("p", { class: "tin-ht", style: "text-align:left" }, t.noi_dung) : null,
@@ -1325,10 +1347,10 @@ function veHeThong() {
         n.disabled = false; n.textContent = "Xuất gói chẩn đoán"; } }, "Xuất gói chẩn đoán")),
     (() => {
       const bs = S.tq.bac_si || {}, kq = bs.kq || [];
-      const nhanCham = (x) => "cham " + (x.ok ? "tot" : x.ok === false ? "xau" : "");
+      const nhanCham = (x) => "cham " + (x.ok ? "tot" : x.ok === false && x.bat_buoc !== false ? "xau" : "");
       return el("div", { class: "ht-dong" }, el("h4", {}, "Máy của bạn"),
-        el("p", {}, "Studio tự kiểm mọi thứ skill cần. Mục đỏ có thể sửa tự động: Studio tự cài ffmpeg, thư viện, kho…"),
-        el("ul", { class: "bs-ds" }, kq.map((x) => el("li", {}, el("i", { class: nhanCham(x) }), el("span", {}, x.ten, el("small", {}, x.chi_tiet))))),
+        el("p", {}, "Studio tự kiểm các điều kiện cần để chạy. Mục đỏ cần sửa; các mục tuỳ chọn có thể làm sau."),
+        el("ul", { class: "bs-ds" }, kq.map((x) => el("li", {}, el("i", { class: nhanCham(x) }), el("span", {}, x.ten + (x.bat_buoc === false ? " (tuỳ chọn)" : ""), el("small", {}, x.chi_tiet))))),
         bs.log?.length ? el("pre", {}, bs.log.slice(-12).join("\n")) : null,
         el("div", { style: "display:flex;gap:8px" },
           el("button", { class: "nut nut-phu", type: "button", onclick: () => api("/api/bac-si/kiem", {}).then(() => bao("Đang kiểm tra lại máy")) }, "Kiểm tra lại"),
