@@ -8,6 +8,8 @@ import os, sys, json, hashlib, subprocess, unicodedata, time, copy, glob
 
 V2 = os.path.dirname(os.path.abspath(__file__))
 SKILL = os.path.dirname(V2)
+sys.path.insert(0, os.path.join(SKILL, "studio"))
+from moi_truong import python_da_chon
 SCRIPTS = os.path.join(SKILL, "scripts")
 NAO = os.path.join(SKILL, "nao")
 CA_NHAN = os.path.join(NAO, "ca-nhan")
@@ -29,6 +31,9 @@ def nfc(s):
 
 
 def python_skill():
+    selected = python_da_chon()
+    if selected:
+        return selected
     p = os.path.join(SKILL, ".venv", "Scripts", "python.exe") if os.name == "nt" else os.path.join(SKILL, ".venv", "bin", "python")
     return p if os.path.exists(p) else sys.executable
 

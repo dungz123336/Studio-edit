@@ -12,6 +12,7 @@ Ghi được:
   - dữ liệu riêng của Studio (các việc + lời trò chuyện) ở STUDIO_DATA, ngoài thư mục skill
 """
 import contextlib, glob, json, os, re, subprocess, sys, time, unicodedata
+from moi_truong import python_da_chon
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 SKILL = os.path.dirname(HERE)
@@ -31,7 +32,10 @@ for d in (VIEC, TAI_LEN):
 
 
 def py_skill():
-    """Python của skill (.venv) nếu đã cài, không thì Python đang chạy Studio."""
+    """Use the running selected environment before the original skill default."""
+    selected = python_da_chon()
+    if selected:
+        return selected
     p = os.path.join(SKILL, ".venv", "Scripts", "python.exe") if WIN else os.path.join(SKILL, ".venv", "bin", "python")
     return p if os.path.isfile(p) else sys.executable
 
@@ -767,6 +771,9 @@ def nhip_dinh_ky(ep=False):
 
 
 def da_cai():
+    selected = python_da_chon()
+    if selected:
+        return True
     # Studio thường chạy bằng chính Python của skill (.venv) — chỉ cần .venv có thật là đã cài
     p = os.path.join(SKILL, ".venv", "Scripts", "python.exe") if WIN else os.path.join(SKILL, ".venv", "bin", "python")
     return os.path.isfile(p)

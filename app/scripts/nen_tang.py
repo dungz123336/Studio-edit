@@ -19,6 +19,8 @@ import functools, os, platform, shutil, subprocess, sys, tempfile
 HE = {"Darwin": "mac", "Windows": "win"}.get(platform.system(), "linux")
 APPLE_SILICON = HE == "mac" and platform.machine() == "arm64"
 DIR = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, os.path.join(os.path.dirname(DIR), "studio"))
+from moi_truong import python_da_chon
 
 
 def kho_mac_dinh():
@@ -34,6 +36,9 @@ def tam(ten=""):
 
 def python_venv():
     """đường dẫn python trong .venv của skill (Windows: Scripts\\python.exe)"""
+    selected = python_da_chon()
+    if selected:
+        return selected
     goc = os.path.join(os.path.dirname(DIR), ".venv")
     return os.path.join(goc, "Scripts", "python.exe") if HE == "win" else os.path.join(goc, "bin", "python")
 

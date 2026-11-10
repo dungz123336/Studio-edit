@@ -10,6 +10,7 @@
     python studio/mo.py --loi-tat  # tạo lối tắt "Studio dựng video" ngoài Desktop
 """
 import json, os, subprocess, sys, time, urllib.request
+from moi_truong import python_da_chon
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 CONG = int(os.environ.get("STUDIO_PORT", "4777"))
@@ -104,11 +105,16 @@ def cua_so():
 def loi_tat():
     script = os.path.abspath(__file__)
     if WIN:
+        selected = python_da_chon()
+        root = os.path.dirname(os.path.dirname(HERE))
+        external_start = os.path.join(root, "start.bat")
         # 1.2.12: lối tắt chạy BỘ MỞ TỰ CHỮA (wscript + mo_studio.vbs) — không trỏ thẳng pythonw của .venv: uv nâng/gỡ bản
         # Python 3.12.x là .venv mất gốc → "Python Launcher is sorry to say… No Python at …". Bộ mở tự trỏ lại rồi mở Studio.
         vbs = os.path.join(HERE, "mo_studio.vbs")
         wscript = os.path.join(os.environ.get("SystemRoot", r"C:\Windows"), "System32", "wscript.exe")
-        if os.path.isfile(vbs) and os.path.isfile(wscript):
+        if selected and os.path.isfile(external_start):
+            py, script = external_start, ""
+        elif os.path.isfile(vbs) and os.path.isfile(wscript):
             py, script = wscript, vbs
         else:
             py = os.path.join(os.path.dirname(sys.executable), "pythonw.exe")
@@ -118,7 +124,7 @@ def loi_tat():
               "$s=(New-Object -ComObject WScript.Shell).CreateShortcut((Join-Path $d 'Studio-dung-video.lnk'));"
               "$s.TargetPath=$env:PY;$s.Arguments=$env:ARGS;$s.WorkingDirectory=$env:WD;"
               "$s.Description='Studio dung video';$s.IconLocation=$env:ICO;$s.Save();$d")
-        env = dict(os.environ, PY=py, ARGS=f'"{script}"', WD=HERE, ICO=ico + ",0")
+        env = dict(os.environ, PY=py, ARGS=f'"{script}"' if script else "", WD=root if not script else HERE, ICO=ico + ",0")
         r = subprocess.run(["powershell", "-NoProfile", "-Command", ps], env=env, check=True, capture_output=True)
         desk = r.stdout.decode("utf-8", "replace").strip().splitlines()[-1]
         dich = os.path.join(desk, "Studio dựng video.lnk")
@@ -135,7 +141,7 @@ def doi_loi_tat_cu(thu_muc=None):
     """1.2.12: lối tắt kiểu cũ (trỏ thẳng pythonw + studio\\mo.py) ở Desktop / Start Menu / ghim Taskbar → SỬA TẠI CHỖ sang bộ mở
     tự chữa (giữ tên, giữ ghim). Chỉ làm khi .venv của skill có thật — máy khách đã tự sửa bằng Python hệ thống (không .venv)
     thì để nguyên lối tắt đang chạy được. Một lần (dấu ~/.studio-edit-video/.loi-tat-tu-chua). → số lối tắt đã đổi"""
-    if not WIN:
+    if not WIN or python_da_chon():
         return 0
     dau = os.path.join(DATA, ".loi-tat-tu-chua")
     mac_dinh = thu_muc is None

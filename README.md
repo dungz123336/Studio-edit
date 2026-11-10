@@ -24,6 +24,14 @@ Các ô thêm clip chính, tư liệu phụ và video mẫu mở hộp chọn t�
 
 Nếu Windows báo **Application Control / lỗi 4551**, chính sách trên máy đang chặn file Python. Bộ cài dừng và giữ nguyên môi trường, không tự đổi file để vượt chặn. Nhờ quản trị viên kiểm tra chính sách và cung cấp bộ Python được phép chạy, rồi mở lại `start.bat`; không cần xóa repo hoặc tắt bảo vệ Windows.
 
+### Chọn CPython chính thức đã cài trên máy
+
+Nếu đã có **CPython 3.12 x64 chính thức, được chính sách của máy cho phép chạy**, bấm đúp `setup-system-python.bat` một lần. Tệp này chọn bộ Python tại `%LOCALAPPDATA%\Programs\Python\Python312\python.exe`; có thể truyền đường dẫn khác làm đối số. Bộ mở kiểm tra chữ ký hợp lệ của Python Software Foundation trên interpreter và các trình phóng venv tiêu chuẩn, rồi dùng `python -m venv --without-pip` tạo môi trường riêng trong `.runtime/system-venv`. Môi trường `app/.venv` hiện có được giữ nguyên.
+
+Đây là lựa chọn rõ ràng của người dùng, không phải cách tự đổi interpreter khi Windows từ chối. Nếu tệp hoặc thư viện của bộ Python được chọn vẫn bị chặn, thiết lập dừng để quản trị viên xử lý. Chữ ký hợp lệ không bảo đảm mọi thư viện đều được chính sách cho chạy. Bộ mở không cài Python hoặc thay đổi chính sách Windows trong chế độ này. Sau khi thiết lập thư viện thành công, `start.bat`, `stop.bat` và lối tắt Desktop hiện có sẽ dùng môi trường đã chọn.
+
+Python **3.12.10** là bản cuối có bộ cài Windows trên python.org, cũ hơn các bản vá bảo mật 3.12 hiện hành. Bộ mở hiển thị đúng phiên bản đang dùng; không tự tải bản cũ hay hạ phiên bản Python đã cài. Bản Studio này chưa hỗ trợ Python 3.13/3.14 do các thư viện đang ghim.
+
 ## Cập nhật mã
 
 Đóng công việc đang chạy rồi bấm đúp `update.bat`. Bộ cập nhật dừng đúng bản Studio của thư mục này và lấy commit mới bằng `git pull --ff-only`; các tệp dữ liệu được Git bỏ qua vẫn ở trên máy.

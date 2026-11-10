@@ -49,6 +49,7 @@ def write_json(path: Path, value: dict):
 def env_for_app():
     result = dict(os.environ)
     result.update(
+        STUDIO_PYTHON=str(PYTHON),
         STUDIO_PORT=str(PORT),
         STUDIO_DATA=str(DATA),
         PYTHONUTF8="1",
@@ -71,6 +72,9 @@ def env_for_app():
 
 
 def require_files():
+    allowed = (APP / ".venv" / "Scripts" / "python.exe", ROOT / ".runtime" / "system-venv" / "Scripts" / "python.exe")
+    if PYTHON not in (path.resolve() for path in allowed):
+        raise RuntimeError("Môi trường Python chưa được bộ mở Studio cấu hình.")
     required = [RUNTIME / "python.exe", PYTHON, APP / "studio" / "mo.py"]
     missing = [str(path) for path in required if not path.is_file()]
     if missing:
@@ -82,6 +86,10 @@ def require_files():
 
 
 def rebase_python():
+    # A stdlib venv is owned by its selected installed distribution. Preserve its
+    # configuration, and never rewrite the separate legacy environment.
+    if PYTHON != (APP / ".venv" / "Scripts" / "python.exe").resolve():
+        return
     cfg = APP / ".venv" / "pyvenv.cfg"
     cfg.write_text(
         f"home = {RUNTIME}\n"

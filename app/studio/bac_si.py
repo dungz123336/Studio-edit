@@ -12,6 +12,7 @@ Không bao giờ: nhập mật khẩu / mã bản quyền hộ, đụng file b�
 Việc cần người dùng tự làm (đăng nhập Claude, nhập mã) thì in hướng dẫn một dòng.
 """
 import glob, json, os, platform, shutil, subprocess, sys, tempfile, time
+from moi_truong import python_da_chon
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 SKILL = os.path.dirname(HERE)
@@ -31,7 +32,7 @@ def tep_yeu_cau():
         return os.path.join(SKILL, "yeu-cau-win.txt")
     p = os.path.join(SKILL, "yeu-cau-linux.txt")
     return p if os.path.isfile(p) else os.path.join(SKILL, "yeu-cau-win.txt")
-VENV_PY = os.path.join(SKILL, ".venv", "Scripts", "python.exe") if WIN else os.path.join(SKILL, ".venv", "bin", "python")
+VENV_PY = python_da_chon() or (os.path.join(SKILL, ".venv", "Scripts", "python.exe") if WIN else os.path.join(SKILL, ".venv", "bin", "python"))
 KHONG_CUA_SO = 0x08000000 if WIN else 0
 GOI = ["faster_whisper", "av"] + (["mediapipe"] if WIN else []) + \
       ["numpy", "PIL", "scipy", "fontTools", "requests", "cryptography", "skia", "onnxruntime"]      # 1.2.19: lõi 1.3 cần faster-whisper trên MỌI hệ
@@ -136,6 +137,9 @@ def k_venv():
 
 
 def s_venv():
+    if python_da_chon():
+        ok, detail = k_venv()
+        return (0 if ok else 1), detail + " — môi trường do start.bat quản lý, không tự đổi Python."
     sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
     import sua_venv
     if os.path.isfile(VENV_PY) and os.path.isfile(sua_venv.CFG):

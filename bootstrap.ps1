@@ -2,7 +2,8 @@
 param(
     [switch]$Check,
     [switch]$NoBrowser,
-    [switch]$Stop
+    [switch]$Stop,
+    [string]$SystemPython
 )
 
 $ErrorActionPreference = 'Stop'
@@ -16,6 +17,7 @@ $StudioTools = Join-Path $StudioRoot 'tools'
 $StudioRuntime = Join-Path $StudioRoot '.runtime'
 $StudioCache = Join-Path $StudioRoot '.cache'
 $StudioVenvPython = Join-Path $StudioApp '.venv\Scripts\python.exe'
+$StudioMode = 'uv'
 $StudioStatePath = Join-Path $StudioRuntime 'runtime.json'
 $StudioRequirements = Join-Path $StudioApp 'yeu-cau-win.txt'
 $StudioUtf8 = New-Object System.Text.UTF8Encoding($false)
@@ -119,7 +121,51 @@ function Read-StudioPython([string]$Executable) {
     if ($Result.version[0] -ne 3 -or $Result.version[1] -ne 12 -or $Result.bits -ne 64) { return $null }
     $BasePython = Join-Path $Result.base 'python.exe'
     if (-not (Test-Path -LiteralPath $BasePython -PathType Leaf)) { return $null }
-    return [pscustomobject]@{ executable = $BasePython; home = $Result.base }
+    return [pscustomobject]@{ executable = $BasePython; home = $Result.base; version = ($Result.version -join '.') }
+}
+
+function Get-StudioRuntimeSelection([string]$RequestedSystemPython) {
+    $SystemVenvPython = Join-Path $StudioRuntime 'system-venv\Scripts\python.exe'
+    if ($RequestedSystemPython) {
+        return [pscustomobject]@{ mode = 'system'; base_python = $RequestedSystemPython; venv_python = $SystemVenvPython }
+    }
+    if (Test-Path -LiteralPath $StudioStatePath -PathType Leaf) {
+        $Saved = Get-Content -LiteralPath $StudioStatePath -Raw -Encoding UTF8 | ConvertFrom-Json
+        if ($Saved.mode -eq 'system') {
+            if (-not $Saved.base_python -or -not $Saved.venv_python -or
+                -not [IO.Path]::GetFullPath([string]$Saved.venv_python).Equals([IO.Path]::GetFullPath($SystemVenvPython), [StringComparison]::OrdinalIgnoreCase)) {
+                throw '[STUDIO_SYSTEM_CONFIGURATION_INVALID] Cấu hình Python hệ thống không hợp lệ. Chạy lại setup-system-python.bat với đường dẫn Python đã được phép dùng.'
+            }
+            return [pscustomobject]@{ mode = 'system'; base_python = [string]$Saved.base_python; venv_python = $SystemVenvPython }
+        }
+    }
+    return [pscustomobject]@{ mode = 'uv'; base_python = $null; venv_python = (Join-Path $StudioApp '.venv\Scripts\python.exe') }
+}
+
+function Assert-StudioPythonSignature([string]$Executable) {
+    if (-not (Test-Path -LiteralPath $Executable -PathType Leaf)) { throw ('Thiếu tệp trong bộ Python hệ thống: ' + $Executable) }
+    $Signature = Get-AuthenticodeSignature -LiteralPath $Executable
+    if ([string]$Signature.Status -ne 'Valid' -or -not $Signature.SignerCertificate -or
+        $Signature.SignerCertificate.Subject -notmatch '(?i)(^|,\s*)(CN|O)=Python Software Foundation(,|$)') {
+        throw ('[STUDIO_PYTHON_SIGNATURE_INVALID] Cần bộ CPython chính thức có chữ ký hợp lệ của Python Software Foundation: ' + $Executable)
+    }
+}
+
+function Resolve-StudioSystemPython([string]$Executable) {
+    $FullPath = [IO.Path]::GetFullPath($Executable)
+    Assert-StudioPythonSignature $FullPath
+    $Python = Read-StudioPython $FullPath
+    if (-not $Python -or -not [IO.Path]::GetFullPath($Python.executable).Equals($FullPath, [StringComparison]::OrdinalIgnoreCase)) {
+        throw 'Chọn python.exe gốc của CPython 3.12 x64 đã cài; không chọn một môi trường ảo hay phiên bản khác.'
+    }
+    foreach ($Name in @('python.exe', 'pythonw.exe')) {
+        Assert-StudioPythonSignature (Join-Path $Python.home ('Lib\venv\scripts\nt\' + $Name))
+    }
+    Write-Host ('Dùng CPython hệ thống ' + $Python.version + ': ' + $Python.executable)
+    if ([version]$Python.version -le [version]'3.12.10') {
+        Write-Host 'Lưu ý: Python 3.12.10 là bản cuối có bộ cài Windows python.org, cũ hơn các bản vá 3.12 hiện hành. Bộ mở không tải hoặc tự hạ phiên bản Python.' -ForegroundColor Yellow
+    }
+    return $Python
 }
 
 function Resolve-StudioPython([string]$Uv) {
@@ -188,22 +234,42 @@ function Ensure-StudioFfmpeg {
     }
 }
 
-function Ensure-StudioVenv([string]$Uv, $Python) {
-    $Venv = Join-Path $StudioApp '.venv'
+function Initialize-StudioVenv([string]$Uv, $Python) {
+    $Venv = if ($StudioMode -eq 'system') { Join-Path $StudioRuntime 'system-venv' } else { Join-Path $StudioApp '.venv' }
+    if ($StudioMode -eq 'system' -and (Test-Path -LiteralPath $StudioVenvPython -PathType Leaf)) { Assert-StudioPythonSignature $StudioVenvPython }
     $Existing = Read-StudioPython $StudioVenvPython
+    if ($StudioMode -eq 'system' -and $Existing -and
+        -not [IO.Path]::GetFullPath($Existing.executable).Equals([IO.Path]::GetFullPath($Python.executable), [StringComparison]::OrdinalIgnoreCase)) {
+        throw '[STUDIO_SYSTEM_BASE_MISMATCH] Môi trường system-venv đang dùng bộ Python khác. Giữ nguyên để quản trị viên kiểm tra; chưa cài thêm thư viện.'
+    }
     if (-not $Existing) {
+        if ($StudioMode -eq 'system' -and (Test-Path -LiteralPath $Venv)) {
+            throw '[STUDIO_SYSTEM_VENV_INCOMPLETE] Môi trường system-venv đã có nhưng không chạy được. Giữ nguyên để kiểm tra; bộ mở không thay tệp thực thi.'
+        }
         if (Test-Path -LiteralPath $Venv) {
             $Backup = Join-Path $StudioApp ('.venv.previous.' + (Get-Date -Format 'yyyyMMddHHmmss') + '.' + [guid]::NewGuid().ToString('N').Substring(0, 6))
             # Preserve a broken/mismatched environment rather than deleting it.
             Move-Item -LiteralPath $Venv -Destination $Backup
         }
-        Invoke-StudioCommand $Uv @('venv', '--no-config', '--python', $Python.executable, $Venv) 'Tạo môi trường Python'
+        if ($StudioMode -eq 'system') {
+            # Use CPython's standard creator in a separate environment. The original
+            # app/.venv is never read, moved, patched or replaced by this mode.
+            Invoke-StudioCommand $Python.executable @('-I', '-m', 'venv', '--without-pip', $Venv) 'Tạo môi trường bằng CPython hệ thống'
+        } else {
+            Invoke-StudioCommand $Uv @('venv', '--no-config', '--python', $Python.executable, $Venv) 'Tạo môi trường Python'
+        }
         # Verify a newly created launcher before attempting any dependency installs.
+        if ($StudioMode -eq 'system') { Assert-StudioPythonSignature $StudioVenvPython }
         $Created = Read-StudioPython $StudioVenvPython
         if (-not $Created) { throw 'Môi trường Python vừa tạo không khởi động được; chưa cài thư viện.' }
     }
+}
+
+function Ensure-StudioVenv([string]$Uv, $Python) {
+    Initialize-StudioVenv $Uv $Python
     $RequirementsHash = (Get-FileHash -LiteralPath $StudioRequirements -Algorithm SHA256).Hash.ToLowerInvariant()
-    $StampPath = Join-Path $StudioRuntime 'requirements.sha256'
+    $StampName = if ($StudioMode -eq 'system') { 'requirements-system.sha256' } else { 'requirements.sha256' }
+    $StampPath = Join-Path $StudioRuntime $StampName
     $Stamp = if (Test-Path -LiteralPath $StampPath -PathType Leaf) { [IO.File]::ReadAllText($StampPath).Trim() } else { '' }
     $Probe = "import importlib;[importlib.import_module(n) for n in ['faster_whisper','av','mediapipe','numpy','PIL','scipy','fontTools','requests','cryptography','skia','onnxruntime']];import av;assert int(av.__version__.split('.')[0])<15"
     $ImportsReady = $false
@@ -222,7 +288,8 @@ function Ensure-StudioVenv([string]$Uv, $Python) {
         Invoke-StudioCommand $StudioVenvPython @('-I', '-c', $Probe) 'Kiểm tra thư viện'
         [IO.File]::WriteAllText($StampPath, ($RequirementsHash + "`n"), $StudioUtf8)
     }
-    Write-StudioJson $StudioStatePath @{ schema = 1; base_python = $Python.executable; venv_python = $StudioVenvPython; requirements_sha256 = $RequirementsHash }
+    $Mode = if ($StudioMode -eq 'system') { 'system' } else { 'uv' }
+    Write-StudioJson $StudioStatePath @{ schema = 2; mode = $Mode; base_python = $Python.executable; venv_python = $StudioVenvPython; requirements_sha256 = $RequirementsHash }
 }
 
 try {
@@ -237,6 +304,15 @@ try {
     Set-Location -LiteralPath $StudioRoot
     if (-not (Test-Path -LiteralPath (Join-Path $StudioRoot 'launcher.py') -PathType Leaf)) { throw 'Thiếu launcher.py; hãy tải đầy đủ repository.' }
 
+    if ($Stop -and $SystemPython) { throw 'Không dùng -Stop cùng -SystemPython.' }
+    # Selection is explicit or previously saved only after successful setup. A
+    # policy refusal never triggers selection of a different runtime.
+    $Selection = Get-StudioRuntimeSelection $SystemPython
+    $StudioMode = $Selection.mode
+    $StudioVenvPython = $Selection.venv_python
+    $SystemRuntime = if ($StudioMode -eq 'system') { Resolve-StudioSystemPython $Selection.base_python } else { $null }
+    if ($StudioMode -eq 'system' -and (Test-Path -LiteralPath $StudioVenvPython -PathType Leaf)) { Assert-StudioPythonSignature $StudioVenvPython }
+
     if ($Stop) {
         # Stopping an absent/incomplete setup must never trigger an installation.
         $Python = Read-StudioPython $StudioVenvPython
@@ -249,6 +325,9 @@ try {
         if (-not (Test-Path -LiteralPath $StudioRequirements -PathType Leaf)) { throw 'Thiếu app\yeu-cau-win.txt; hãy tải đầy đủ repository.' }
         # A policy refusal is not a missing dependency: stop before downloading anything else.
         if (Test-Path -LiteralPath $StudioVenvPython -PathType Leaf) { $null = Read-StudioPython $StudioVenvPython }
+        # Standard CPython needs no downloaded tool to create its environment.
+        # Check its launcher before uv, FFmpeg or package installation begins.
+        if ($StudioMode -eq 'system') { Initialize-StudioVenv $null $SystemRuntime }
         [IO.Directory]::CreateDirectory($StudioTools) | Out-Null
         [IO.Directory]::CreateDirectory($StudioRuntime) | Out-Null
         [IO.Directory]::CreateDirectory($StudioCache) | Out-Null
@@ -263,12 +342,13 @@ try {
         $env:PATH = (Split-Path -Parent $Claude) + ';' + $env:PATH
         $Uv = Ensure-StudioUv
         $env:PATH = (Split-Path -Parent $Uv) + ';' + $env:PATH
-        $Python = Resolve-StudioPython $Uv
+        $Python = if ($StudioMode -eq 'system') { $SystemRuntime } else { Resolve-StudioPython $Uv }
         Ensure-StudioFfmpeg
         Ensure-StudioVenv $Uv $Python
     }
     $env:STUDIO_RUNTIME_HOME = $Python.home
     $env:STUDIO_PYTHON = $StudioVenvPython
+    $env:STUDIO_RUNTIME_MODE = $StudioMode
     $env:STUDIO_TOOLS_DIR = $StudioTools
     $LaunchArguments = @('-I', (Join-Path $StudioRoot 'launcher.py'))
     if ($Stop) { $LaunchArguments += '--stop' }

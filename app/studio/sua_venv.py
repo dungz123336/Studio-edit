@@ -15,9 +15,11 @@ nâng bản vá); thiếu hẳn thì `uv python install 3.12`. Cùng 3.12 nên t
 Studio ngoài Desktop dùng bộ mở studio/mo_studio.vbs (cùng logic, không cần Python) nên tự chữa trước khi mở.
 """
 import os, re, glob, shutil, subprocess, sys
+from moi_truong import python_da_chon
 
 SKILL = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-VENV = os.path.join(SKILL, ".venv")
+SELECTED_PYTHON = python_da_chon()
+VENV = os.path.dirname(os.path.dirname(SELECTED_PYTHON)) if SELECTED_PYTHON else os.path.join(SKILL, ".venv")
 CFG = os.path.join(VENV, "pyvenv.cfg")
 WIN = os.name == "nt"
 EXE = "python.exe" if WIN else os.path.join("bin", "python3")
@@ -26,7 +28,8 @@ MINOR = "3.12"
 
 def doc_cfg():
     try:
-        return open(CFG, encoding="utf-8").read()
+        with open(CFG, encoding="utf-8") as stream:
+            return stream.read()
     except OSError:
         return ""
 
@@ -100,6 +103,9 @@ def _uv():
 
 def chua(cai_neu_thieu=True):
     """→ (ok, mô tả). Gốc còn → chỉ 'chốt' sang thư mục 3.12 cố định nếu có; mất → trỏ sang ứng viên / cài 3.12 bằng uv."""
+    if SELECTED_PYTHON:
+        ok = goc_ok()
+        return ok, ("gốc Python đã chọn còn: " if ok else "gốc Python đã chọn bị thiếu: ") + str(goc())
     if not os.path.isfile(CFG):
         return False, "chưa có môi trường Python của skill (.venv) — chạy bộ cài"
     if goc_ok():

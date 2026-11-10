@@ -20,9 +20,13 @@ và chuyển lệnh sang v3/cau_noi.py.
   python v2/st.py xem | tiep
 """
 import os, sys, argparse, time, json, subprocess, re
-_VENV = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), ".venv",
+_SKILL = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.join(_SKILL, "studio"))
+from moi_truong import python_da_chon
+_SELECTED_PYTHON = python_da_chon()
+_VENV = _SELECTED_PYTHON or os.path.join(_SKILL, ".venv",
                      "Scripts" if os.name == "nt" else "bin", "python.exe" if os.name == "nt" else "python")
-if __name__ == "__main__" and os.path.exists(_VENV) and os.path.normcase(os.path.abspath(sys.executable)) != os.path.normcase(_VENV) \
+if __name__ == "__main__" and not _SELECTED_PYTHON and os.path.exists(_VENV) and os.path.normcase(os.path.abspath(sys.executable)) != os.path.normcase(_VENV) \
         and not os.environ.get("_ST_DA_CHUYEN"):
     # gọi nhầm Python hệ thống → tự chạy lại bằng Python của Studio, cùng tham số
     sys.exit(subprocess.call([_VENV, os.path.abspath(__file__)] + sys.argv[1:], env=dict(os.environ, _ST_DA_CHUYEN="1")))

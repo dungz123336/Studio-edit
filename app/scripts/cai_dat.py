@@ -13,10 +13,13 @@ ghi đường dẫn kho vào cau-hinh.json nếu chưa có → in báo cáo `nen
 import json, os, platform, shutil, subprocess, sys
 
 SKILL = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.join(SKILL, "studio"))
+from moi_truong import python_da_chon
 WIN = platform.system() == "Windows"
 MAC_ARM = platform.system() == "Darwin" and platform.machine() == "arm64"
-VENV = os.path.join(SKILL, ".venv")
-PY = os.path.join(VENV, "Scripts", "python.exe") if WIN else os.path.join(VENV, "bin", "python")
+SELECTED_PYTHON = python_da_chon()
+VENV = os.path.dirname(os.path.dirname(SELECTED_PYTHON)) if SELECTED_PYTHON else os.path.join(SKILL, ".venv")
+PY = SELECTED_PYTHON or (os.path.join(VENV, "Scripts", "python.exe") if WIN else os.path.join(VENV, "bin", "python"))
 
 
 def buoc(t):
@@ -48,6 +51,9 @@ def main():
 
     buoc("Tạo môi trường Python 3.12 riêng cho skill")
     if not os.path.exists(PY):
+        if SELECTED_PYTHON:
+            print("  Môi trường đã chọn bị thiếu; mở lại start.bat để kiểm tra. Không tự tạo môi trường khác.")
+            return 1
         if chay([uv, "venv", "--python", "3.12", VENV]).returncode:
             return 1
     else:
