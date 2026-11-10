@@ -39,9 +39,47 @@ function Find-StudioTool([string]$Name, [string[]]$Candidates = @()) {
     return $null
 }
 
+function Test-StudioPolicyBlock($Value) {
+    if ($Value -is [System.Management.Automation.ErrorRecord]) {
+        if (Test-StudioPolicyBlock $Value.Exception) { return $true }
+    }
+    if ($Value -is [Exception]) {
+        if ($Value -is [System.ComponentModel.Win32Exception] -and $Value.NativeErrorCode -eq 4551) { return $true }
+        if ($Value.InnerException -and (Test-StudioPolicyBlock $Value.InnerException)) { return $true }
+    }
+    return [bool]([string]$Value -match '(?i)\b4551\b|STUDIO_APP_CONTROL_BLOCKED|Application Control.{0,80}block|block.{0,80}(Application Control|group policy)')
+}
+
+function Throw-StudioPolicyBlock([string]$Executable) {
+    throw ('[STUDIO_APP_CONTROL_BLOCKED] Windows Application Control đang chặn: ' + $Executable +
+           '. Bộ cài đã dừng và giữ nguyên môi trường hiện có. Nhờ quản trị viên kiểm tra chính sách và cung cấp bộ Python được phép chạy; sau đó mở lại start.bat. Không cần xóa môi trường hay tắt bảo vệ Windows.')
+}
+
+function Invoke-StudioCaptured([string]$Executable, [string[]]$Arguments) {
+    # Read stderr as diagnostic data on Windows PowerShell 5.1 as well as newer versions.
+    $ErrorActionPreference = 'Continue'
+    try {
+        $Lines = @(& $Executable @Arguments 2>&1)
+        $Code = $LASTEXITCODE
+    } catch {
+        if (Test-StudioPolicyBlock $_) { Throw-StudioPolicyBlock $Executable }
+        throw
+    }
+    foreach ($Line in $Lines) {
+        if (Test-StudioPolicyBlock $Line) {
+            $BlockedPath = $Executable
+            $PathMatch = [regex]::Match(($Lines -join "`n"), '(?i)([A-Z]:\\[^`"\r\n]+?pythonw?\.exe)')
+            if ($PathMatch.Success) { $BlockedPath = $PathMatch.Value }
+            Throw-StudioPolicyBlock $BlockedPath
+        }
+    }
+    return [pscustomobject]@{ exit_code = $Code; output = $Lines }
+}
+
 function Invoke-StudioCommand([string]$Executable, [string[]]$Arguments, [string]$Description) {
-    & $Executable @Arguments
-    if ($LASTEXITCODE -ne 0) { throw ($Description + ' không thành công (mã ' + $LASTEXITCODE + ').') }
+    $Completed = Invoke-StudioCaptured $Executable $Arguments
+    foreach ($Line in $Completed.output) { Write-Host ([string]$Line) }
+    if ($Completed.exit_code -ne 0) { throw ($Description + ' không thành công (mã ' + $Completed.exit_code + ').') }
 }
 
 function Get-StudioDownload([string]$Uri, [string]$Destination) {
@@ -71,8 +109,12 @@ function Ensure-StudioUv {
 function Read-StudioPython([string]$Executable) {
     if (-not $Executable -or -not (Test-Path -LiteralPath $Executable -PathType Leaf)) { return $null }
     $MetadataCode = "import json,struct,sys;print(json.dumps({'version':list(sys.version_info[:3]),'bits':struct.calcsize('P')*8,'base':sys.base_prefix}))"
-    try { $Metadata = & $Executable -I -c $MetadataCode 2>$null } catch { return $null }
-    if ($LASTEXITCODE -ne 0) { return $null }
+    try { $Completed = Invoke-StudioCaptured $Executable @('-I', '-c', $MetadataCode) } catch {
+        if (Test-StudioPolicyBlock $_) { throw }
+        return $null
+    }
+    if ($Completed.exit_code -ne 0) { return $null }
+    $Metadata = $Completed.output
     try { $Result = ($Metadata | Select-Object -Last 1) | ConvertFrom-Json } catch { return $null }
     if ($Result.version[0] -ne 3 -or $Result.version[1] -ne 12 -or $Result.bits -ne 64) { return $null }
     $BasePython = Join-Path $Result.base 'python.exe'
@@ -86,19 +128,26 @@ function Resolve-StudioPython([string]$Uv) {
             $Saved = Get-Content -LiteralPath $StudioStatePath -Raw -Encoding UTF8 | ConvertFrom-Json
             $Python = Read-StudioPython $Saved.base_python
             if ($Python) { return $Python }
-        } catch { }
+        } catch {
+            if (Test-StudioPolicyBlock $_) { throw }
+        }
     }
     $env:UV_PYTHON_INSTALL_DIR = Join-Path $StudioRuntime 'python'
     $env:UV_PYTHON_BIN_DIR = Join-Path $StudioRuntime 'bin'
-    try { $Found = & $Uv python find --no-config --no-project --no-python-downloads 3.12 2>$null } catch { $Found = $null }
-    if ($LASTEXITCODE -eq 0) {
+    try { $FindResult = Invoke-StudioCaptured $Uv @('python', 'find', '--no-config', '--no-project', '--no-python-downloads', '3.12') } catch {
+        if (Test-StudioPolicyBlock $_) { throw }
+        $FindResult = $null
+    }
+    if ($FindResult -and $FindResult.exit_code -eq 0) {
+        $Found = $FindResult.output
         $Python = Read-StudioPython ($Found | Select-Object -Last 1)
         if ($Python) { return $Python }
     }
     Write-Host 'Đang tải Python 3.12 x64 vào thư mục .runtime...'
     Invoke-StudioCommand $Uv @('python', 'install', '3.12', '--no-config', '--no-bin', '--no-registry') 'Cài Python'
-    $Found = & $Uv python find --no-config --no-project --no-python-downloads 3.12 2>$null
-    if ($LASTEXITCODE -ne 0) { throw 'Không tìm thấy Python 3.12 sau khi cài.' }
+    $FindResult = Invoke-StudioCaptured $Uv @('python', 'find', '--no-config', '--no-project', '--no-python-downloads', '3.12')
+    if ($FindResult.exit_code -ne 0) { throw 'Không tìm thấy Python 3.12 sau khi cài.' }
+    $Found = $FindResult.output
     $Python = Read-StudioPython ($Found | Select-Object -Last 1)
     if (-not $Python) { throw 'Cần Python 3.12 bản Windows x64.' }
     return $Python
@@ -149,6 +198,9 @@ function Ensure-StudioVenv([string]$Uv, $Python) {
             Move-Item -LiteralPath $Venv -Destination $Backup
         }
         Invoke-StudioCommand $Uv @('venv', '--no-config', '--python', $Python.executable, $Venv) 'Tạo môi trường Python'
+        # Verify a newly created launcher before attempting any dependency installs.
+        $Created = Read-StudioPython $StudioVenvPython
+        if (-not $Created) { throw 'Môi trường Python vừa tạo không khởi động được; chưa cài thư viện.' }
     }
     $RequirementsHash = (Get-FileHash -LiteralPath $StudioRequirements -Algorithm SHA256).Hash.ToLowerInvariant()
     $StampPath = Join-Path $StudioRuntime 'requirements.sha256'
@@ -156,9 +208,12 @@ function Ensure-StudioVenv([string]$Uv, $Python) {
     $Probe = "import importlib;[importlib.import_module(n) for n in ['faster_whisper','av','mediapipe','numpy','PIL','scipy','fontTools','requests','cryptography','skia','onnxruntime']];import av;assert int(av.__version__.split('.')[0])<15"
     $ImportsReady = $false
     try {
-        & $StudioVenvPython -I -c $Probe 2>$null
-        $ImportsReady = $LASTEXITCODE -eq 0
-    } catch { $ImportsReady = $false }
+        $ProbeResult = Invoke-StudioCaptured $StudioVenvPython @('-I', '-c', $Probe)
+        $ImportsReady = $ProbeResult.exit_code -eq 0
+    } catch {
+        if (Test-StudioPolicyBlock $_) { throw }
+        $ImportsReady = $false
+    }
     if (-not $ImportsReady -or $Stamp -ne $RequirementsHash) {
         Write-Host 'Đang cài thư viện của Studio. Lần đầu có thể mất vài phút...'
         Invoke-StudioCommand $Uv @('pip', 'install', '--no-config', '--python', $StudioVenvPython, '-r', $StudioRequirements) 'Cài thư viện Studio'
@@ -192,6 +247,8 @@ try {
         if (-not $Python) { Write-Host 'Studio chưa được thiết lập trong thư mục này; không cài thêm gì.'; exit 0 }
     } else {
         if (-not (Test-Path -LiteralPath $StudioRequirements -PathType Leaf)) { throw 'Thiếu app\yeu-cau-win.txt; hãy tải đầy đủ repository.' }
+        # A policy refusal is not a missing dependency: stop before downloading anything else.
+        if (Test-Path -LiteralPath $StudioVenvPython -PathType Leaf) { $null = Read-StudioPython $StudioVenvPython }
         [IO.Directory]::CreateDirectory($StudioTools) | Out-Null
         [IO.Directory]::CreateDirectory($StudioRuntime) | Out-Null
         [IO.Directory]::CreateDirectory($StudioCache) | Out-Null

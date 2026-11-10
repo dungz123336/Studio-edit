@@ -22,6 +22,8 @@ Nếu máy chưa cài Claude Code, `start.bat` sẽ hiện hướng dẫn cài t
 
 Các ô thêm clip chính, tư liệu phụ và video mẫu mở hộp chọn tệp của trình duyệt. Nếu đang mở một bản cũ, bấm `Ctrl+F5` sau khi cập nhật.
 
+Nếu Windows báo **Application Control / lỗi 4551**, chính sách trên máy đang chặn file Python. Bộ cài dừng và giữ nguyên môi trường, không tự đổi file để vượt chặn. Nhờ quản trị viên kiểm tra chính sách và cung cấp bộ Python được phép chạy, rồi mở lại `start.bat`; không cần xóa repo hoặc tắt bảo vệ Windows.
+
 ## Cập nhật mã
 
 Đóng công việc đang chạy rồi bấm đúp `update.bat`. Bộ cập nhật dừng đúng bản Studio của thư mục này và lấy commit mới bằng `git pull --ff-only`; các tệp dữ liệu được Git bỏ qua vẫn ở trên máy.
